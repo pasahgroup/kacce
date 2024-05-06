@@ -219,9 +219,10 @@
                                         <select class="form-control" name="tribe">
                                             <option></option>                                           
                                             <option>Chaga</option>
-                                            <option>Pare</option>
+                                              <option>Haya</option>                                           
                                             <option>Luo</option>
-                                             <option>Masai</option>
+                                             <option>Pare</option>
+                                             <option>Masai</option>                                           
                                              <option>Sukuma</option>
                                               <option>Kinga</option>
                                               <option>Nyaturu</option>
