@@ -222,6 +222,9 @@
                                              <option>Mang'ati</option>
                                               <option>Meru</option>
                                               <option>Muha</option>
+                                              <option>Ngoni</option>
+                                              <option>Nyiramba</option>
+                                              
                                               <option>Nyaturu</option>
                                               <option>Nyakyusa</option>
                                                <option>Nyamwezi</option>
