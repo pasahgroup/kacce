@@ -223,6 +223,7 @@
                                               <option>Meru</option>
                                               <option>Muha</option>
                                               <option>Nyaturu</option>
+                                              <option>Nyakyusa</option>
                                                <option>Nyamwezi</option>
 
                                         </select>
