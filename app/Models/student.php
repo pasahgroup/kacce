@@ -23,6 +23,7 @@ class student extends Model
         'email',
         'photo',
         'education_level',
+        'graduate',
         'parental_status',
         'tribe',
       

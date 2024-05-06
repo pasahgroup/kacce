@@ -35,7 +35,8 @@ $table->string('session')->nullable();
                $table->string('photo')->nullable();
 
                $table->string('education_level')->nullable();
-            
+                 $table->integer('graduate',64)->nullable();
+
                  $table->string('parental_status')->nullable();
                   $table->string('tribe')->nullable();
               

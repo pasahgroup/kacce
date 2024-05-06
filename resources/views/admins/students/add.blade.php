@@ -36,17 +36,16 @@
                                 <div class="form-group col-md-4 col-sm-6" >
                                     <label>Class</label>
                                 <select class="form-control" name="class">
-                                    <option>Class1</option>
-                                    <option>Class2</option>
-                                    <option>Class3</option>
+                                    <option></option>
+                                    <option>Vulnerable youth</option>
+                               
                                 </select>
                             </div>
                                  <div class="form-group col-md-4 col-sm-6">
                                     <label>Session</label>
                                 <select class="form-control" name="session">
-                                    <option>Session1</option>
-                                    <option>Session2</option>
-                                    <option>Session3</option>
+                                    <option>March 2023</option>
+                                    <option>June 2023</option>
                                 </select>
                             </div>
                             </div>
@@ -125,8 +124,16 @@
                                         </select>
                                     </div>
 
+                                    <div class="form-group col-md-2 col-sm-4">
 
-                                      <div class="form-group col-md-4 col-sm-4">
+                                      <div class="form-group">
+                                       <label>Year</label>
+                                <input type="number" name="graduate" placeholder="Year" class="form-email form-control" name="graduate">
+                            </div>
+                          </div>
+
+
+                                      <div class="form-group col-md-2 col-sm-4">
                                          <label>Religion</label>
                                         <select class="form-control" name="religion">
                                             <option></option>
@@ -200,11 +207,15 @@
                                  <div class="form-group col-md-4 col-sm-4">
                                          <label>Tribe</label>
                                         <select class="form-control" name="tribe">
-                                            <option></option>
+                                            <option></option>                                           
                                             <option>Chaga</option>
                                             <option>Pare</option>
+                                            <option>Luo</option>
                                              <option>Masai</option>
                                              <option>Sukuma</option>
+                                              <option>Kinga</option>
+                                              <option>Nyaturu</option>
+
                                         </select>
                                     </div>
 
@@ -221,6 +232,7 @@
                                          <label>Designation</label>
                                         <select class="form-control" name="designation">
                                             <option></option>
+                                            <option>None</option>
                                             <option>Ahadi lodge</option>
                                             <option>MBVL lodge</option>
                                         </select>
@@ -281,7 +293,7 @@
                       <div class="form-group col-md-4 col-sm-4">
                                       <div class="form-group">
                                      <label>Mobile Number</label>
-                                <input type="text" placeholder="gurdian mobile" class="form-email form-control" name="guardian_mobile">
+                                <input type="text" placeholder="gurdian mobile" class="" name="guardian_mobile">
                             </div>
                           </div>
 
@@ -338,7 +350,7 @@
     // submit
     $('.registration-form').on('submit', function (e) {
 
-        $(this).find('input[type="text"],input[type="email"]').each(function () {
+        $(this).find('input[type="text"],input[type="emailx"]').each(function () {
             if ($(this).val() == "") {
                 e.preventDefault();
                 $(this).addClass('input-error');
@@ -348,7 +360,6 @@
         });
 
     });
-
    
 });
     </script>
