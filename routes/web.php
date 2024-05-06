@@ -43,6 +43,8 @@ use App\Http\Controllers\InclusiveController;
 use App\Http\Controllers\PeoplePercentController;
 use App\Http\Controllers\BankController;
 
+use App\Http\Controllers\StudentController;
+
 use App\Http\Controllers\Auth\AuthController;
 use Illuminate\Support\Facades\Route;
 
@@ -129,6 +131,7 @@ Route::get('/accommodation-Destroy/{x}', [accommodationController::class, 'destr
 //End of accommodation controller
 Route::resource('/dashboard', dashboardController::class);
 Route::resource('/programs', programController::class);
+Route::resource('/students', StudentController::class);
 
 Route::resource('/itineraries', itineraryController::class);
 });

@@ -21,6 +21,31 @@
   <!-- summernote -->
   <link rel="stylesheet" href="../../../../plugins/summernote/summernote-bs4.min.css">
      <link rel="stylesheet" href="../../../css/bayanno.css">
+
+
+
+ <!-- 
+  <script src="../custom/js/jquery.min.js"></script>
+    <script src="../custom/js/bootstrap.min.js"></script> -->
+
+<!-- End of Modal -->
+
+
+    <!-- <link href="../custom/css/style.css" rel="stylesheet"> -->
+
+ <!--        <link href="../../assets/pages/css/components.css" rel="stylesheet">
+<link href="../../assets/pages/css/slider.css" rel="stylesheet">
+  <link href="../../assets/corporate/css/style.css" rel="stylesheet">
+  <link href="../../assets/corporate/css/style-responsive.css" rel="stylesheet">
+  <link href="../../assets/corporate/css/themes/red.css" rel="stylesheet" id="style-color">
+  <link href="../../assets/corporate/css/custom.css" rel="stylesheet"> -->
+
+
+
+    <link rel="stylesheet" href="../../css/style.css">
+
+
+
 </head>
 <body class="hold-transition sidebar-mini">
 <!-- Site wrapper -->
@@ -104,7 +129,7 @@
  <li class="nav-item dropdown">
          <a class="nav-link" data-toggle="dropdown" href="#">
           <i class="">          
-          <div class="logo mr-auto"><img src="{{ URL::asset('/storage/user/'.auth()->user()->photo)?? 0}}" width="60" height="40">
+          <div class="logo mr-auto"><img src="{{ URL::asset('/storage/user/'.auth()->user()->photo)?? 0}}" style="width:60px;height:40px">
           </div>
           </i>         
         </a>
@@ -164,79 +189,20 @@
           {{-- Sales --}}
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-dollar-sign"></i>
+           <i class="nav-icon fas fa-users"></i>
               <p>
-                Sales
+                Students
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/sales" class="nav-link">
+                <a href="/students" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Special Offer</p>
+                  <p>Student List</p>
                 </a>
               </li>
-               <li class="nav-item">
-                <a href="/departures" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Departures</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="/popularExperience" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Popular Experience</p>
-                </a>
-              </li>
-            </ul>
-          </li>
-
-
-   {{-- Customers --}}
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-users"></i>
-              <p>
-                Customers
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="/customers" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Booked Trip</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="/activeGroupTrip" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Active Group Trip(AGT)</p>
-                </a>
-              </li>
-                <li class="nav-item">
-            <a href="/tailorMade" class="nav-link">
-              <i class="nav-icon fas fa-user"></i>
-              <p>
-                Tailor Made
-             </p>
-            </a>
-          </li>
-            <li class="nav-item">
-            <a href="/enquiry" class="nav-link">
-              <i class="nav-icon fas fa-user"></i>
-              <p>
-                Enquiry
-             </p>
-            </a>
-          </li>
-              <li class="nav-item">
-                <a href="/mailing" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Mailing</p>
-                </a>
-              </li>
+         
             </ul>
           </li>
 
@@ -262,46 +228,11 @@
                   <p>Page Content</p>
                 </a>
               </li>    
-          <li class="nav-item">
-                <a href="/PostCategory" class="nav-link">
-                  <i class="fas fa-minus"></i>
-                  <p>Page Type</p>
-                </a>
-              </li>                
+                        
 
             </ul>
           </li>
-          
-            {{-- Opportunities --}}
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-eye"></i>
-              <p>
-                Opportunities
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="/Agents" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Agents</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="/Tour-Guide" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Tour Guide</p>
-                </a>
-              </li>
-               <li class="nav-item">
-                <a href="/Partner" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Partners</p>
-                </a>
-              </li>
-            </ul>
-          </li>
+    
 
          {{-- Pages --}}
    <li class="nav-item">
@@ -338,51 +269,10 @@
                   <p>Titles</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="{{ route('Attraction.index') }}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Attractions/Do you Know</p>
-                </a>
-              </li>
+            
             </ul>
           </li>
 
-           {{-- Pages --}}
-        <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-dollar-sign"></i>
-              <p>
-                Dynamic Pages
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="/section" class="nav-link">
-                  <i class="fas fa-plus"></i>
-                  <p>Page</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="/page" class="nav-link">
-                  <i class="fas fa-plus"></i>
-                  <p>Page origin</p>
-                </a>
-              </li>
-               <li class="nav-item">
-                <a href="/widgetList" class="nav-link">
-                  <i class="fas fa-plus"></i>
-                  <p>Widgets</p>
-                </a>
-              </li>
-                 <li class="nav-item">
-                <a href="/createPage" class="nav-link">
-                  <i class="fas fa-plus"></i>
-                  <p>Create Page</p>
-                </a>
-              </li> 
-            </ul>
-          </li>
 
            {{-- Settings --}}
           <li class="nav-item">
@@ -394,20 +284,26 @@
               </p>
             </a>
             <ul class="nav nav-treeview">
-              <li class="nav-item">
+             <!--  <li class="nav-item">
                 <a href="/programs" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Programs</p>
                 </a>
+              </li> -->
+
+                <li class="nav-item">
+                <a href="/students" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Student</p>
+                </a>
               </li>
-          <!--      <li class="nav-item">-->
-          <!--  <a href="/add-ons" class="nav-link">-->
-          <!--    <i class="far fa-circle nav-icon"></i>-->
-          <!--    <p>-->
-          <!--      Add-Ons-->
-          <!--   </p>-->
-          <!--  </a>-->
-          <!--</li>-->
+         <li class="nav-item">
+                <a href="/mailing" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Mailing</p>
+                </a>
+              </li>
+
            <li class="nav-item">
             <a href="/tourcostsummary" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
@@ -493,33 +389,7 @@
                @endif      
          {{-- Other --}}
 
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-eye"></i>
-              <p>
-                Other
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-            <li class="nav-item">
-            <a href="/socialMedia" class="nav-link">
-              <i class="nav-icon fas fa-comments"></i>
-              <p>
-                Social Media
-             </p>
-            </a>
-          </li>
-            <li class="nav-item">
-            <a href="/Testimonies" class="nav-link">
-              <i class="nav-icon fas fa-comments"></i>
-              <p>
-                Testimonies
-             </p>
-            </a>
-          </li> 
-            </ul>
-          </li>           
+                 
 
    {{-- Quick Link--}}
         <!--   <li class="nav-item">

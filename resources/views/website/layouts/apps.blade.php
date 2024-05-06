@@ -92,16 +92,8 @@
     <link href="../../css/sidemenu.css" rel="stylesheet">
 
 
-<!-- <link href="../../assets/corporate/css/styleCustom.css" rel="stylesheet"> -->
-
-      <!-- <link rel="stylesheet" href="../assets/css/jqueryui.css" media="all"> -->
-
-  <!-- <link rel="stylesheet" href="../assets/vendor/animate-css/animate.css" media="all"> -->
-  <!-- <link rel="stylesheet" href="../assets/font/iconfont/iconstyle.css" media="all"> -->
-  <!-- <link rel="stylesheet" href="../assets/font/font-awesome/css/font-awesome.css" media="all"> -->
 
      <link href="../custom/css/style.css" rel="stylesheet">
-         <!-- <link href="../custom/css/bootstrap.min.css" rel="stylesheet"> -->
 
 </head>
 
