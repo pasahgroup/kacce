@@ -82,7 +82,7 @@
                    <td>{{ $data->session }}</td>
 
                     <td>
-<a role="button" href="{{ route('editProgram',$data->id) }}"><i class="fa fa-bars"></i></a> 
+<a role="button" href="{{ route('students.show',$data->id) }}"><i class="fa fa-bars"></i></a> 
                       <a role="button" href="{{ route('editProgram',$data->id) }}"><i class="fa fa-edit"></i></a> 
                      
                      <!--  <a role="button" href="/destroyf/{{$data->id}} " onclick="return confirm('Are you sure? You want to delete {{ $data->tour_name}}','Inclusive')"><i class="fa fa-trash red"></i></a> -->

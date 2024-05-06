@@ -79,11 +79,12 @@ class StudentController extends Controller
                  'email'=>request('email'),
 
                  'education_level'=>request('education'),
+                 'graduate'=>request('graduate'),
                  'religion'=>request('religion'),
 
                 'tribe'=>request('tribe'),
 
-  'marital_status'=>request('marital_status'),
+    'marital_status'=>request('marital_status'),
     'place_origin'=>request('place_origin'),
       'current_residence'=>request('current_residence'),
         'no_children'=>request('no_children'),
@@ -233,7 +234,11 @@ return redirect()->route('students.index')->with('success','Created successfuly'
      */
     public function show(student $student)
     {
-        //
+
+        // return view('admins.students.user-details',compact('datas'));
+         return view('admins.students.user-details');
+      // return redirect()->route('programs.index')->with('success','Created successfuly');
+
     }
 
     /**

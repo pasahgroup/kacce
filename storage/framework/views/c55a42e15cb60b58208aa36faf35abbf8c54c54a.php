@@ -21,7 +21,7 @@
   <!-- summernote -->
   <link rel="stylesheet" href="../../../../plugins/summernote/summernote-bs4.min.css">
      <link rel="stylesheet" href="../../../css/bayanno.css">
-
+ <link href="../user/css/style.css" rel="stylesheet">
 
 
  <!-- 

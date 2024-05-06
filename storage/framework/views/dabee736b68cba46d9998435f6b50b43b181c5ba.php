@@ -81,7 +81,7 @@
                    <td><?php echo e($data->session); ?></td>
 
                     <td>
-<a role="button" href="<?php echo e(route('editProgram',$data->id)); ?>"><i class="fa fa-bars"></i></a> 
+<a role="button" href="<?php echo e(route('students.show',$data->id)); ?>"><i class="fa fa-bars"></i></a> 
                       <a role="button" href="<?php echo e(route('editProgram',$data->id)); ?>"><i class="fa fa-edit"></i></a> 
                      
                      <!--  <a role="button" href="/destroyf/<?php echo e($data->id); ?> " onclick="return confirm('Are you sure? You want to delete <?php echo e($data->tour_name); ?>','Inclusive')"><i class="fa fa-trash red"></i></a> -->

@@ -219,13 +219,20 @@
                                         <select class="form-control" name="tribe">
                                             <option></option>                                           
                                             <option>Chaga</option>
-                                              <option>Haya</option>                                           
+                                              <option>Haya</option> 
+                                              <option>Iraq</option>
+                                                                                       
                                             <option>Luo</option>
                                              <option>Pare</option>
                                              <option>Masai</option>                                           
                                              <option>Sukuma</option>
                                               <option>Kinga</option>
+                                              <option>Kuria</option>
+                                             <option>Mang'ati</option>
+                                              <option>Meru</option>
+                                              <option>Muha</option>
                                               <option>Nyaturu</option>
+                                               <option>Nyamwezi</option>
 
                                         </select>
                                     </div>
@@ -245,7 +252,7 @@
                                             <option></option>
                                             <option>None</option>
                                             <option>Ahadi lodge</option>
-                                            <option>MBVL lodge</option>
+                                            <option>Manyara bestview lodge</option>
                                         </select>
                                     </div>
                                 
