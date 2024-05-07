@@ -15,6 +15,7 @@ class PostController extends Controller
     public function index()    {
            
          $Postcategory = Post::get();
+       //  dd('print');
         return view('admins.Posts.PostCategory',compact('Postcategory'));
     }
 

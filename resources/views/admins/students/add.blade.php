@@ -159,6 +159,7 @@
                                             <option></option>
                                             <option>Married</option>
                                             <option>Single</option>
+                                            <option>Other</option>
                                         </select>
                                 </div>
                                   <div class="form-group col-md-12 col-sm-12">
@@ -209,7 +210,9 @@
                                         <select class="form-control" name="tribe">
                                             <option></option>                                           
                                             <option>Chaga</option>
-                                              <option>Haya</option> 
+                                            <option>Haya</option> 
+                                              <option>Digo</option> 
+                                              <option>Hehe</option>
                                               <option>Iraq</option>
                                                                                        
                                             <option>Luo</option>
@@ -222,12 +225,15 @@
                                              <option>Mang'ati</option>
                                               <option>Meru</option>
                                               <option>Muha</option>
+                                               <option>Mwera</option>
                                               <option>Ngoni</option>
                                               <option>Nyiramba</option>
                                               
                                               <option>Nyaturu</option>
                                               <option>Nyakyusa</option>
                                                <option>Nyamwezi</option>
+                                              <option>Zigua</option>
+
 
                                         </select>
                                     </div>

@@ -158,6 +158,7 @@
                                             <option></option>
                                             <option>Married</option>
                                             <option>Single</option>
+                                            <option>Other</option>
                                         </select>
                                 </div>
                                   <div class="form-group col-md-12 col-sm-12">
@@ -220,18 +221,24 @@
                                             <option></option>                                           
                                             <option>Chaga</option>
                                               <option>Haya</option> 
+                                              <option>Hehe</option>
                                               <option>Iraq</option>
                                                                                        
                                             <option>Luo</option>
                                              <option>Pare</option>
-                                             <option>Masai</option>                                           
+                                             <option>Masai</option> 
+                                             <option>Sambaa</option>                                           
                                              <option>Sukuma</option>
                                               <option>Kinga</option>
                                               <option>Kuria</option>
                                              <option>Mang'ati</option>
                                               <option>Meru</option>
                                               <option>Muha</option>
+                                              <option>Ngoni</option>
+                                              <option>Nyiramba</option>
+                                              
                                               <option>Nyaturu</option>
+                                              <option>Nyakyusa</option>
                                                <option>Nyamwezi</option>
 
                                         </select>

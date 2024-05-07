@@ -1,4 +1,4 @@
-@extends('website.layouts.apps')
+@extends('website.layouts.app_hm')
 @section('content')
 
 <style>

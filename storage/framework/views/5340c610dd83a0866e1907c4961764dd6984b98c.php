@@ -1,8 +1,6 @@
 <?php $__env->startSection('content'); ?>
 
-     <section class="">
-        <div class="container">
-        <a href="#"></a>
+  <div class="container">      
         <div class="row"> 
            <div class="col-lg-12 col-md-12 col-sm-12 ">
             <p class="text-center">
@@ -110,17 +108,12 @@
                             </div>
                         </div>
                          <br>
-                        <button type="submit" class="btn btn-success">Submit</button>
+                        <button type="submit" class="btn btn-success float-right">Submit</button>
                     </form>
                 </div>
-            </div>
-        </div>
-    </section>
- <script src="map/main.js"></script>
-         <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgIfLQi8KTxTJahilcem6qHusV-V6XXjw&amp;callback=initMap">          
-        </script>
+            </div>       
+    </div>
 <?php $__env->stopSection(); ?>
 
 
-<?php echo $__env->make('website.layouts.apps', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\hmff\resources\views/website/contacts/contact.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('website.layouts.app_hm', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\hmff\resources\views/website/contacts/contact.blade.php ENDPATH**/ ?>

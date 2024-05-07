@@ -1,9 +1,7 @@
-@extends('website.layouts.apps')
+@extends('website.layouts.app_hm')
 @section('content')
 
-     <section class="">
-        <div class="container">
-        <a href="#"></a>
+  <div class="container">      
         <div class="row"> 
            <div class="col-lg-12 col-md-12 col-sm-12 ">
             <p class="text-center">
@@ -111,15 +109,10 @@
                             </div>
                         </div>
                          <br>
-                        <button type="submit" class="btn btn-success">Submit</button>
+                        <button type="submit" class="btn btn-success float-right">Submit</button>
                     </form>
                 </div>
-            </div>
-        </div>
-    </section>
- <script src="map/main.js"></script>
-         <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgIfLQi8KTxTJahilcem6qHusV-V6XXjw&amp;callback=initMap">          
-        </script>
+            </div>       
+    </div>
 @endsection
 

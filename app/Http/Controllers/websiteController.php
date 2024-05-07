@@ -185,12 +185,16 @@ class websiteController extends Controller
         // $slidersCount=slider::where('status','1')
         // ->count();
 
-        //  dd($sliders);
+         //dd($slidersf);
         
+
+
+
            $slidersCount = slider::join('programs','programs.id','sliders.tour_id')
            ->where('sliders.status','1')
           ->count();
-          
+           dd($slidersCount);
+
           
          $quickLinkSliderCount=quicklink::where('slider','Yes')
          ->count();
