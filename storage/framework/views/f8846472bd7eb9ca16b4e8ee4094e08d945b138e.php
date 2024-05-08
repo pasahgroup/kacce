@@ -12,12 +12,12 @@
     <link href="img/favicon.ico" rel="icon">
 
     <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">  
+    <!-- <link rel="preconnect" href="https://fonts.gstatic.com"> -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">   -->
 
     <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-
+    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet"> -->
+   <link href="../website/css/all.min.css" rel="stylesheet">
     <!-- Libraries Stylesheet -->
     <link href="../website/lib/animate/animate.min.css" rel="stylesheet">
     <link href="../websitelib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
@@ -141,13 +141,7 @@
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-secondary mt-5 pt-5">
         <div class="row px-xl-5 pt-5">
-            <div class="col-lg-4 col-md-12 mb-5 pr-3 pr-xl-5">
-                <h5 class="text-secondary text-uppercase mb-4">Get In Touch</h5>
-                <p class="mb-4">No dolore ipsum accusam no lorem. Invidunt sed clita kasd clita et et dolor sed dolor. Rebum tempor no vero est magna amet no</p>
-                <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i>123 Street, New York, USA</p>
-                <p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i>info@example.com</p>
-                <p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>+012 345 67890</p>
-            </div>
+         
             <div class="col-lg-8 col-md-12">
                 <div class="row">
                     <div class="col-md-4 mb-5">
@@ -193,14 +187,19 @@
                     </div>
                 </div>
             </div>
+
+               <div class="col-lg-4 col-md-12 mb-5 pr-3 pr-xl-5">
+                <h5 class="text-secondary text-uppercase mb-4">Contact</h5>
+                
+                <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i><?php echo e($contact->address); ?></p>
+                <p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i><?php echo e($contact->email); ?></p>
+                <p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i><?php echo e($contact->phone); ?></p>
+            </div>
         </div>
         <div class="row border-top mx-xl-5 py-4" style="border-color: rgba(256, 256, 256, .1) !important;">
             <div class="col-md-6 px-xl-0">
                 <p class="mb-md-0 text-center text-md-left text-secondary">
-                    &copy; <a class="text-primary" href="#">Domain</a>. All Rights Reserved. Designed
-                    by
-                    <a class="text-primary" href="https://htmlcodex.com">HTML Codex</a>
-                    <br>Distributed By: <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
+                    &copy; <a class="text-primary text-center" href="#">HM Academy</a>. All Rights Reserved by Hakuna Matata Academy.
                 </p>
             </div>
             <div class="col-md-6 px-xl-0 text-center text-md-right">

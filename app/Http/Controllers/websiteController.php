@@ -176,19 +176,40 @@ class websiteController extends Controller
           ->select('sliders.*','programs.tour_name')
           ->limit(1)->first();
 
-           $sliders = slider::join('programs','programs.id','sliders.tour_id')
-          ->where('sliders.status','1')
-          ->select('sliders.*','programs.tour_name')
+
+
+ $sliderCount = slider::where('status','1')
+                  ->count();
+
+                  //dd($sliderCount );
+
+  $slider_first = slider::where('status','1')
+          //->select('sliders.*')
           // ->offset(1)
-          ->limit(5)->get();
-        //  $slidersCount=DB::select('select count(title) title from sliders');
+          ->limit(1)->first();
+
+$slider_second = slider::where('status','1')
+          //->select('sliders.*')
+           ->offset(1)
+          ->limit(1)->first();
+
+        //    $sliders = slider::join('programs','programs.id','sliders.tour_id')
+        //   ->where('sliders.status','1')
+        //   ->select('sliders.*','programs.tour_name')
+        //   // ->offset(1)
+        //   ->limit(5)->get();
+        // //  $slidersCount=DB::select('select count(title) title from sliders');
         // $slidersCount=slider::where('status','1')
         // ->count();
-
-         //dd($slidersf);
+     
         
 
+           $sliders = slider::where('status','1')
+          // ->select('sliders.*')
+           ->offset(1)
+          ->limit(8)->get();
 
+  // dd($sliders);
 
            $slidersCount = slider::join('programs','programs.id','sliders.tour_id')
            ->where('sliders.status','1')
@@ -230,7 +251,7 @@ class websiteController extends Controller
        
      //Seach Engine
        // $seo = title::where('title','What We Offer')->first();
-       $title = "Palatial Tour Tanzania";
+       $title = "HM Academy";
        $description = "";
        $keywords = "";
 
@@ -265,7 +286,8 @@ class websiteController extends Controller
           // ->offset(1)
           ->limit(8)->get();
 
-         return view('website.home.index',compact('offers_private','offers_group','popular_safarif','popular_trekking','popular_trekkingf','popular_safari','popular_holiday','popular_holidayf','popular_historicalf','popular_historical','place_to_visit','sliders','slidersf','slidersCount','testimonies','offers','welcome_message','scheduledGroupTours','datasLink','title','description','keywords','contacts','testimonies_one','quickLinkSliders','historical_first','historical','geographical_first','geographical','culture_first','culture','wildlife_first','wildlife'));
+         
+         return view('website.home.index',compact('offers_private','slider_first','slider_second','sliderCount','offers_group','popular_safarif','popular_trekking','popular_trekkingf','popular_safari','popular_holiday','popular_holidayf','popular_historicalf','popular_historical','place_to_visit','sliders','slidersf','slidersCount','testimonies','offers','welcome_message','scheduledGroupTours','datasLink','title','description','keywords','contacts','testimonies_one','quickLinkSliders','historical_first','historical','geographical_first','geographical','culture_first','culture','wildlife_first','wildlife'));
     }
 
     /**

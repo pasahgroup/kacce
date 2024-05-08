@@ -41,7 +41,9 @@ class themeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+//dd('print slider');
+
         if(request('attachment')){
             //dd('d1');
             // Get filename with extension

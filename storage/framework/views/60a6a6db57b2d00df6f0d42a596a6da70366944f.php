@@ -51,14 +51,12 @@
                                 </div>
                                   </div>
                           </div>
-
-                          
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+  </div>
+      <div class="row">                    
+                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-12">
                       <label for="inputEmail3">Description </label>
-                                                
-                          <div class="col-lg-12 col-md-12 col-sm-12 ">
-                             <textarea name="description" id="" cols="38" rows="2" placeholder="Descriptions" maxlength="830"></textarea>
-                          </div>
+                             <textarea name="description" id="" cols="100" rows="2" placeholder="Descriptions"></textarea>
+                      
                         </div>
                   </div>
                     

@@ -1,8 +1,13 @@
 <!DOCTYPE html>@extends('website.layouts.app_hm')
 @section('content')
 
-   
+       <link rel="preconnect" href="https://fonts.gstatic.com">
+   <!-- Libraries Stylesheet -->
+    <!-- <link href="../website/lib/animate/animate.min.css" rel="stylesheet"> -->
+    <!-- <link href="../website/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet"> -->
 
+    <!-- Customized Bootstrap Stylesheet -->
+    <!-- <link href="../website/css/style.css" rel="stylesheet"> -->
     <!-- Carousel Start -->
     <div class="container-fluid mb-3">
         <div class="row px-xl-5">
@@ -10,62 +15,53 @@
                 <div id="header-carousel" class="carousel slide carousel-fade mb-30 mb-lg-0" data-ride="carousel">
             
                     <ol class="carousel-indicators">
-                        <li data-target="#header-carousel" data-slide-to="0" class="active"></li>
-                        <li data-target="#header-carousel" data-slide-to="1"></li>
-                        <li data-target="#header-carousel" data-slide-to="2"></li>
+                        {{-- <li data-target="#header-carousel" data-slide-to="0" class="active"></li> --}}
+                       @for ($x =0; $x <=$sliderCount-1; $x++)
+                        <li data-target="#header-carousel" data-slide-to="$x"></li>
+                          @endfor 
                     </ol>
                         
-                    <div class="carousel-inner">
-                       @foreach ($sliders as $slides)
+                      
+                    <div class="carousel-inner">                      
                         <div class="carousel-item position-relative active" style="height: 430px;">
-                            <img class="position-absolute w-100 h-100" src="img/carousel-1.jpg" style="object-fit: cover;">
+                            <img class="position-absolute w-100 h-100" src="{{URL::asset('/storage/uploads/'.$slider_first->attachment)}}" style="object-fit: cover;">
                             <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                                 <div class="p-3" style="max-width: 700px;">
-                                    <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown">Men Fashion</h1>
-                                    <p class="mx-md-5 px-5 animate__animated animate__bounceIn">Lorem rebum magna amet lorem magna erat diam stet. Sadips duo stet amet amet ndiam elitr ipsum diam</p>
-                                    <a class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp" href="#">Shop Now</a>
+                                    <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown">{{ $slider_first->title }}</h1>
+                                    <p class="mx-md-5 px-5 animate__animated animate__bounceIn">{{ $slider_first->description }}</p>
+                                    <a class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp" href="#">Read More</a>
                                 </div>
                             </div>
                         </div>
-                         @endforeach
+
+                         @foreach ($sliders as $slides)                      
                         <div class="carousel-item position-relative" style="height: 430px;">
-                            <img class="position-absolute w-100 h-100" src="img/carousel-2.jpg" style="object-fit: cover;">
+                            <img class="position-absolute w-100 h-100" src="{{URL::asset('/storage/uploads/'.$slides->attachment)}}" style="object-fit: cover;">
                             <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                                 <div class="p-3" style="max-width: 700px;">
-                                    <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown">Women Fashion</h1>
-                                    <p class="mx-md-5 px-5 animate__animated animate__bounceIn">Lorem rebum magna amet lorem magna erat diam stet. Sadips duo stet amet amet ndiam elitr ipsum diam</p>
-                                    <a class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp" href="#">Shop Now</a>
+                                    <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown">{{ $slides->title }}</h1>
+                                    <p class="mx-md-5 px-5 animate__animated animate__bounceIn">{{ $slides->description }}</p>
+                                    <a class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp" href="#">Read More</a>
                                 </div>
                             </div>
                         </div>
-                        <div class="carousel-item position-relative" style="height: 430px;">
-                            <img class="position-absolute w-100 h-100" src="img/carousel-3.jpg" style="object-fit: cover;">
-                            <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                                <div class="p-3" style="max-width: 700px;">
-                                    <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown">Kids Fashion</h1>
-                                    <p class="mx-md-5 px-5 animate__animated animate__bounceIn">Lorem rebum magna amet lorem magna erat diam stet. Sadips duo stet amet amet ndiam elitr ipsum diam</p>
-                                    <a class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp" href="#">Shop Now</a>
-                                </div>
-                            </div>
-                        </div>
+                           @endforeach
                     </div>
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="product-offer mb-30" style="height: 200px;">
-                    <img class="img-fluid" src="img/offer-1.jpg" alt="">
+                    <img class="img-fluid" src="{{URL::asset('/storage/uploads/'.$slider_first->attachment)}}" alt="">
                     <div class="offer-text">
-                        <h6 class="text-white text-uppercase">Save 20%</h6>
-                        <h3 class="text-white mb-3">Special Offer</h3>
-                        <a href="" class="btn btn-primary">Shop Now</a>
+                        <h6 class="text-white text-uppercase">{{ $slider_first->title }}</h6>
+                           <a href="#" class="btn btn-primary">Read More</a>
                     </div>
                 </div>
                 <div class="product-offer mb-30" style="height: 200px;">
-                    <img class="img-fluid" src="img/offer-2.jpg" alt="">
+                    <img class="img-fluid" src="{{URL::asset('/storage/uploads/'.$slider_second->attachment)}}" alt="">
                     <div class="offer-text">
-                        <h6 class="text-white text-uppercase">Save 20%</h6>
-                        <h3 class="text-white mb-3">Special Offer</h3>
-                        <a href="" class="btn btn-primary">Shop Now</a>
+                        <h6 class="text-white text-uppercase">{{ $slider_second->title }}</h6>
+                        <a href="#" class="btn btn-primary">Read More</a>
                     </div>
                 </div>
             </div>
@@ -269,232 +265,6 @@
         </div>
     </div>
     <!-- Categories End -->
-
-
-    <!-- Products Start -->
-    <div class="container-fluid pt-5 pb-3">
-        <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">Featured Products</span></h2>
-        <div class="row px-xl-5">
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <div class="product-item bg-light mb-4">
-                    <div class="product-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="img/product-1.jpg" alt="">
-                        <div class="product-action">
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
-                        </div>
-                    </div>
-                    <div class="text-center py-4">
-                        <a class="h6 text-decoration-none text-truncate" href="">Product Name Goes Here</a>
-                        <div class="d-flex align-items-center justify-content-center mt-2">
-                            <h5>$123.00</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-center mb-1">
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small>(99)</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <div class="product-item bg-light mb-4">
-                    <div class="product-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="img/product-2.jpg" alt="">
-                        <div class="product-action">
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
-                        </div>
-                    </div>
-                    <div class="text-center py-4">
-                        <a class="h6 text-decoration-none text-truncate" href="">Product Name Goes Here</a>
-                        <div class="d-flex align-items-center justify-content-center mt-2">
-                            <h5>$123.00</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-center mb-1">
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star-half-alt text-primary mr-1"></small>
-                            <small>(99)</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <div class="product-item bg-light mb-4">
-                    <div class="product-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="img/product-3.jpg" alt="">
-                        <div class="product-action">
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
-                        </div>
-                    </div>
-                    <div class="text-center py-4">
-                        <a class="h6 text-decoration-none text-truncate" href="">Product Name Goes Here</a>
-                        <div class="d-flex align-items-center justify-content-center mt-2">
-                            <h5>$123.00</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-center mb-1">
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star-half-alt text-primary mr-1"></small>
-                            <small class="far fa-star text-primary mr-1"></small>
-                            <small>(99)</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <div class="product-item bg-light mb-4">
-                    <div class="product-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="img/product-4.jpg" alt="">
-                        <div class="product-action">
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
-                        </div>
-                    </div>
-                    <div class="text-center py-4">
-                        <a class="h6 text-decoration-none text-truncate" href="">Product Name Goes Here</a>
-                        <div class="d-flex align-items-center justify-content-center mt-2">
-                            <h5>$123.00</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-center mb-1">
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="far fa-star text-primary mr-1"></small>
-                            <small class="far fa-star text-primary mr-1"></small>
-                            <small>(99)</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <div class="product-item bg-light mb-4">
-                    <div class="product-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="img/product-5.jpg" alt="">
-                        <div class="product-action">
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
-                        </div>
-                    </div>
-                    <div class="text-center py-4">
-                        <a class="h6 text-decoration-none text-truncate" href="">Product Name Goes Here</a>
-                        <div class="d-flex align-items-center justify-content-center mt-2">
-                            <h5>$123.00</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-center mb-1">
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small>(99)</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <div class="product-item bg-light mb-4">
-                    <div class="product-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="img/product-6.jpg" alt="">
-                        <div class="product-action">
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
-                        </div>
-                    </div>
-                    <div class="text-center py-4">
-                        <a class="h6 text-decoration-none text-truncate" href="">Product Name Goes Here</a>
-                        <div class="d-flex align-items-center justify-content-center mt-2">
-                            <h5>$123.00</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-center mb-1">
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star-half-alt text-primary mr-1"></small>
-                            <small>(99)</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <div class="product-item bg-light mb-4">
-                    <div class="product-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="img/product-7.jpg" alt="">
-                        <div class="product-action">
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
-                        </div>
-                    </div>
-                    <div class="text-center py-4">
-                        <a class="h6 text-decoration-none text-truncate" href="">Product Name Goes Here</a>
-                        <div class="d-flex align-items-center justify-content-center mt-2">
-                            <h5>$123.00</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-center mb-1">
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star-half-alt text-primary mr-1"></small>
-                            <small class="far fa-star text-primary mr-1"></small>
-                            <small>(99)</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <div class="product-item bg-light mb-4">
-                    <div class="product-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="img/product-8.jpg" alt="">
-                        <div class="product-action">
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
-                        </div>
-                    </div>
-                    <div class="text-center py-4">
-                        <a class="h6 text-decoration-none text-truncate" href="">Product Name Goes Here</a>
-                        <div class="d-flex align-items-center justify-content-center mt-2">
-                            <h5>$123.00</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-center mb-1">
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="far fa-star text-primary mr-1"></small>
-                            <small class="far fa-star text-primary mr-1"></small>
-                            <small>(99)</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Products End -->
-
 
     <!-- Offer Start -->
     <div class="container-fluid pt-5 pb-3">
@@ -755,13 +525,13 @@
             <div class="col">
                 <div class="owl-carousel vendor-carousel">
                     <div class="bg-light p-4">
-                        <img src="img/vendor-1.jpg" alt="">
+                        <img src="../website/img/vendor-1.jpg" alt="">
                     </div>
                     <div class="bg-light p-4">
-                        <img src="img/vendor-2.jpg" alt="">
+                        <img src="../website/img/vendor-2.jpg" alt="">
                     </div>
                     <div class="bg-light p-4">
-                        <img src="img/vendor-3.jpg" alt="">
+                        <img src="../website/img/vendor-3.jpg" alt="">
                     </div>
                     <div class="bg-light p-4">
                         <img src="img/vendor-4.jpg" alt="">
@@ -782,4 +552,5 @@
             </div>
         </div>
     </div>  
+
 @endsection

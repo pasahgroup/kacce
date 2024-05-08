@@ -219,7 +219,7 @@
               <li class="nav-item">
                 <a href="/themes" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Program-Slider</p>
+                  <p>Slider</p>
                 </a>
               </li>       
                         <li class="nav-item">
