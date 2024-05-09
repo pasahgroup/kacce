@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\student;
+use App\Models\tribe;
 use App\Http\Requests\StorestudentRequest;
 use App\Http\Requests\UpdatestudentRequest;
 use Illuminate\Http\Request;
@@ -19,7 +20,7 @@ class StudentController extends Controller
     public function index()
     {
          $datas = student::get();
-        // dd($datas);
+        //dd($datas);
         return view('admins.students.index',compact('datas'));
     }
 
@@ -30,7 +31,9 @@ class StudentController extends Controller
      */
     public function create()
     {
-        return view('admins.students.add');
+       // dd('dddd');
+      $tribes = tribe::orderBy('tribe', 'asc')->get();
+          return view('admins.students.add',compact('tribes'));
     }
 
     /**

@@ -102,7 +102,7 @@
 
                                       <div class="form-group">
                                        <label>Email</label>
-                                <input type="text" name="email" placeholder="Email" class="form-email form-control" name="email">
+                                <input type="email" name="email" placeholder="Email" class="form-email form-control">
                             </div>
                           </div>
                                     <div class="form-group col-md-4 col-sm-4">
@@ -209,32 +209,10 @@
                                          <label>Tribe</label>
                                         <select class="form-control" name="tribe">
                                             <option></option>                                           
-                                            <option>Chaga</option>
-                                            <option>Haya</option> 
-                                              <option>Digo</option> 
-                                              <option>Hehe</option>
-                                              <option>Iraq</option>
-                                                                                       
-                                            <option>Luo</option>
-                                             <option>Pare</option>
-                                             <option>Masai</option> 
-                                             <option>Sambaa</option>                                           
-                                             <option>Sukuma</option>
-                                              <option>Kinga</option>
-                                              <option>Kuria</option>
-                                             <option>Mang'ati</option>
-                                              <option>Meru</option>
-                                              <option>Muha</option>
-                                               <option>Mwera</option>
-                                              <option>Ngoni</option>
-                                              <option>Nyiramba</option>
-                                              
-                                              <option>Nyaturu</option>
-                                              <option>Nyakyusa</option>
-                                               <option>Nyamwezi</option>
-                                              <option>Zigua</option>
-
-
+                                   
+  @foreach ($tribes as $tribe) 
+  <option>{{$tribe->tribe}}</option>
+ @endforeach 
                                         </select>
                                     </div>
 
@@ -342,7 +320,7 @@
         var parent_fieldset = $(this).parents('fieldset');
         var next_step = true;
 
-        parent_fieldset.find('input[type="text"],input[type="email"]').each(function () {
+        parent_fieldset.find('input[type="text"],input[type="emailx"]').each(function () {
             if ($(this).val() == "") {
                 $(this).addClass('input-error');
                 next_step = false;

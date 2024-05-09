@@ -44,6 +44,7 @@ use App\Http\Controllers\PeoplePercentController;
 use App\Http\Controllers\BankController;
 
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\TribeController;
 
 use App\Http\Controllers\Auth\AuthController;
 use Illuminate\Support\Facades\Route;
@@ -366,6 +367,11 @@ Route::get('/addInclusive',[InclusiveController::class, 'addinclusive'])->name('
 Route::get('/editInclusive/{x}',[InclusiveController::class, 'editInclusive'])->name('editInclusive');
 Route::get('/destroyInclusive/{x}',[InclusiveController::class, 'destroyf'])->name('destroyf');
 
+
+Route::resource('/tribe',TribeController::class);
+Route::get('/addtribe',[TribeController::class, 'addtribe'])->name('addtribe');
+Route::get('/editTribe/{x}',[TribeController::class, 'editTribe'])->name('editTribe');
+Route::get('/destroyTribe/{x}',[TribeController::class, 'destroy'])->name('destroy');
 // Home page route
 Route::resource('/page',homeController::class);
 Route::get('/pages',[homeController::class,'addPage']);

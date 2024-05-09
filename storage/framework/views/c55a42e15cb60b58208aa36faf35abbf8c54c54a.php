@@ -328,6 +328,13 @@
                   <p>Inclusive</p>
                 </a>
               </li>
+
+               <li class="nav-item">
+                <a href="/tribe" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Tribe</p>
+                </a>
+              </li>
                <hr>
                <li class="nav-item">
                 <a href="/bank" class="nav-link">

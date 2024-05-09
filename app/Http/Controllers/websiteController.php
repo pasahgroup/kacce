@@ -13,6 +13,7 @@ use App\Models\PostBody;
 use App\Models\title;
 use App\Models\quickLink;
 use App\Models\attraction;
+use App\Models\tribe;
 use DB;
 
 use Illuminate\Http\Request;
@@ -286,7 +287,10 @@ $slider_second = slider::where('status','1')
           // ->offset(1)
           ->limit(8)->get();
 
+
+
          
+
          return view('website.home.index',compact('offers_private','slider_first','slider_second','sliderCount','offers_group','popular_safarif','popular_trekking','popular_trekkingf','popular_safari','popular_holiday','popular_holidayf','popular_historicalf','popular_historical','place_to_visit','sliders','slidersf','slidersCount','testimonies','offers','welcome_message','scheduledGroupTours','datasLink','title','description','keywords','contacts','testimonies_one','quickLinkSliders','historical_first','historical','geographical_first','geographical','culture_first','culture','wildlife_first','wildlife'));
     }
 
