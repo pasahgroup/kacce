@@ -24,8 +24,6 @@ class TribeController extends Controller
 
 
  public function addtribe(){
-
-//dd('print');
          return view('admins.tribes.addtribe');
     }
     /**

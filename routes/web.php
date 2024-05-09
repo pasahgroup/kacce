@@ -45,6 +45,7 @@ use App\Http\Controllers\BankController;
 
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TribeController;
+use App\Http\Controllers\LodgeController;
 
 use App\Http\Controllers\Auth\AuthController;
 use Illuminate\Support\Facades\Route;
@@ -102,6 +103,7 @@ Route::get('/l', [commandController::class, 'index'])->name('c');
 });
 // Route::group(['middleware' => ['auth']], function() {
   Route::group(['middleware' => ['auth','Admin']], function() {
+// Route::group(["middleware" => "role:Admin,worker"], function() {
 
         Route::post('post-registration', [AuthController::class, 'postRegistration'])->name('register.post');
        Route::get('/new-user', [AuthController::class, 'registration'])->name('new-user');
@@ -372,6 +374,12 @@ Route::resource('/tribe',TribeController::class);
 Route::get('/addtribe',[TribeController::class, 'addtribe'])->name('addtribe');
 Route::get('/editTribe/{x}',[TribeController::class, 'editTribe'])->name('editTribe');
 Route::get('/destroyTribe/{x}',[TribeController::class, 'destroy'])->name('destroy');
+
+Route::resource('/lodge',LodgeController::class);
+Route::get('/addlodge',[LodgeController::class, 'addlodge'])->name('addlodge');
+Route::get('/editLodge/{x}',[LodgeController::class, 'editLodge'])->name('editLodge');
+Route::get('/destroyLodge/{x}',[LodgeController::class, 'destroy'])->name('destroy');
+
 // Home page route
 Route::resource('/page',homeController::class);
 Route::get('/pages',[homeController::class,'addPage']);

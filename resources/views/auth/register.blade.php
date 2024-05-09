@@ -83,11 +83,12 @@
                                             <option value="Admin">Admin</option>\
                                              <option value="Account">Account</option>
                                             <option value="Agents">Agent</option>
+                                             <option value="Cultural">Cultural</option>
                                              <option value="Employee">Employee</option>
                                             <option value="Marketing Officer">Marketing Officer</option>                                             
                                             <option value="Tour Guide">Tour Guide</option>
                                             <option value="Partiner">Partiner</option>
-                                              <option value="Cultural">Cultural</option>
+                                              <option value="Normal">Normal</option>
                                         </select>
                                     </div>
                                 </div>
