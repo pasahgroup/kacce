@@ -16,8 +16,9 @@
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Student Main Page</li>
+              <li class="breadcrumb-item active"><a href="<?php echo e(route('students.create')); ?>" class="btn btn-primary" >
+              <i class="fas fa-plus"></i> Student
+            </a></li>
             </ol>
           </div>
         </div>
@@ -28,20 +29,32 @@
     <section class="content">
 
       <!-- Default box -->
+        
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title">Programs</h3>
+           <div class="row">
 
-     
-
-         
+              <div class="form-group col-md-1 col-sm-1">
+          <b class="card-title">Session</b>
+        </div>
+               <div class="form-group col-md-6 col-sm-6">
+            <div class="form-bottom">                         
+                                <select class="form-control" name="session">
+                                    <option>March 2023</option>
+                                    <option>June 2023</option>
+                                </select>
+                            </div>
+                            </div>
+                        
        
           <div class="card-tools">
-            <a href="<?php echo e(route('students.create')); ?>" class="btn btn-primary" >
-              <i class="fas fa-plus"></i> Student
+            <a href="<?php echo e(route('students.create')); ?>" class="btn btn-success" >
+              <i class="fas fa-pencil"></i> Ok
             </a>
           </div>
         </div>
+      </div>
+
         <div class="card-body">
             <div class="card-body">
                 <table id="example1" class="table table-bordered table-striped">
@@ -70,7 +83,7 @@
                     <td><?php echo e($data->addmission_no); ?></td>
                     <td><a href="<?php echo e(route('inclusive.show',$data->id)); ?>"><?php echo e($data->first_name); ?> <?php echo e($data->middle_name); ?> <?php echo e($data->last_name); ?><inclusive.show></a></td>
                                       <td><span class="badge"> <?php echo e($data->mobile_no); ?></span></td>
-                    <td><?php echo e($data->gender); ?><span class="badge"> <?php echo e($data->gender); ?></span></td>
+                    <td><span class="badge"> <?php echo e($data->gender); ?></span></td>
                     <td><?php echo e($data->birth_date); ?></td>
                     <td><?php echo e($data->education_level); ?></td>
                    
@@ -82,7 +95,7 @@
 
                     <td>
 <a role="button" href="<?php echo e(route('students.show',$data->id)); ?>"><i class="fa fa-bars"></i></a> 
-                      <a role="button" href="<?php echo e(route('editProgram',$data->id)); ?>"><i class="fa fa-edit"></i></a> 
+                      <a role="button" href="<?php echo e(route('editStudent',$data->id)); ?>"><i class="fa fa-edit"></i></a> 
                      
                      <!--  <a role="button" href="/destroyf/<?php echo e($data->id); ?> " onclick="return confirm('Are you sure? You want to delete <?php echo e($data->tour_name); ?>','Inclusive')"><i class="fa fa-trash red"></i></a> -->
 

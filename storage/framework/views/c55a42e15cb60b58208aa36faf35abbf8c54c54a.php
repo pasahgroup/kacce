@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Palatial Tour</title>
+  <title>HM Academy</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -167,8 +167,8 @@
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="/dashboard" class="brand-link">
-      <img src="../../img/logo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light"><b>HM Academy</b></span>
+      <img src="../../img/logo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity:1">
+      <span class="brand-text font-weight-light">.</span>
     </a>
 
     <!-- Sidebar -->
@@ -317,9 +317,9 @@
             </a>
           </li>
               <li class="nav-item">
-                <a href="/accommodations" class="nav-link">
+                <a href="/relation" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Accommodations</p>
+                  <p>Relation</p>
                 </a>
               </li>
                <li class="nav-item">
@@ -433,7 +433,7 @@
     <div class="float-right d-none d-sm-block">
       <b>Version</b> 3.1.0
     </div>
-    <strong>Copyright &copy; 2021 <a href="#">Palatial Tour</a>.</strong> All rights reserved.
+    <strong>Copyright &copy; 2021 <a href="#">HM Academy</a>.</strong> All rights reserved.
   </footer>
 
   <!-- Control Sidebar -->

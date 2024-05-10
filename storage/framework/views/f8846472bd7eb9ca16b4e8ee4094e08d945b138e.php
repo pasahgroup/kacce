@@ -5,8 +5,8 @@
     <meta charset="utf-8">
      <title><?php echo e($title ?? 'HM Academy'); ?></title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Free HTML Templates" name="keywords">
-    <meta content="Free HTML Templates" name="description">
+    <meta content="HM Academy" name="keywords">
+    <meta content="HM Academy" name="description">
 
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">

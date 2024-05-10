@@ -20,8 +20,7 @@ class StudentController extends Controller
     public function index()
     {
          $datas = student::get();
-        //dd($datas);
-        return view('admins.students.index',compact('datas'));
+             return view('admins.students.index',compact('datas'));
     }
 
     /**
@@ -44,21 +43,7 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-       // No of days before update on itenary table
-       //dd (request('main'));
-
-        //dd('print');
-
-        // if(request('main')=='Program')
-        // {
-        //  $type='Programs';
-        // }
-        // else
-        // {
-        // $type='Addon';
-        // }
-
-//dd(request('gurdian_name'));
+      
 
            $pin=rand(10000,99999);
            // $storeType=request('edit');
@@ -66,6 +51,16 @@ class StudentController extends Controller
            //   ->where('tour_addon',$type)
            //   ->get()->first();  
 
+//   $pinFound=student::where('pin',$pin)
+//         ->first();
+// dd($pinFound);
+
+
+// if($pinFound !=null)
+// {
+// $pin=$pin
+// }
+         
           $student =  student::UpdateOrCreate(
             [   'pin'=>$pin],
             [
@@ -160,73 +155,8 @@ class StudentController extends Controller
         }
       }
        
+   return redirect()->route('students.index')->with('success','Created successfuly');
 
-
-
-return redirect()->route('students.index')->with('success','Created successfuly');
-
-
-
-         dd('saved');
-        //Update Price offer,Get Discount value first
-         $discount=specialOffer::where('tour_id',$program->id)
-         ->get()->first();
-         
-         if($discount !=null)
-         {
-         $newPrice=request('price')-$discount->discount;
-              $offerUpdate = specialOffer::where('tour_id',$program->id)             
-             ->update([
-            'new_price'=> $newPrice
-        ]);
-        }
-       //End of Price offer
-
-       //Update Itenary day
-              $itenaryUpdate = itinerary::where('program_id',$program->id)
-             ->where('tour_addon', $type)
-             ->update([
-            'days'=>request('days')
-        ]);
-        
-         //Get ItenaryID
-          $it=itinerary::where('program_id',$program->id)
-             ->where('tour_addon', $type)
-             ->get()->first();
-       //End of Update Itenary day
-          
-         //End of delete
-            if(request('attachment')){
-                $attach = request('attachment');
-                foreach($attach as $attached){
-
-                     // Get filename with extension
-                     $fileNameWithExt = $attached->getClientOriginalName();
-                     // Just Filename
-                     $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
-                     // Get just Extension
-                     $extension = $attached->getClientOriginalExtension();
-                     //Filename to store
-                     $imageToStore = $filename.'_'.time().'.'.$extension;
-                     //upload the image
-                     $path = $attached->storeAs('public/uploads/', $imageToStore);
-
-       
-           $id = attachment::where('destination_id', '=', $program->id)
-            ->where('type', $type)
-            ->get()->first();
-           
-        
-        }
-      }
-
-
-        if($storeType=='Edit')
-        {
-        return redirect()->route('programs.index')->with('success','Created successfuly');
-        }else{
-        return redirect()->route('inclusive.show',$program->id)->with('success','Created successfuly');
-        }
     }
 
     /**
@@ -235,11 +165,36 @@ return redirect()->route('students.index')->with('success','Created successfuly'
      * @param  \App\Models\student  $student
      * @return \Illuminate\Http\Response
      */
-    public function show(student $student)
+
+
+
+
+
+    public function editStudent($id)
+    {
+     //dd($id);
+
+       $datas = student::where('id', $id)->first();  
+        $tribes = tribe::orderBy('tribe', 'asc')->get();     
+//dd($datas);
+             return view('admins.students.edit-student',compact('datas','tribes'));
+     }
+
+
+
+
+
+    public function show($id)
     {
 
         // return view('admins.students.user-details',compact('datas'));
-         return view('admins.students.user-details');
+//dd($id);
+           $student=student::where('status','Active')
+           ->where('id',$id)
+           ->first();
+
+                      //dd($students);
+         return view('admins.students.user-details',compact('student'));
       // return redirect()->route('programs.index')->with('success','Created successfuly');
 
     }
@@ -262,9 +217,86 @@ return redirect()->route('students.index')->with('success','Created successfuly'
      * @param  \App\Models\student  $student
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdatestudentRequest $request, student $student)
+    public function update($id)
     {
-        //
+        
+dd('print');
+
+         
+          $studentUpdate =  student::UpdateOrCreate(
+            [   'id'=>$id],
+            [
+                 'addmission_no'=>request('addmission_no'),
+                  'class'=>request('class'),
+                 'session'=>request('session'),
+                 'first_name'=>request('fname'),
+                 'middle_name'=>request('mname'),
+                 'last_name'=>request('lname'),
+              
+                 'gender'=>request('gender'),
+                 'birth_date'=>request('birth_date'),
+                  'mobile_no'=>request('mobile_no'),
+                 'email'=>request('email'),
+
+                 'education_level'=>request('education'),
+                 'graduate'=>request('graduate'),
+                 'religion'=>request('religion'),
+
+                'tribe'=>request('tribe'),
+
+    'marital_status'=>request('marital_status'),
+    'place_origin'=>request('place_origin'),
+      'current_residence'=>request('current_residence'),
+        'no_children'=>request('no_children'),
+
+
+                 'designation'=>request('designation'),
+
+'gurdian_name'=>request('gurdian_name'),
+'parental_status'=>request('parental_status'),
+'relationship'=>request('relationship'),
+
+
+
+'guardian_mobile'=>request('guardian_mobile'),
+                 'status'=>'Active',
+                'user_id'=>auth()->id()
+            ]);
+
+
+//dd($student->id);
+
+
+   if(request('attachment')){
+                $attach = request('attachment');
+                foreach($attach as $attached){
+
+                     // Get filename with extension
+                     $fileNameWithExt = $attached->getClientOriginalName();
+                     // Just Filename
+                     $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+                     // Get just Extension
+                     $extension = $attached->getClientOriginalExtension();
+                     //Filename to store
+                     $imageToStore = $filename.'_'.time().'.'.$extension;
+                     //upload the image
+                     $path = $attached->storeAs('public/photos/', $imageToStore);
+
+
+          if(request('attachment') !=null)
+            {
+      //dd('printintcxx');   
+
+             $toupdate = student::where('id',$student->id)
+            // ->where('type', $type)
+             ->update([
+            'photo'=>$imageToStore
+           ]);
+           }
+        }
+      }
+       
+   return redirect()->route('students.index')->with('success','Created successfuly');
     }
 
     /**

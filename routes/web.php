@@ -47,6 +47,8 @@ use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TribeController;
 use App\Http\Controllers\LodgeController;
 
+use App\Http\Controllers\RelationController;
+
 use App\Http\Controllers\Auth\AuthController;
 use Illuminate\Support\Facades\Route;
 
@@ -135,7 +137,7 @@ Route::get('/accommodation-Destroy/{x}', [accommodationController::class, 'destr
 Route::resource('/dashboard', dashboardController::class);
 Route::resource('/programs', programController::class);
 Route::resource('/students', StudentController::class);
-
+Route::get('/editStudent/{x}', [StudentController::class, 'editStudent'])->name('editStudent');
 Route::resource('/itineraries', itineraryController::class);
 });
 
@@ -380,6 +382,11 @@ Route::get('/addlodge',[LodgeController::class, 'addlodge'])->name('addlodge');
 Route::get('/editLodge/{x}',[LodgeController::class, 'editLodge'])->name('editLodge');
 Route::get('/destroyLodge/{x}',[LodgeController::class, 'destroy'])->name('destroy');
 
+
+Route::resource('/relation',RelationController::class);
+Route::get('/addrelation',[RelationController::class, 'addrelation'])->name('addrelation');
+Route::get('/editRelation/{x}',[RelationController::class, 'editRelation'])->name('editRelation');
+Route::get('/destroyRelation/{x}',[RelationController::class, 'destroy'])->name('destroy');
 // Home page route
 Route::resource('/page',homeController::class);
 Route::get('/pages',[homeController::class,'addPage']);
