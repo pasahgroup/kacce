@@ -47,6 +47,11 @@ use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TribeController;
 use App\Http\Controllers\LodgeController;
 
+
+use App\Http\Controllers\ClassgController;
+use App\Http\Controllers\SessionController;
+
+
 use App\Http\Controllers\RelationController;
 
 use App\Http\Controllers\Auth\AuthController;
@@ -370,6 +375,18 @@ Route::POST('/inclusiveUpdate/{x}',[InclusiveController::class, 'inclusiveUpdate
 Route::get('/addInclusive',[InclusiveController::class, 'addinclusive'])->name('addinclusive');
 Route::get('/editInclusive/{x}',[InclusiveController::class, 'editInclusive'])->name('editInclusive');
 Route::get('/destroyInclusive/{x}',[InclusiveController::class, 'destroyf'])->name('destroyf');
+
+
+
+Route::resource('/class',ClassgController::class);
+Route::get('/addclass',[ClassgController::class, 'addclass'])->name('addclass');
+Route::get('/editClass/{x}',[ClassgController::class, 'editClass'])->name('editClass');
+Route::get('/destroyClass/{x}',[ClassgController::class, 'destroy'])->name('destroy');
+
+Route::resource('/session',SessionController::class);
+Route::get('/addsession',[SessionController::class, 'addsession'])->name('addsession');
+Route::get('/editSession/{x}',[SessionController::class, 'editSession'])->name('editSession');
+Route::get('/destroySession/{x}',[SessionController::class, 'destroy'])->name('destroy');
 
 
 Route::resource('/tribe',TribeController::class);

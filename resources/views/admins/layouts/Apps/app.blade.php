@@ -175,18 +175,61 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
    
+    @if(Auth::user()->role =='accountant' || Auth::user()->role =='Normal' || Auth::user()->role =='owner' || Auth::user()->role =='Cultural')
           <li class="nav-item">
             <a href="/dashboard" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
-                @if(Auth::user()->role == 'Admin' || Auth::user()->role =='accountant' || Auth::user()->role =='Normal' || Auth::user()->role =='owner' || Auth::user()->role =='Cultural')
-                Dashboard
-                @endif
+               
+                Dashboard             
+
+
+   <li class="nav-item">
+            <a href="#" class="nav-link">
+           <i class="nav-icon fas fa-users"></i>
+              <p>
+                Students
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/students" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Student List</p>
+                </a>
+              </li>
+         
+            </ul>
+          </li>
+                
              </p>
             </a>
           </li>
-            @if(Auth::user()->role == 'Admin' || Auth::user()->role =='accountant' || Auth::user()->role =='Normal')
+
+          @endif
+            @if(Auth::user()->role == 'Admin' || Auth::user()->role =='accountant' || Auth::user()->role =='Normalx')
           {{-- Sales --}}
+  <li class="nav-item">
+            <a href="/dashboard" class="nav-link">
+           <i class="nav-icon fas fa-users"></i>
+              <p>
+                Dashboard
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/dashboard" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Dashboard</p>
+                </a>
+              </li>
+         
+            </ul>
+          </li>
+
+
           <li class="nav-item">
             <a href="#" class="nav-link">
            <i class="nav-icon fas fa-users"></i>
@@ -332,6 +375,19 @@
                 </a>
               </li>
                <hr>
+                <li class="nav-item">
+                <a href="/class" class="nav-link">
+                  <i class="far fa-dot-circle nav-icon"></i>
+                  <p>Class</p>
+                </a>
+              </li>
+               <li class="nav-item">
+                <a href="/session" class="nav-link">
+                  <i class="far fa-dot-circle nav-icon"></i>
+                  <p>Session</p>
+                </a>
+              </li>
+              <hr>
                <li class="nav-item">
                 <a href="/bank" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>

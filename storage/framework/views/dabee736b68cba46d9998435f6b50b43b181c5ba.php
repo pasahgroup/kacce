@@ -15,11 +15,13 @@
             <h1>Student Page</h1>
           </div>
           <div class="col-sm-6">
+             <?php if(Auth::user()->role =='Admin'): ?>
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item active"><a href="<?php echo e(route('students.create')); ?>" class="btn btn-primary" >
               <i class="fas fa-plus"></i> Student
             </a></li>
             </ol>
+            <?php endif; ?>
           </div>
         </div>
       </div><!-- /.container-fluid -->
@@ -95,7 +97,10 @@
 
                     <td>
 <a role="button" href="<?php echo e(route('students.show',$data->id)); ?>"><i class="fa fa-bars"></i></a> 
+
+  <?php if(Auth::user()->role =='Admin'): ?>
                       <a role="button" href="<?php echo e(route('editStudent',$data->id)); ?>"><i class="fa fa-edit"></i></a> 
+                      <?php endif; ?>
                      
                      <!--  <a role="button" href="/destroyf/<?php echo e($data->id); ?> " onclick="return confirm('Are you sure? You want to delete <?php echo e($data->tour_name); ?>','Inclusive')"><i class="fa fa-trash red"></i></a> -->
 

@@ -21,6 +21,10 @@ class CheckAdmin
         elseif(\Auth::User()->hasRole('Account'))
         {
              return $next($request);
+        } 
+        elseif(\Auth::User()->hasRole('Normal'))
+        {
+             return $next($request);
         }        
          return redirect("flush");
     }
