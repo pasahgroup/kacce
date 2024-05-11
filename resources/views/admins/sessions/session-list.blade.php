@@ -13,12 +13,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Tribe List</h1>
+            <h1>Session List</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Tribe List</li>
+              <li class="breadcrumb-item active">Session List</li>
             </ol>
           </div>
         </div>
@@ -31,11 +31,11 @@
       <!-- Default box -->
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title">List of Tribe</h3>
+          <h3 class="card-title">List of Session</h3>
 
           <div class="card-tools">
-            <a href="/addtribe" class="btn btn-primary" >
-              <i class="fas fa-plus"></i>New Tribe
+            <a href="/addsession" class="btn btn-primary" >
+              <i class="fas fa-plus"></i>New Session
             </a>
           </div>
         </div>
@@ -45,19 +45,19 @@
                   <thead>
                   <tr>
                     <th>#</th>
-                    <th>Tribe Name</th>              
+                    <th>Session Name</th>              
                     <th>Action</th> 
                                  
                   </tr>
                   </thead>
                   <tbody>
                    
-                    @foreach ($tribes as $tribe)
+                    @foreach ($sessions as $session)
                             <tr>
-                    <td>{{ $tribe->id }}</td>
-                     <td><a href="/editTribe/{{$tribe->id}}">{{ $tribe->tribe }}</a></td>                   
-                    <td><a href="/editTribe/{{$tribe->id}}"><i class="fa fa-edit"></i></a>
-                     <a href="/destroyTribe/{{$tribe->id}}" onclick="return confirm('Are you sure? You want to delete {{ $tribe->tribe}}','Tribe')"><i class="fa fa-trash red"></i></a></td>
+                    <td>{{ $session->id }}</td>
+                     <td><a href="/editSession/{{$session->id}}">{{ $session->session }}</a></td>                   
+                    <td><a href="/editSession/{{$session->id}}"><i class="fa fa-edit"></i></a>
+                     <a href="/destroySession/{{$session->id}}" onclick="return confirm('Are you sure? You want to delete {{ $session->session}}','Session')"><i class="fa fa-trash red"></i></a></td>
                                 </tr>
                      @endforeach
 
@@ -65,7 +65,7 @@
                   <tfoot>
                   <tr>
                     <th>#</th>
-                    <th>Tribe Name</th>              
+                    <th>Session Name</th>              
                     <th>Action</th>     
                   </tr>
                   </tfoot>

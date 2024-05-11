@@ -31,17 +31,17 @@
               </div>
               <div class="container-fluid x_content">
                 <br />
-              <form  method="post" id="post_form" action="{{ route('tribe.update',$tribes->id) }}">
+              <form  method="post" id="post_form" action="{{ route('session.update',$sessions->id) }}">
                 @csrf
              <input type="hidden" name="_method" value="PUT">
                 <div class="card-body">                       
-                    <label>Tribe Name</label>
-                    <input class="form-control" type="text" name="tribe_name" value="{{$tribes->tribe}}">
+                    <label>Session Name</label>
+                    <input class="form-control" type="text" name="session_name" value="{{$sessions->session}}">
                     
              </div>               
       <div class="col-md-12 col-sm-12 col-xs-12 col-md-offset-3">
               <div>
-                <a href="/tribe"  role="button" class="btn btn-success float-left">View Tribe List</a>
+                <a href="/session"  role="button" class="btn btn-success float-left">View Session List</a>
               <button type="submit" class="btn btn-primary float-right" name="inclusive" value="inclusive">Update</button>         
               </div>
              </div>

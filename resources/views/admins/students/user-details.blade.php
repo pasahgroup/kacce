@@ -74,11 +74,11 @@
               <i class="fa fa-angle-double-left"></i>
             </a> 
 <div class="float-right">
-                   @csrf
+                  @if(Auth::user()->role =='Admin')
                 <a href="/editStudent/{{$student->id}}" class="btn btn-success float-right">
               <i class="fas fa-pencil-alt"></i> Edit
             </a>
-
+@endif
             </div> 
         </div>
                 </div>

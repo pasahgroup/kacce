@@ -9,12 +9,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>New Tribe</h1>
+            <h1>New Session</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">New Tribe</li>
+              <li class="breadcrumb-item active">New Session</li>
             </ol>
           </div>
         </div>
@@ -31,18 +31,18 @@
               </div>
               <div class="container-fluid x_content">
                 <br />
-              <form  method="post" id="post_form" action="{{ route('tribe.store') }}">
+              <form  method="post" id="post_form" action="{{ route('session.store') }}">
                 @csrf
 
                 <div class="card-body">                       
-                    <label>Tribe Name</label>
-                    <input class="form-control" type="text" name="tribe_name" placeholder="tribe name">
+                    <label>Session Name</label>
+                    <input class="form-control" type="text" name="session_name" placeholder="session name">
                     
              </div>               
       <div class="col-md-12 col-sm-12 col-xs-12 col-md-offset-3">
               <div>
-                <a href="/tribe"  role="button" class="btn btn-success float-left">View Tribe List</a>
-              <button type="submit" class="btn btn-primary float-right" name="tribe" value="tribe">Save</button>         
+                <a href="/session"  role="button" class="btn btn-success float-left">View Session List</a>
+              <button type="submit" class="btn btn-primary float-right" name="session" value="session">Save</button>         
               </div>
              </div>
             </form>

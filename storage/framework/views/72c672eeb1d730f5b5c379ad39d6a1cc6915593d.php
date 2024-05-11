@@ -73,11 +73,11 @@
               <i class="fa fa-angle-double-left"></i>
             </a> 
 <div class="float-right">
-                   <?php echo csrf_field(); ?>
+                  <?php if(Auth::user()->role =='Admin'): ?>
                 <a href="/editStudent/<?php echo e($student->id); ?>" class="btn btn-success float-right">
               <i class="fas fa-pencil-alt"></i> Edit
             </a>
-
+<?php endif; ?>
             </div> 
         </div>
                 </div>

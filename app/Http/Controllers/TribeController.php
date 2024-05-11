@@ -52,17 +52,6 @@ class TribeController extends Controller
            return redirect()->back()->with('success','Tribe recorded successfully');
         }
 
-    //       // Assign Inclusive to the Tour Name
-    //     if(request('assign')){           
-    //     $assign = accommodationInclusive::UpdateOrCreate([
-    //     'inclusive_id'=>request('assign'),
-    //     'tour_id'=>request('tour_id')
-    //      ],
-    //     [
-    //     'user_id'=>auth::id()            
-    //        ]);
-    //  return redirect()->back()->with('success','Tribe created successfully');
-    // }
     }
 
 
