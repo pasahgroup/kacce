@@ -6,6 +6,8 @@ use App\Models\classg;
 use App\Http\Requests\StoreclassgRequest;
 use App\Http\Requests\UpdateclassgRequest;
 
+use Illuminate\Http\Request;
+
 class ClassgController extends Controller
 {
     /**
@@ -43,13 +45,24 @@ class ClassgController extends Controller
     public function store(Request $request)
     {
          if (request('class')) {
-        $class = class::UpdateOrCreate([
+        $class = classg::UpdateOrCreate([
         'class'=>request('class_name')        
            ]);
                   
            return redirect()->back()->with('success','Class recorded successfully');
         }
 
+    }
+
+
+
+
+     public function editClass($id){
+       
+       $classes = classg::where('id',$id)
+       ->first();
+      //dd($tribes);
+         return view('admins.classes.edit-class',compact('classes'));
     }
 
     /**
@@ -81,9 +94,15 @@ class ClassgController extends Controller
      * @param  \App\Models\classg  $classg
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateclassgRequest $request, classg $classg)
+
+  public function update(Request $request,$id)
     {
-        //
+  
+      $toupdate = classg::where('id',$id)
+               ->update([
+            'class'=>request('class_name')
+        ]);
+    return redirect()->route('class.index')->with('success','Class created successfully');
     }
 
     /**
@@ -92,8 +111,14 @@ class ClassgController extends Controller
      * @param  \App\Models\classg  $classg
      * @return \Illuminate\Http\Response
      */
-    public function destroy(classg $classg)
+      public function destroy($id)
     {
-        //
+     $delete = classg::where('id',$id)->first();
+        if($delete->delete()){
+            return redirect()->route('class.index')->with('success','Class removed successfully');
+        }    
+        else{
+            return redirect()->route('class.index')->with('error','Class not exists');
+        }
     }
 }

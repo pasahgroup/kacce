@@ -1,6 +1,6 @@
 
-  @extends('admins.layouts.Apps.app')
-  @section('contents')
+  
+  <?php $__env->startSection('contents'); ?>
 
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
@@ -31,12 +31,12 @@
               </div>
               <div class="container-fluid x_content">
                 <br />
-              <form  method="post" id="post_form" action="{{ route('class.update',$classes->id) }}">
-                @csrf
+              <form  method="post" id="post_form" action="<?php echo e(route('class.update',$classes->id)); ?>">
+                <?php echo csrf_field(); ?>
              <input type="hidden" name="_method" value="PUT">
                 <div class="card-body">                       
                     <label>Class Name</label>
-                    <input class="form-control" type="text" name="class_name" value="{{$classes->class}}">
+                    <input class="form-control" type="text" name="class_name" value="<?php echo e($classes->class); ?>">
                     
              </div>               
       <div class="col-md-12 col-sm-12 col-xs-12 col-md-offset-3">
@@ -51,4 +51,6 @@
     </section>
   </div> 
 
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('admins.layouts.Apps.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\hmff\resources\views/admins/classes/edit-class.blade.php ENDPATH**/ ?>
