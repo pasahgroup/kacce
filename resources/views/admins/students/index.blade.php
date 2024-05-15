@@ -54,7 +54,7 @@
             <div class="form-bottom">                         
                                 <select class="form-control" name="classg" id="classg" required>
                                     <option></option>
-                                    <option selected>{{$selected_class ?? ''}}</option>
+                                    <option selected style="background-color:yellow">{{$selected_class ?? ''}}</option>
                                       @foreach ($classes as $class) 
   <option>{{$class->class}}</option>
    @endforeach 
@@ -69,7 +69,10 @@
             <div class="form-bottom">                         
                                 <select class="form-control" name="session" id="session" required>
                                   <option></option>
-                                    <option selected>{{$selected_session ?? ''}}</option>
+                                    <option selected style="background-color:yellow">{{$selected_session ?? ''}}</option>
+                                      @foreach ($sessions as $session) 
+  <option>{{$session->session}}</option>
+   @endforeach 
                                 </select>
                             </div>
                             </div>

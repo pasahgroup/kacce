@@ -25,9 +25,13 @@ class StudentController extends Controller
     public function index()
     {
          $datas = student::get();
-          $classes = classg::get();
-          //dd($classes);
-             return view('admins.students.index',compact('datas','classes'));
+          $classes = classg::where('class',request('classg'))
+          ->get();
+
+           $sessions = session::where('class_name',request('classg'))
+                 ->get();
+         // dd($sessions);
+             return view('admins.students.index',compact('datas','sessions','classes'));
     }
 
     public function research(request $request)
@@ -38,6 +42,7 @@ class StudentController extends Controller
          ->get();
 
           $sessions = session::where('class_name',request('classg'))
+                   ->where('session','!=',request('session'))
                  ->get();
 
          //dd($sessions);

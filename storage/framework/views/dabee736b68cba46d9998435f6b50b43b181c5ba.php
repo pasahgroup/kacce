@@ -53,7 +53,7 @@
             <div class="form-bottom">                         
                                 <select class="form-control" name="classg" id="classg" required>
                                     <option></option>
-                                    <option selected><?php echo e($selected_class ?? ''); ?></option>
+                                    <option selected style="background-color:yellow"><?php echo e($selected_class ?? ''); ?></option>
                                       <?php $__currentLoopData = $classes; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $class): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?> 
   <option><?php echo e($class->class); ?></option>
    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?> 
@@ -68,7 +68,10 @@
             <div class="form-bottom">                         
                                 <select class="form-control" name="session" id="session" required>
                                   <option></option>
-                                    <option selected><?php echo e($selected_session ?? ''); ?></option>
+                                    <option selected style="background-color:yellow"><?php echo e($selected_session ?? ''); ?></option>
+                                      <?php $__currentLoopData = $sessions; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $session): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?> 
+  <option><?php echo e($session->session); ?></option>
+   <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?> 
                                 </select>
                             </div>
                             </div>
