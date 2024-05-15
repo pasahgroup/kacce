@@ -14,6 +14,8 @@ use App\Models\title;
 use App\Models\quickLink;
 use App\Models\attraction;
 use App\Models\tribe;
+
+use App\Models\student;
 use DB;
 
 use Illuminate\Http\Request;
@@ -288,10 +290,14 @@ $slider_second = slider::where('status','1')
           ->limit(8)->get();
 
 
+ // $view->with('students', student::where('session','March 2023')
+ //        ->select('first_name','last_name','photo')
 
-         
+           $student_webs = student::select('first_name','last_name','class','session','photo')
+           ->limit(12)->get();
+//dd($students);
 
-         return view('website.home.index',compact('offers_private','slider_first','slider_second','sliderCount','offers_group','popular_safarif','popular_trekking','popular_trekkingf','popular_safari','popular_holiday','popular_holidayf','popular_historicalf','popular_historical','place_to_visit','sliders','slidersf','slidersCount','testimonies','offers','welcome_message','scheduledGroupTours','datasLink','title','description','keywords','contacts','testimonies_one','quickLinkSliders','historical_first','historical','geographical_first','geographical','culture_first','culture','wildlife_first','wildlife'));
+         return view('website.home.index',compact('offers_private','student_webs','slider_first','slider_second','sliderCount','offers_group','popular_safarif','popular_trekking','popular_trekkingf','popular_safari','popular_holiday','popular_holidayf','popular_historicalf','popular_historical','place_to_visit','sliders','slidersf','slidersCount','testimonies','offers','welcome_message','scheduledGroupTours','datasLink','title','description','keywords','contacts','testimonies_one','quickLinkSliders','historical_first','historical','geographical_first','geographical','culture_first','culture','wildlife_first','wildlife'));
     }
 
     /**

@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\student;
 use App\Models\tribe;
+use App\Models\lodge;
+use App\Models\relation;
+use App\Models\classg;
+
 use App\Http\Requests\StorestudentRequest;
 use App\Http\Requests\UpdatestudentRequest;
 use Illuminate\Http\Request;
@@ -20,9 +24,24 @@ class StudentController extends Controller
     public function index()
     {
          $datas = student::get();
-             return view('admins.students.index',compact('datas'));
+          $classes = classg::get();
+          //dd($classes);
+             return view('admins.students.index',compact('datas','classes'));
     }
 
+    public function research(request $request)
+    {
+     
+         $datas = student::where('class',request('classg'))
+         ->where('session',request('session'))
+         ->get();
+ 
+ $selected_session=request('session');
+ $selected_class=request('classg');
+
+          $classes = classg::get();
+             return view('admins.students.index',compact('datas','classes','selected_session','selected_class'));
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -32,7 +51,11 @@ class StudentController extends Controller
     {
        // dd('dddd');
       $tribes = tribe::orderBy('tribe', 'asc')->get();
-          return view('admins.students.add',compact('tribes'));
+       $lodges = lodge::orderBy('lodge_name', 'asc')->get();
+        $relations = relation::orderBy('relation', 'asc')->get();
+
+        //dd($relations);
+          return view('admins.students.add',compact('tribes','lodges','relations'));
     }
 
     /**
@@ -175,9 +198,13 @@ class StudentController extends Controller
      //dd($id);
 
        $datas = student::where('id', $id)->first();  
-        $tribes = tribe::orderBy('tribe', 'asc')->get();     
+        $tribes = tribe::orderBy('tribe', 'asc')->get(); 
+       $lodges = lodge::orderBy('lodge_name', 'asc')->get();
+
+        $relations = relation::orderBy('relation', 'asc')->get();
+    
 //dd($datas);
-             return view('admins.students.edit-student',compact('datas','tribes'));
+             return view('admins.students.edit-student',compact('datas','tribes','lodges','relations'));
      }
 
 
@@ -220,7 +247,7 @@ class StudentController extends Controller
     public function update($id)
     {
         
-dd('print');
+//dd('print');
 
          
           $studentUpdate =  student::UpdateOrCreate(
@@ -299,6 +326,13 @@ dd('print');
    return redirect()->route('students.index')->with('success','Created successfuly');
     }
 
+
+   public function getA($p){
+       // Fetch Employees by Departmentid
+       $aData['dataA'] = checklist::getAsset($p);
+       echo json_encode($aData);
+       exit;
+     }
     /**
      * Remove the specified resource from storage.
      *

@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+
+use App\Models\student;
 use App\Models\PostBody;
 
 class AppServiceProvider extends ServiceProvider
@@ -55,7 +57,16 @@ class AppServiceProvider extends ServiceProvider
             //->select('properties.property_name')->first());
              //$view->with('qnsCount', collect($qnsCount));
 
+       $view->with('students', student::where('session','March 2023')
+        ->select('first_name','last_name','photo')
+            // ->where('manager_checklist','!=','Cleared')
+            // ->where('property_id',$property_id)
+            //  ->where('status','Active')
+            // select('properties.property_name')
+            ->get());
+
              $view->with('contact', PostBody::where('category','Contact')->first());
+              // $view->with('students', student::where('category','Contact')->first());
         });
     }
 }

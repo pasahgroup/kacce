@@ -33,12 +33,26 @@
                 <br />
               <form  method="post" id="post_form" action="{{ route('session.store') }}">
                 @csrf
-
-                <div class="card-body">                       
-                    <label>Session Name</label>
-                    <input class="form-control" type="text" name="session_name" placeholder="session name">
+         
+                <div class="card-body">  
+                       <div class="row">
+<div class="col-md-4 col-sm-4 col-xs-4 col-md-offset-3">                     
+                    <label>Class Name</label>
+                   
+                    <select name="class_name" class="form-control">
+                      <option></option>
+                       @foreach ($classes as $class)
+ <option>{{$class->class}}</option>
+ @endforeach
+                    </select>
                     
-             </div>               
+                      <label>Session Name</label>
+                    <input class="form-control" type="text" name="session_name" placeholder="session name">
+             </div> 
+           </div>
+           <br>
+             </div>  
+
       <div class="col-md-12 col-sm-12 col-xs-12 col-md-offset-3">
               <div>
                 <a href="/session"  role="button" class="btn btn-success float-left">View Session List</a>

@@ -32,12 +32,29 @@
               <div class="container-fluid x_content">
                 <br />
               <form  method="post" id="post_form" action="{{ route('session.update',$sessions->id) }}">
+               
                 @csrf
              <input type="hidden" name="_method" value="PUT">
-                <div class="card-body">                       
-                    <label>Session Name</label>
-                    <input class="form-control" type="text" name="session_name" value="{{$sessions->session}}">
+                <div class="card-body">
+
+
+                      <div class="row">
+<div class="col-md-4 col-sm-4 col-xs-4 col-md-offset-3">                     
+                    <label>Class Name</label>
+                   
+                    <select name="class_name" class="form-control">
+                       <option>{{$sessions->class_name}}</option>
+                      <option></option>
+                       @foreach ($classes as $class)
+ <option>{{$class->class}}</option>
+ @endforeach
+                    </select>
                     
+                      <label>Session Name</label>
+                     <input class="form-control" type="text" name="session_name" value="{{$sessions->session}}">
+             </div> 
+           </div>                       
+                   
              </div>               
       <div class="col-md-12 col-sm-12 col-xs-12 col-md-offset-3">
               <div>
@@ -45,6 +62,7 @@
               <button type="submit" class="btn btn-primary float-right" name="inclusive" value="inclusive">Update</button>         
               </div>
              </div>
+
             </form>
                <br>
         </div>

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class student extends Model
 {
@@ -39,4 +40,12 @@ class student extends Model
         'status',
         'user_id'
     ];
+
+        public static function getAsset($n){
+   
+      $value = DB::select('select id,session from sessions where class_name="'.$n.'"  order by p.asset_name');
+
+//dd($value);
+      return $value;
+    }
 }

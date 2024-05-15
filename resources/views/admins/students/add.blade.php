@@ -165,7 +165,7 @@
                                 </div>
                                   <div class="form-group col-md-12 col-sm-12">
                                     <label>Number of children</label>
-                                    <input type="number" class="form-control" placeholder="number of children" name="no_children">
+                                    <input type="number" class="form-control" placeholder="0" name="no_children">
                                 </div>                               
                                   
                             </div>
@@ -231,8 +231,10 @@
                                         <select class="form-control" name="designation">
                                             <option></option>
                                             <option>None</option>
-                                            <option>Ahadi lodge</option>
-                                            <option>Manyara bestview lodge</option>
+  @foreach ($lodges as $lodge) 
+  <option>{{$lodge->lodge_name}}</option>
+ @endforeach 
+              
                                         </select>
                                     </div>
                                 
@@ -278,13 +280,11 @@
                                          <label>Relationship</label>
                                         <select class="form-control" name="relationship" id="relationship">
                                             <option></option>
-                                            <option>Father</option>
-                                             <option>Mother</option>
-                                              <option>Sister</option>
-                                              <option>Brother</option>
-                                              <option>Auncle</option>
-                                            <option>Other</option>
-                                            <option>None</option>
+              
+   @foreach ($relations as $relation) 
+  <option>{{$relation->relation}}</option>
+ @endforeach 
+
                                         </select>
                                     </div>
 

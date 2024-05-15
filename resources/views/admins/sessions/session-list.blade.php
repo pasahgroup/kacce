@@ -45,6 +45,7 @@
                   <thead>
                   <tr>
                     <th>#</th>
+                      <th>Class Name</th>  
                     <th>Session Name</th>              
                     <th>Action</th> 
                                  
@@ -55,6 +56,7 @@
                     @foreach ($sessions as $session)
                             <tr>
                     <td>{{ $session->id }}</td>
+                     <td>{{ $session->class_name }}</td>
                      <td><a href="/editSession/{{$session->id}}">{{ $session->session }}</a></td>                   
                     <td><a href="/editSession/{{$session->id}}"><i class="fa fa-edit"></i></a>
                      <a href="/destroySession/{{$session->id}}" onclick="return confirm('Are you sure? You want to delete {{ $session->session}}','Session')"><i class="fa fa-trash red"></i></a></td>
@@ -65,6 +67,7 @@
                   <tfoot>
                   <tr>
                     <th>#</th>
+                    <th>Class Name</th>
                     <th>Session Name</th>              
                     <th>Action</th>     
                   </tr>

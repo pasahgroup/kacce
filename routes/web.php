@@ -143,6 +143,10 @@ Route::resource('/dashboard', dashboardController::class);
 Route::resource('/programs', programController::class);
 Route::resource('/students', StudentController::class);
 Route::get('/editStudent/{x}', [StudentController::class, 'editStudent'])->name('editStudent');
+Route::post('/search-student', [StudentController::class, 'research'])->name('research');
+
+Route::get('/getA/{p}', [StudentController::class,'getA']);
+
 Route::resource('/itineraries', itineraryController::class);
 });
 

@@ -20,6 +20,9 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="../website/css/style.css" rel="stylesheet">
+    <!-- <link href="../slider_header/style.css" rel="stylesheet"> -->
+
+     <link href="../slider_header/style_slider.css" rel="stylesheet">
 </head>
    
 <body>
@@ -28,10 +31,8 @@
         <div class="row bg-secondary py-1 px-xl-5">
             <div class="col-lg-6 d-none d-lg-block">
                 <div class="d-inline-flex align-items-center h-100">
-                    <a class="text-body mr-3" href="">About</a>
-                    <a class="text-body mr-3" href="">Contact</a>
-                    <a class="text-body mr-3" href="">Help</a>
-                    <a class="text-body mr-3" href="">FAQs</a>
+                    <a class="text-body mr-3" href="#">Help</a>
+                    <a class="text-body mr-3" href="#">FAQs</a>
                 </div>
             </div>
             <div class="col-lg-6 text-center text-lg-right">
@@ -74,23 +75,25 @@
         <div class="row align-items-center bg-light py-3 px-xl-5 d-none d-lg-flex">
             <div class="col-lg-4">
                 <a href="" class="text-decoration-none">
-                    <span class="h1 text-uppercase text-primary bg-dark px-2">Multi</span>
-                    <span class="h1 text-uppercase text-dark bg-primary px-2 ml-n1">Shop</span>
+                    <span class="h3 text-uppercase text-primary bg-dark px-2">HM</span>
+                    <span class="h3 text-uppercase text-dark bg-primary2 px-2 ml-n1" style="background-color:red">Academy</span>
                 </a>
             </div>
-            <div class="col-lg-4 col-6 text-left">
-                <form action="">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search for products">
-                        <div class="input-group-append">
-                            <span class="input-group-text bg-transparent text-primary">
-                                <i class="fa fa-search"></i>
-                            </span>
-                        </div>
-                    </div>
-                </form>
+            <div class="col-lg-5 col-6 text-left">                          
+                            
+                              
+                                <div class="overflow-hidden" style="width: 735px;">                                 
+                                <div id="note" class="ps-2">
+                                   <?php $__currentLoopData = $students; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $student): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>   
+                                    <img src="<?php echo e(URL::asset('/storage/photos/'.$student->photo)); ?>" class="img-fluid rounded-circle border border-3 border-primary me-2" style="width: 30px; height: 30px;" alt="">
+                                    <a href="#"><p class="text-white mb-0 link-hover"></p></a>
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>  
+                                </div>                                   
+                            </div> 
+
+
             </div>
-            <div class="col-lg-4 col-6 text-right">
+            <div class="col-lg-3 col-6 text-right">
                 <p class="m-0">Customer Service</p>
                 <h5 class="m-0">+255 742 400 000</h5>
             </div>
@@ -128,6 +131,8 @@
             </div>
         </div>
     </div>
+
+   
 
     <!-- Navbar End -->
  <?php echo $__env->yieldContent('content'); ?>

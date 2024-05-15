@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\session;
+use App\Models\classg;
+
 use App\Http\Requests\StoresessionRequest;
 use App\Http\Requests\UpdatesessionRequest;
 
@@ -23,7 +25,9 @@ class SessionController extends Controller
      */
 
     public function addsession(){
-         return view('admins.sessions.addsession');
+       // dd('print');
+         $classes = classg::orderBy('class', 'asc')->get();
+         return view('admins.sessions.addsession',compact('classes'));
     }
 
     public function create()
@@ -41,6 +45,7 @@ class SessionController extends Controller
     {
          if (request('session')) {
         $class = session::UpdateOrCreate([
+        'class_name'=>request('class_name'),
         'session'=>request('session_name')        
            ]);
                   
@@ -56,8 +61,10 @@ class SessionController extends Controller
        
        $sessions = session::where('id',$id)
        ->first();
-      //dd($tribes);
-         return view('admins.sessions.edit-session',compact('sessions'));
+      
+         $classes = classg::orderBy('class', 'asc')->get();
+//dd($classes);
+         return view('admins.sessions.edit-session',compact('sessions','classes'));
     }
 
     /**
@@ -95,6 +102,7 @@ class SessionController extends Controller
   
       $toupdate = session::where('id',$id)
                ->update([
+           'class_name'=>request('class_name'),
             'session'=>request('session_name')
         ]);
     return redirect()->route('session.index')->with('success','Session created successfully');

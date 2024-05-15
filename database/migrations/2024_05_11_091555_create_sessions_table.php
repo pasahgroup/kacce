@@ -15,7 +15,8 @@ class CreateSessionsTable extends Migration
     {
         Schema::create('sessions', function (Blueprint $table) {
           $table->bigIncrements('id');
-            $table->string('session')->nullable();
+            $table->string('class_name')->nullable();
+             $table->string('session')->nullable();
             $table->timestamps();
         });
     }

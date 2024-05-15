@@ -45,6 +45,7 @@
                   <thead>
                   <tr>
                     <th>#</th>
+                      <th>Class Name</th>  
                     <th>Session Name</th>              
                     <th>Action</th> 
                                  
@@ -55,6 +56,7 @@
                     <?php $__currentLoopData = $sessions; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $session): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <tr>
                     <td><?php echo e($session->id); ?></td>
+                     <td><?php echo e($session->class_name); ?></td>
                      <td><a href="/editSession/<?php echo e($session->id); ?>"><?php echo e($session->session); ?></a></td>                   
                     <td><a href="/editSession/<?php echo e($session->id); ?>"><i class="fa fa-edit"></i></a>
                      <a href="/destroySession/<?php echo e($session->id); ?>" onclick="return confirm('Are you sure? You want to delete <?php echo e($session->session); ?>','Session')"><i class="fa fa-trash red"></i></a></td>
@@ -65,6 +67,7 @@
                   <tfoot>
                   <tr>
                     <th>#</th>
+                    <th>Class Name</th>
                     <th>Session Name</th>              
                     <th>Action</th>     
                   </tr>

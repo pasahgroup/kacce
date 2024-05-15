@@ -164,7 +164,7 @@
                                 </div>
                                   <div class="form-group col-md-12 col-sm-12">
                                     <label>Number of children</label>
-                                    <input type="number" class="form-control" placeholder="number of children" name="no_children">
+                                    <input type="number" class="form-control" placeholder="0" name="no_children">
                                 </div>                               
                                   
                             </div>
@@ -241,8 +241,10 @@
                                         <select class="form-control" name="designation">
                                             <option></option>
                                             <option>None</option>
-                                            <option>Ahadi lodge</option>
-                                            <option>Manyara bestview lodge</option>
+  <?php $__currentLoopData = $lodges; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $lodge): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?> 
+  <option><?php echo e($lodge->lodge_name); ?></option>
+ <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?> 
+              
                                         </select>
                                     </div>
                                 
@@ -288,13 +290,11 @@
                                          <label>Relationship</label>
                                         <select class="form-control" name="relationship" id="relationship">
                                             <option></option>
-                                            <option>Father</option>
-                                             <option>Mother</option>
-                                              <option>Sister</option>
-                                              <option>Brother</option>
-                                              <option>Auncle</option>
-                                            <option>Other</option>
-                                            <option>None</option>
+              
+   <?php $__currentLoopData = $relations; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $relation): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?> 
+  <option><?php echo e($relation->relation); ?></option>
+ <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?> 
+
                                         </select>
                                     </div>
 

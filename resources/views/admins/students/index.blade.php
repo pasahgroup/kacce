@@ -35,27 +35,49 @@
         
       <div class="card">
         <div class="card-header">
-           <div class="row">
+         
 
+          <form method="post" id="post_form" role="form" class="registration-form" action="{{ route('research') }}" enctype="multipart/form-data">
+
+      @csrf
+             <input type="hidden" name="user_id" value="POST">
+           <div class="row">
               <div class="form-group col-md-1 col-sm-1">
+          <b class="card-title">Class</b>
+        </div>
+               <div class="form-group col-md-3 col-sm-3">
+            <div class="form-bottom">                         
+                                <select class="form-control" name="classg" required>
+                                    <option></option>
+                                    <option selected>{{$selected_class ?? ''}}</option>
+                                      @foreach ($classes as $class) 
+  <option>{{$class->class}}</option>
+   @endforeach 
+                                </select>
+
+                            </div>
+                            </div>
+                              <div class="form-group col-md-1 col-sm-1">
           <b class="card-title">Session</b>
         </div>
-               <div class="form-group col-md-6 col-sm-6">
+                              <div class="form-group col-md-3 col-sm-3">
             <div class="form-bottom">                         
-                                <select class="form-control" name="session">
+                                <select class="form-control" name="session" required>
+                                  <option></option>
+                                    <option selected>{{$selected_session ?? ''}}</option>
                                     <option>March 2023</option>
                                     <option>June 2023</option>
                                 </select>
                             </div>
                             </div>
                         
+                        
        
-          <div class="card-tools">
-            <a href="{{ route('students.create') }}" class="btn btn-success" >
-              <i class="fas fa-pencil"></i> Ok
-            </a>
-          </div>
+          <div class="card-tools">         
+          <button type="submit" class="btn btn-success float-right">Ok</button>
+           </div>
         </div>
+      </form>
       </div>
 
         <div class="card-body">
@@ -92,7 +114,7 @@
                    
                   <!--    <td>{{ $data->main }}</td>
                      <td>{{ $data->tour_code }}</td> -->
-                      <td><div class="logo mr-auto"><img src="{{ URL::asset('/storage/photos/'.$data->photo) }}"  style="width:120px; height:100px;"></div></td>
+                      <td><div class="logo mr-auto"><img src="{{ URL::asset('/storage/photos/'.$data->photo) }}"  style="width:100px; height:130px;"></div></td>
                        <td>{{ $data->parental_status }}</td>
                    <td>{{ $data->session }}</td>
 

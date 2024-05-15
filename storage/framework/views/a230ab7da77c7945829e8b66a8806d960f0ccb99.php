@@ -32,12 +32,29 @@
               <div class="container-fluid x_content">
                 <br />
               <form  method="post" id="post_form" action="<?php echo e(route('session.update',$sessions->id)); ?>">
+               
                 <?php echo csrf_field(); ?>
              <input type="hidden" name="_method" value="PUT">
-                <div class="card-body">                       
-                    <label>Session Name</label>
-                    <input class="form-control" type="text" name="session_name" value="<?php echo e($sessions->session); ?>">
+                <div class="card-body">
+
+
+                      <div class="row">
+<div class="col-md-4 col-sm-4 col-xs-4 col-md-offset-3">                     
+                    <label>Class Name</label>
+                   
+                    <select name="class_name" class="form-control">
+                       <option><?php echo e($sessions->class_name); ?></option>
+                      <option></option>
+                       <?php $__currentLoopData = $classes; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $class): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+ <option><?php echo e($class->class); ?></option>
+ <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                    </select>
                     
+                      <label>Session Name</label>
+                     <input class="form-control" type="text" name="session_name" value="<?php echo e($sessions->session); ?>">
+             </div> 
+           </div>                       
+                   
              </div>               
       <div class="col-md-12 col-sm-12 col-xs-12 col-md-offset-3">
               <div>
@@ -45,6 +62,7 @@
               <button type="submit" class="btn btn-primary float-right" name="inclusive" value="inclusive">Update</button>         
               </div>
              </div>
+
             </form>
                <br>
         </div>

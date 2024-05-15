@@ -34,27 +34,49 @@
         
       <div class="card">
         <div class="card-header">
-           <div class="row">
+         
 
+          <form method="post" id="post_form" role="form" class="registration-form" action="<?php echo e(route('research')); ?>" enctype="multipart/form-data">
+
+      <?php echo csrf_field(); ?>
+             <input type="hidden" name="user_id" value="POST">
+           <div class="row">
               <div class="form-group col-md-1 col-sm-1">
+          <b class="card-title">Class</b>
+        </div>
+               <div class="form-group col-md-3 col-sm-3">
+            <div class="form-bottom">                         
+                                <select class="form-control" name="classg" required>
+                                    <option></option>
+                                    <option selected><?php echo e($selected_class ?? ''); ?></option>
+                                      <?php $__currentLoopData = $classes; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $class): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?> 
+  <option><?php echo e($class->class); ?></option>
+   <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?> 
+                                </select>
+
+                            </div>
+                            </div>
+                              <div class="form-group col-md-1 col-sm-1">
           <b class="card-title">Session</b>
         </div>
-               <div class="form-group col-md-6 col-sm-6">
+                              <div class="form-group col-md-3 col-sm-3">
             <div class="form-bottom">                         
-                                <select class="form-control" name="session">
+                                <select class="form-control" name="session" required>
+                                  <option></option>
+                                    <option selected><?php echo e($selected_session ?? ''); ?></option>
                                     <option>March 2023</option>
                                     <option>June 2023</option>
                                 </select>
                             </div>
                             </div>
                         
+                        
        
-          <div class="card-tools">
-            <a href="<?php echo e(route('students.create')); ?>" class="btn btn-success" >
-              <i class="fas fa-pencil"></i> Ok
-            </a>
-          </div>
+          <div class="card-tools">         
+          <button type="submit" class="btn btn-success float-right">Ok</button>
+           </div>
         </div>
+      </form>
       </div>
 
         <div class="card-body">
@@ -91,7 +113,7 @@
                    
                   <!--    <td><?php echo e($data->main); ?></td>
                      <td><?php echo e($data->tour_code); ?></td> -->
-                      <td><div class="logo mr-auto"><img src="<?php echo e(URL::asset('/storage/photos/'.$data->photo)); ?>"  style="width:120px; height:100px;"></div></td>
+                      <td><div class="logo mr-auto"><img src="<?php echo e(URL::asset('/storage/photos/'.$data->photo)); ?>"  style="width:100px; height:130px;"></div></td>
                        <td><?php echo e($data->parental_status); ?></td>
                    <td><?php echo e($data->session); ?></td>
 

@@ -9,6 +9,7 @@ class session extends Model
 {
     use HasFactory;
          protected $fillable = [
-        'session'
+        'class_name',
+         'session'
     ];
 }
