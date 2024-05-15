@@ -34,11 +34,55 @@
               <form  method="post" id="post_form" action="<?php echo e(route('lodge.update',$lodges->id)); ?>">
                 <?php echo csrf_field(); ?>
              <input type="hidden" name="_method" value="PUT">
+               
+
+
                 <div class="card-body">                       
                     <label>Lodge Name</label>
                     <input class="form-control" type="text" name="lodge_name" value="<?php echo e($lodges->lodge_name); ?>">
                     
-             </div>               
+             </div>  
+
+
+     <?php echo csrf_field(); ?>
+  <div class="row">
+ <div class="col-md-3">
+                <div class="card-body">                       
+                    <label>Lodge Name</label>
+                    <input class="form-control" type="text" name="lodge_name" value="<?php echo e($lodges->lodge_name); ?>">
+                    
+             </div> 
+           </div>
+              <div class="col-md-3">
+             <div class="card-body">                       
+                    <label>Owner</label>
+                    <input class="form-control" type="text" name="owner_name" value="<?php echo e($lodges->owner_name); ?>">
+                    
+             </div> 
+             </div>
+             <div class="col-md-3">
+             <div class="card-body">                       
+                    <label>Contact</label>
+                    <input class="form-control" type="text" name="contact" value="<?php echo e($lodges->contact); ?>">
+                    
+             </div> 
+             </div>
+             <div class="col-md-3">
+             <div class="card-body">                       
+                    <label>Email</label>
+                    <input class="form-control" type="email" name="email" value="<?php echo e($lodges->email); ?>">
+                    
+             </div> 
+             </div>
+              </div>
+
+             <div class="card-body">                       
+                    <label>Location</label>
+                    <input class="form-control" type="text" name="location" value="<?php echo e($lodges->location); ?>">
+                    
+             </div> 
+
+
       <div class="col-md-12 col-sm-12 col-xs-12 col-md-offset-3">
               <div>
                 <a href="/lodge"  role="button" class="btn btn-success float-left">View Lodge List</a>

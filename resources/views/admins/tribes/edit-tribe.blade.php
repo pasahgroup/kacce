@@ -38,7 +38,8 @@
                     <label>Tribe Name</label>
                     <input class="form-control" type="text" name="tribe_name" value="{{$tribes->tribe}}">
                     
-             </div>               
+             </div> 
+              <br>                
       <div class="col-md-12 col-sm-12 col-xs-12 col-md-offset-3">
               <div>
                 <a href="/tribe"  role="button" class="btn btn-success float-left">View Tribe List</a>

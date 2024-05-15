@@ -38,7 +38,8 @@
                     <label>Relation Name</label>
                     <input class="form-control" type="text" name="relation_name" value="{{$relations->relation}}">
                     
-             </div>               
+             </div> 
+             <br>              
       <div class="col-md-12 col-sm-12 col-xs-12 col-md-offset-3">
               <div>
                 <a href="/addrelation"  role="button" class="btn btn-success float-left">View Relation List</a>

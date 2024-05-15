@@ -33,16 +33,48 @@
                 <br />
               <form  method="post" id="post_form" action="<?php echo e(route('lodge.store')); ?>">
                 <?php echo csrf_field(); ?>
-
+  <div class="row">
+ <div class="col-md-3">
                 <div class="card-body">                       
                     <label>Lodge Name</label>
                     <input class="form-control" type="text" name="lodge_name" placeholder="lodge name">
                     
-             </div>               
+             </div> 
+           </div>
+              <div class="col-md-3">
+             <div class="card-body">                       
+                    <label>Owner</label>
+                    <input class="form-control" type="text" name="owner_name" placeholder="owner name">
+                    
+             </div> 
+             </div>
+             <div class="col-md-3">
+             <div class="card-body">                       
+                    <label>Contact</label>
+                    <input class="form-control" type="text" name="contact" placeholder="contact">
+                    
+             </div> 
+             </div>
+             <div class="col-md-3">
+             <div class="card-body">                       
+                    <label>Email</label>
+                    <input class="form-control" type="email" name="email" placeholder="email">
+                    
+             </div> 
+             </div>
+              </div>
+
+             <div class="card-body">                       
+                    <label>Location</label>
+                    <input class="form-control" type="text" name="location" placeholder="location">
+                    
+             </div> 
+             <br>               
       <div class="col-md-12 col-sm-12 col-xs-12 col-md-offset-3">
               <div>
+                       
                 <a href="/lodge"  role="button" class="btn btn-success float-left">View Lodge List</a>
-              <button type="submit" class="btn btn-primary float-right" name="lodge" value="lodge">Save</button>         
+                <button type="submit" class="btn btn-primary float-right" name="lodge" value="lodge">Save</button>
               </div>
              </div>
             </form>

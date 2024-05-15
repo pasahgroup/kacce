@@ -55,8 +55,9 @@
 
       <div class="col-md-12 col-sm-12 col-xs-12 col-md-offset-3">
               <div>
+
                 <a href="/session"  role="button" class="btn btn-success float-left">View Session List</a>
-              <button type="submit" class="btn btn-primary float-right" name="session" value="session">Save</button>         
+                    <button type="submit" class="btn btn-primary float-right" name="session" value="session">Save</button>    
               </div>
              </div>
             </form>

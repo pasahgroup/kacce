@@ -38,11 +38,13 @@
                     <label>Tribe Name</label>
                     <input class="form-control" type="text" name="tribe_name" placeholder="tribe name">
                     
-             </div>               
+             </div>  
+             <br>             
       <div class="col-md-12 col-sm-12 col-xs-12 col-md-offset-3">
               <div>
-                <a href="/tribe"  role="button" class="btn btn-success float-left">View Tribe List</a>
-              <button type="submit" class="btn btn-primary float-right" name="tribe" value="tribe">Save</button>         
+                 <button type="submit" class="btn btn-primary float-left" name="tribe" value="tribe">Save</button>    
+                <a href="/tribe"  role="button" class="btn btn-success float-right">View Tribe List</a>
+                 
               </div>
              </div>
             </form>

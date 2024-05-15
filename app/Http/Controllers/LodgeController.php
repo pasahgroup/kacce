@@ -45,7 +45,11 @@ public function addlodge(){
     {
         if (request('lodge')) {
         $lodge = lodge::UpdateOrCreate([
-        'lodge_name'=>request('lodge_name')        
+        'lodge_name'=>request('lodge_name'),
+        'owner_name'=>request('owner_name'), 
+        'contact'=>request('contact'), 
+        'email'=>request('email'), 
+        'location'=>request('location')         
            ]);
                   
            return redirect()->back()->with('success','Lodge recorded successfully');
@@ -94,7 +98,11 @@ public function addlodge(){
   
       $toupdate = lodge::where('id',$id)
                ->update([
-            'lodge_name'=>request('lodge_name')
+             'lodge_name'=>request('lodge_name'),
+        'owner_name'=>request('owner_name'), 
+        'contact'=>request('contact'), 
+        'email'=>request('email'), 
+        'location'=>request('location')  
         ]);
     return redirect()->route('lodge.index')->with('success','Lodge created successfully');
     }

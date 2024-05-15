@@ -9,7 +9,12 @@ class lodge extends Model
 {
     use HasFactory;
       protected $fillable = [
-        'lodge_name'
+        'lodge_name',
+        'owner_name',
+        'contact',
+         'email',
+        'location'
+
     ];
 }
 

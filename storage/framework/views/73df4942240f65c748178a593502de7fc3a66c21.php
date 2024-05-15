@@ -45,7 +45,11 @@
                   <thead>
                   <tr>
                     <th>#</th>
-                    <th>Lodge Name</th>              
+                    <th>Lodge Name</th>  
+                    <th>Owner Name</th>             
+                    <th>Contact</th> 
+                    <th>Email</th> 
+                    <th>Location</th> 
                     <th>Action</th> 
                                  
                   </tr>
@@ -55,7 +59,11 @@
                     <?php $__currentLoopData = $lodges; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $lodge): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <tr>
                     <td><?php echo e($lodge->id); ?></td>
-                     <td><a href="/editLodge/<?php echo e($lodge->id); ?>"><?php echo e($lodge->lodge_name); ?></a></td>                   
+                     <td><a href="/editLodge/<?php echo e($lodge->id); ?>"><?php echo e($lodge->lodge_name); ?></a></td>
+                            <td><a href="/editLodge/<?php echo e($lodge->id); ?>"><?php echo e($lodge->owner_name); ?></a></td>
+                              <td><a href="/editLodge/<?php echo e($lodge->id); ?>"><?php echo e($lodge->contact); ?></a></td>
+                                <td><a href="/editLodge/<?php echo e($lodge->id); ?>"><?php echo e($lodge->email); ?></a></td>
+                                  <td><a href="/editLodge/<?php echo e($lodge->id); ?>"><?php echo e($lodge->location); ?></a></td>              
                     <td><a href="/editLodge/<?php echo e($lodge->id); ?>"><i class="fa fa-edit"></i></a>
                      <a href="/destroyLodge/<?php echo e($lodge->id); ?>" onclick="return confirm('Are you sure? You want to delete <?php echo e($lodge->lodge_name); ?>','Lodge')"><i class="fa fa-trash red"></i></a></td>
                                 </tr>
@@ -65,7 +73,11 @@
                   <tfoot>
                   <tr>
                     <th>#</th>
-                    <th>Lodge Name</th>              
+                     <th>Lodge Name</th>  
+                    <th>Owner Name</th>             
+                    <th>Contact</th> 
+                    <th>Email</th> 
+                    <th>Location</th>              
                     <th>Action</th>     
                   </tr>
                   </tfoot>

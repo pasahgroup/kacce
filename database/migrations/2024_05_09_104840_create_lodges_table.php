@@ -16,6 +16,10 @@ class CreateLodgesTable extends Migration
         Schema::create('lodges', function (Blueprint $table) {
               $table->bigIncrements('id');
             $table->string('lodge_name')->nullable();
+             $table->string('owner_name')->nullable();
+              $table->string('contact')->nullable();
+               $table->string('email')->nullable();
+               $table->string('location')->nullable();
             $table->timestamps();
         });
     }

@@ -45,7 +45,11 @@
                   <thead>
                   <tr>
                     <th>#</th>
-                    <th>Lodge Name</th>              
+                    <th>Lodge Name</th>  
+                    <th>Owner Name</th>             
+                    <th>Contact</th> 
+                    <th>Email</th> 
+                    <th>Location</th> 
                     <th>Action</th> 
                                  
                   </tr>
@@ -55,7 +59,11 @@
                     @foreach ($lodges as $lodge)
                             <tr>
                     <td>{{ $lodge->id }}</td>
-                     <td><a href="/editLodge/{{$lodge->id}}">{{ $lodge->lodge_name }}</a></td>                   
+                     <td><a href="/editLodge/{{$lodge->id}}">{{ $lodge->lodge_name }}</a></td>
+                            <td><a href="/editLodge/{{$lodge->id}}">{{ $lodge->owner_name }}</a></td>
+                              <td><a href="/editLodge/{{$lodge->id}}">{{ $lodge->contact }}</a></td>
+                                <td><a href="/editLodge/{{$lodge->id}}">{{ $lodge->email }}</a></td>
+                                  <td><a href="/editLodge/{{$lodge->id}}">{{ $lodge->location }}</a></td>              
                     <td><a href="/editLodge/{{$lodge->id}}"><i class="fa fa-edit"></i></a>
                      <a href="/destroyLodge/{{$lodge->id}}" onclick="return confirm('Are you sure? You want to delete {{ $lodge->lodge_name}}','Lodge')"><i class="fa fa-trash red"></i></a></td>
                                 </tr>
@@ -65,7 +73,11 @@
                   <tfoot>
                   <tr>
                     <th>#</th>
-                    <th>Lodge Name</th>              
+                     <th>Lodge Name</th>  
+                    <th>Owner Name</th>             
+                    <th>Contact</th> 
+                    <th>Email</th> 
+                    <th>Location</th>              
                     <th>Action</th>     
                   </tr>
                   </tfoot>

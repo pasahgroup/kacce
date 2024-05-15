@@ -38,11 +38,13 @@
                     <label>Class Name</label>
                     <input class="form-control" type="text" name="class_name" placeholder="class name">
                     
-             </div>               
+             </div>  
+              <br>               
       <div class="col-md-12 col-sm-12 col-xs-12 col-md-offset-3">
               <div>
+                
                 <a href="/class"  role="button" class="btn btn-success float-left">View Class List</a>
-              <button type="submit" class="btn btn-primary float-right" name="class" value="class">Save</button>         
+                   <button type="submit" class="btn btn-primary float-right" name="class" value="class">Save</button>    
               </div>
              </div>
             </form>
