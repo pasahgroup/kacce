@@ -1,6 +1,11 @@
 
   @extends('admins.layouts.Apps.app')
   @section('contents')
+
+  <script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="../js/jquery311.min.js"></script>
+
+
   <style type="text/css">
     .red{
       color: red;
@@ -47,7 +52,7 @@
         </div>
                <div class="form-group col-md-3 col-sm-3">
             <div class="form-bottom">                         
-                                <select class="form-control" name="classg" required>
+                                <select class="form-control" name="classg" id="classg" required>
                                     <option></option>
                                     <option selected>{{$selected_class ?? ''}}</option>
                                       @foreach ($classes as $class) 
@@ -62,11 +67,9 @@
         </div>
                               <div class="form-group col-md-3 col-sm-3">
             <div class="form-bottom">                         
-                                <select class="form-control" name="session" required>
+                                <select class="form-control" name="session" id="session" required>
                                   <option></option>
                                     <option selected>{{$selected_session ?? ''}}</option>
-                                    <option>March 2023</option>
-                                    <option>June 2023</option>
                                 </select>
                             </div>
                             </div>
@@ -166,4 +169,61 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
+
+  <script type="text/javascript">
+       $(document).ready(function(){
+      // Department Change
+      $('#classg').change(function(){
+         // ward
+
+  
+
+         var v = $(this).val();
+             //   alert(v);
+           // Empty the dropdown
+          $('#session').find('option').not(':first').remove();
+         // $('#village').find('option').not(':first').remove();
+         // $('#project_name').find('option').not(':first').remove();
+         // $('#project_activities').find('option').not(':first').remove();
+
+         // AJAX request
+         $.ajax({
+           url: 'getA/'+v,
+           type: 'get',
+           dataType: 'json',
+           success: function(response){
+
+             var len = 0;
+             if(response['dataA'] != null){
+               len = response['dataA'].length;
+             }
+
+                       if(len > 0){
+               // Read data and create <option >
+               for(var i=0; i<len; i++){
+
+                 var id = response['dataA'][i].session;
+                 var name = response['dataA'][i].session;
+                 var option = "<option value='"+id+"'>"+name+"</option>";
+                 $("#session").append(option);
+               }
+             }
+             //DAta are here
+
+           }
+        });
+      });
+    });
+     </script>
+
+
+     <script type="text/javascript">
+  function setMetanameFunction(id) {
+   // alert('passed');
+    var elementM = document.getElementById("metaname_model").value;
+     //alert(elementM);
+ $('#metaname_id').val(elementM);
+         document.getElementById("data_display").style.display = "none";
+  }
+</script>
 @endsection

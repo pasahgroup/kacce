@@ -7,6 +7,7 @@ use App\Models\tribe;
 use App\Models\lodge;
 use App\Models\relation;
 use App\Models\classg;
+use App\Models\session;
 
 use App\Http\Requests\StorestudentRequest;
 use App\Http\Requests\UpdatestudentRequest;
@@ -35,12 +36,17 @@ class StudentController extends Controller
          $datas = student::where('class',request('classg'))
          ->where('session',request('session'))
          ->get();
+
+          $sessions = session::where('class_name',request('classg'))
+                 ->get();
+
+         //dd($sessions);
  
  $selected_session=request('session');
  $selected_class=request('classg');
 
           $classes = classg::get();
-             return view('admins.students.index',compact('datas','classes','selected_session','selected_class'));
+             return view('admins.students.index',compact('datas','sessions','classes','selected_session','selected_class'));
     }
     /**
      * Show the form for creating a new resource.
@@ -329,7 +335,7 @@ class StudentController extends Controller
 
    public function getA($p){
        // Fetch Employees by Departmentid
-       $aData['dataA'] = checklist::getAsset($p);
+       $aData['dataA'] = student::getAsset($p);
        echo json_encode($aData);
        exit;
      }
