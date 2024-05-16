@@ -388,7 +388,7 @@
                 </a>
               </li>
               <hr>
-               <li class="nav-item">
+           <!--     <li class="nav-item">
                 <a href="/bank" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Bank</p>
@@ -401,7 +401,7 @@
                   <p>People Percent</p>
                 </a>
               </li>
-              <hr>
+              <hr> -->
                  <li class="nav-item">
                 <a href="/quickLink" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
