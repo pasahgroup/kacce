@@ -37,7 +37,7 @@
  <div class="col-md-3">
                 <div class="card-body">                       
                     <label>Lodge Name</label>
-                    <input class="form-control" type="text" name="lodge_name" placeholder="lodge name">
+                    <input class="form-control" type="text" name="lodge_name" placeholder="lodge name" required="lodg">
                     
              </div> 
            </div>

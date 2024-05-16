@@ -34,22 +34,12 @@
               <form  method="post" id="post_form" action="{{ route('lodge.update',$lodges->id) }}">
                 @csrf
              <input type="hidden" name="_method" value="PUT">
-               
-
-
-                <div class="card-body">                       
-                    <label>Lodge Name</label>
-                    <input class="form-control" type="text" name="lodge_name" value="{{$lodges->lodge_name}}">
-                    
-             </div>  
-
-
-     @csrf
+          
   <div class="row">
  <div class="col-md-3">
                 <div class="card-body">                       
                     <label>Lodge Name</label>
-                    <input class="form-control" type="text" name="lodge_name" value="{{$lodges->lodge_name}}">
+                    <input class="form-control" type="text" name="lodge_name" value="{{$lodges->lodge_name}}" required>
                     
              </div> 
            </div>

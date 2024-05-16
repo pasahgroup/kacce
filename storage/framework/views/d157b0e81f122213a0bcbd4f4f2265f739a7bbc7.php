@@ -49,7 +49,7 @@
  <div class="col-md-3">
                 <div class="card-body">                       
                     <label>Lodge Name</label>
-                    <input class="form-control" type="text" name="lodge_name" value="<?php echo e($lodges->lodge_name); ?>">
+                    <input class="form-control" type="text" name="lodge_name" value="<?php echo e($lodges->lodge_name); ?>" required="GGG">
                     
              </div> 
            </div>
