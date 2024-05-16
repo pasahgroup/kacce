@@ -49,7 +49,9 @@ public function addlodge(){
         'owner_name'=>request('owner_name'), 
         'contact'=>request('contact'), 
         'email'=>request('email'), 
-        'location'=>request('location')         
+        'location'=>request('location'),
+         'gm_contact'=>request('gm_contact'), 
+        'gm_email'=>request('gm_email')         
            ]);
                   
            return redirect()->back()->with('success','Lodge recorded successfully');
@@ -102,7 +104,9 @@ public function addlodge(){
         'owner_name'=>request('owner_name'), 
         'contact'=>request('contact'), 
         'email'=>request('email'), 
-        'location'=>request('location')  
+        'location'=>request('location'),
+          'gm_contact'=>request('gm_contact'), 
+        'gm_email'=>request('gm_email')   
         ]);
     return redirect()->route('lodge.index')->with('success','Lodge created successfully');
     }

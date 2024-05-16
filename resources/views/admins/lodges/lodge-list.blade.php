@@ -50,6 +50,8 @@
                     <th>Contact</th> 
                     <th>Email</th> 
                     <th>Location</th> 
+                    <th>GM_contact</th> 
+                    <th>GM_email</th>
                     <th>Action</th> 
                                  
                   </tr>
@@ -63,7 +65,9 @@
                             <td><a href="/editLodge/{{$lodge->id}}">{{ $lodge->owner_name }}</a></td>
                               <td><a href="/editLodge/{{$lodge->id}}">{{ $lodge->contact }}</a></td>
                                 <td><a href="/editLodge/{{$lodge->id}}">{{ $lodge->email }}</a></td>
-                                  <td><a href="/editLodge/{{$lodge->id}}">{{ $lodge->location }}</a></td>              
+                                  <td><a href="/editLodge/{{$lodge->id}}">{{ $lodge->location }}</a></td>
+                                  <td><a href="/editLodge/{{$lodge->id}}">{{ $lodge->gm_contact }}</a></td>
+                                <td><a href="/editLodge/{{$lodge->id}}">{{ $lodge->gm_email }}</a></td>              
                     <td><a href="/editLodge/{{$lodge->id}}"><i class="fa fa-edit"></i></a>
                      <a href="/destroyLodge/{{$lodge->id}}" onclick="return confirm('Are you sure? You want to delete {{ $lodge->lodge_name}}','Lodge')"><i class="fa fa-trash red"></i></a></td>
                                 </tr>
@@ -77,7 +81,9 @@
                     <th>Owner Name</th>             
                     <th>Contact</th> 
                     <th>Email</th> 
-                    <th>Location</th>              
+                    <th>Location</th>
+                        <th>GM_contact</th> 
+                    <th>GM_email</th>              
                     <th>Action</th>     
                   </tr>
                   </tfoot>

@@ -64,11 +64,33 @@
              </div>
               </div>
 
+
+                <div class="row">         
+             <div class="col-md-4">
+             <div class="card-body">                       
+                    <label>GM contact</label>
+                    <input class="form-control" type="text" name="gm_contact" placeholder="gm contact">
+                    
+             </div> 
+             </div>
+
+             <div class="col-md-4">
+             <div class="card-body">                       
+                    <label>GM email</label>
+                    <input class="form-control" type="email" name="gm_email" placeholder="gm email">
+                    
+             </div> 
+             </div>
+
+
+             <div class="col-md-4">
              <div class="card-body">                       
                     <label>Location</label>
                     <input class="form-control" type="text" name="location" placeholder="location">
                     
              </div> 
+             </div>
+              </div>
              <br>               
       <div class="col-md-12 col-sm-12 col-xs-12 col-md-offset-3">
               <div>

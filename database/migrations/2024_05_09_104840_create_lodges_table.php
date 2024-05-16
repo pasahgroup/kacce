@@ -19,7 +19,9 @@ class CreateLodgesTable extends Migration
              $table->string('owner_name')->nullable();
               $table->string('contact')->nullable();
                $table->string('email')->nullable();
-               $table->string('location')->nullable();
+                $table->string('location')->nullable();
+                $table->string('gm_contact')->nullable();
+               $table->string('gm_email')->nullable();
             $table->timestamps();
         });
     }

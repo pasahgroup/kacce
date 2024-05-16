@@ -76,11 +76,32 @@
              </div>
               </div>
 
+                   <div class="row">         
+             <div class="col-md-4">
              <div class="card-body">                       
-                    <label>Location</label>
-                    <input class="form-control" type="text" name="location" value="<?php echo e($lodges->location); ?>">
+                    <label>GM contact</label>
+                    <input class="form-control" type="text" name="gm_contact" value="<?php echo e($lodges->gm_contact); ?>">
                     
              </div> 
+             </div>
+
+             <div class="col-md-4">
+             <div class="card-body">                       
+                    <label>GM email</label>
+                    <input class="form-control" type="email" name="gm_email" value="<?php echo e($lodges->gm_email); ?>">
+                    
+             </div> 
+             </div>
+
+
+             <div class="col-md-4">
+             <div class="card-body">                       
+                    <label>Location</label>
+                     <input class="form-control" type="text" name="location" value="<?php echo e($lodges->location); ?>">
+                    
+             </div> 
+             </div>
+              </div> 
 
 
       <div class="col-md-12 col-sm-12 col-xs-12 col-md-offset-3">

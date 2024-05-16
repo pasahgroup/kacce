@@ -1,4 +1,4 @@
-<!DOCTYPE html>@extends('website.layouts.app_hm')
+@extends('website.layouts.app_hm')
 @section('content')
 
 

@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <?php $__env->startSection('content'); ?>
 
 
