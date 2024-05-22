@@ -131,10 +131,10 @@
 
       @csrf
              <input type="hidden" name="user_id" value="PUT">
-             <input type="text" name="classgf" id="classgf" value="{{ $data->class }}">
-<input type="text" name="sessionf" id="sessionf" value="{{ $data->session }}">
+             <input type="hidden" name="classgf" id="classgf" value="{{ $data->class }}">
+<input type="hidden" name="sessionf" id="sessionf" value="{{ $data->session }}">
 
-<input type="text" name="searchf" id="searchf" value="{{ $search }}">
+<input type="hidden" name="searchf" id="searchf" value="{{ $search }}">
 
 
 <button type="submit" role="button"><i class="fa fa-bars"></i></button>

@@ -12,7 +12,7 @@
                     <div class="widget user">
                         <!-- User Image -->
                         <div class="image d-flex justify-content-center">
-                            <img src="{{ URL::asset('/storage/photos/'.$student->photo) }}" alt="" class="">
+                            <img src="{{ URL::asset('/storage/trainee/'.$student->photo) }}" alt="" class="">
                         </div>
                         <!-- User Name -->
                         <h5 class="text-center">{{$student->first_name}} {{$student->middle_name}} {{$student->last_name}}</h5>

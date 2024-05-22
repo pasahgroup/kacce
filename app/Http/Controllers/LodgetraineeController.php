@@ -178,6 +178,7 @@ class LodgetraineeController extends Controller
     public function show(Request $request,$id)
     {
 
+//dd($id);
     $search=request('searchf');
 
            $student=lodgetrainee::where('status','Active')
@@ -185,7 +186,7 @@ class LodgetraineeController extends Controller
            ->first();
 
                       //dd($students);
-         return view('admins.students.user-details',compact('student','search'));    
+         return view('admins.trainee.trainee-details',compact('student','search'));    
     }
 
     /**
