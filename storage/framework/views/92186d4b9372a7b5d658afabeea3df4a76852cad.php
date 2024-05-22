@@ -36,7 +36,9 @@
                                     <label>Class</label>
                                 <select class="form-control" name="class">
                                     <option></option>
-                                    <option>Vulnerable youth</option>
+                                                                   <?php $__currentLoopData = $classes; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $class): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?> 
+  <option><?php echo e($class->class); ?></option>
+ <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?> 
                                
                                 </select>
                             </div>
@@ -44,8 +46,9 @@
                                     <label>Session</label>
                                 <select class="form-control" name="session">
                                      <option></option>
-                                    <option>March 2023</option>
-                                    <option>June 2023</option>
+                                                                <?php $__currentLoopData = $sessions; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $session): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?> 
+  <option><?php echo e($session->session); ?></option>
+ <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?> 
                                 </select>
                             </div>
                             </div>
@@ -236,9 +239,24 @@
                                     <label>Current residence</label>
                                     <input type="text" class="form-control" placeholder="current residence" name="current_residence">
                                 </div>
-                                 <div class="form-group col-md-12 col-sm-12">
+
+
+                                 <div class="form-group col-md-6 col-sm-6">
                                          <label>Designation</label>
-                                        <select class="form-control" name="designation">
+                                        <select class="form-control" name="designation" id="designation">
+                                            <option></option>
+                                            <option>None</option>
+  <?php $__currentLoopData = $designations; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $designation): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?> 
+  <option><?php echo e($designation->designation); ?></option>
+ <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?> 
+              
+                                        </select>
+                                    </div>
+
+
+   <div class="form-group col-md-6 col-sm-6">
+                                         <label>Located</label>
+                                        <select class="form-control" name="located" id="located">
                                             <option></option>
                                             <option>None</option>
   <?php $__currentLoopData = $lodges; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $lodge): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?> 

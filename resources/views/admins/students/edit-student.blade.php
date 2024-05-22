@@ -17,10 +17,11 @@
             <div class="col-md-1">
             </div>
             <div class="col-md-11 form-box">
-                <form method="post" id="post_form" role="form" class="registration-form" action="{{ route('students.update',$datas->id) }}" enctype="multipart/form-data">
+                <form method="POST" id="post_form" role="form" class="registration-form" action="{{ route('students.update',$datas->id) }}" enctype="multipart/form-data">
 
                     <fieldset>
                            @csrf
+                              <input type="hidden" name="_method" value="PUT">
                         <div class="form-top">
                             <div class="form-top-left">
                                 <h3><span><i class="fa fa-calendar-check-o" aria-hidden="true"></i></span>Personal Information</h3>
@@ -232,10 +233,24 @@
                                     <label>Current residence</label>
                                     <input type="text" class="form-control" value="{{$datas->current_residence}}" name="current_residence">
                                 </div>
-                                 <div class="form-group col-md-12 col-sm-12">
+
+                                 <div class="form-group col-md-6 col-sm-6">
                                          <label>Designation</label>
-                                        <select class="form-control" name="designation">
+                                        <select class="form-control" name="designation" id="designation">
                                            <option>{{$datas->designation}}</option>
+                                            <option></option>
+                                           
+                                             @foreach ($designations as $designation) 
+  <option>{{$designation->designation}}</option>
+ @endforeach 
+                                        </select>
+                                    </div>
+                                
+
+<div class="form-group col-md-6 col-sm-6">
+                                         <label>Located</label>
+                                        <select class="form-control" name="located" id="located">
+                                           <option>{{$datas->located}}</option>
                                             <option></option>
                                            
                                              @foreach ($lodges as $lodge) 
@@ -243,7 +258,7 @@
  @endforeach 
                                         </select>
                                     </div>
-                                
+
                             </div>
 
                              

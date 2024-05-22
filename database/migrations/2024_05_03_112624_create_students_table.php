@@ -46,9 +46,10 @@ $table->string('session')->nullable();
                    $table->integer('no_children')->nullable();
 
                    $table->string('designation',64)->nullable();
+                     $table->string('located',64)->nullable();
                    $table->string('gurdian_name',64)->nullable();
                     $table->string('relationship',64)->nullable();
-                   // $table->string('full_name',64)->nullable();
+                 
 
                    $table->string('guardian_mobile')->nullable();
                     $table->integer('user_id')->unsigned();

@@ -49,6 +49,7 @@
            <div class="row">
               <div class="form-group col-md-1 col-sm-1">
           <b class="card-title">Class</b>
+
         </div>
                <div class="form-group col-md-3 col-sm-3">
             <div class="form-bottom">                         
@@ -103,6 +104,7 @@
                       <th>Photo</th>
                     <th>Parental status</th>
                     <th>Class session</th>
+                    <th>Located</th>
                     <th>Action</th>
                   </tr>
                   </thead>
@@ -120,12 +122,24 @@
                    
                   <!--    <td>{{ $data->main }}</td>
                      <td>{{ $data->tour_code }}</td> -->
-                      <td><div class="logo mr-auto"><img src="{{ URL::asset('/storage/photos/'.$data->photo) }}"  style="width:100px; height:130px;"></div></td>
+                      <td><div class="logo mr-auto"><img src="{{ URL::asset('/storage/photos/'.$data->photo) }}"  style="width:100px; height:90px;"></div></td>
                        <td>{{ $data->parental_status }}</td>
                    <td>{{ $data->session }}</td>
-
+  <td>{{ $data->located }}</td>
                     <td>
-<a role="button" href="{{ route('students.show',$data->id) }}"><i class="fa fa-bars"></i></a> 
+
+     <form method="GET" id="post_form" role="form" class="registration-form" action="{{ route('students.show',$data->id) }}" enctype="multipart/form-data">
+
+      @csrf
+             <input type="hidden" name="user_id" value="PUT">
+             <input type="text" name="classgf" id="classgf" value="{{ $data->class }}">
+<input type="text" name="sessionf" id="sessionf" value="{{ $data->session }}">
+
+<input type="text" name="searchf" id="searchf" value="{{ $search }}">
+
+
+<button type="submit" role="button"><i class="fa fa-bars"></i></button>
+</form>
 
   @if(Auth::user()->role =='Admin')
                       <a role="button" href="{{ route('editStudent',$data->id) }}"><i class="fa fa-edit"></i></a> 
@@ -152,7 +166,7 @@
                       <th>Photo</th>
                        <th>Parental status</th>               
                        <th>Class session</th>
-                    
+                     <th>Located</th>
                     <th>Action</th>
                   </tr>
                   </tfoot>
@@ -182,13 +196,16 @@
   
 
          var v = $(this).val();
-             //   alert(v);
+              //  alert(v);
            // Empty the dropdown
           $('#session').find('option').not(':first').remove();
+             document.getElementById("classgf").value =v;
          // $('#village').find('option').not(':first').remove();
          // $('#project_name').find('option').not(':first').remove();
          // $('#project_activities').find('option').not(':first').remove();
 
+
+alert(v);
          // AJAX request
          $.ajax({
            url: 'getA/'+v,
@@ -197,9 +214,12 @@
            success: function(response){
 
              var len = 0;
+                //alet(len);
+
              if(response['dataA'] != null){
                len = response['dataA'].length;
              }
+           //  alet(len);
 
                        if(len > 0){
                // Read data and create <option >
@@ -218,6 +238,13 @@
       });
     });
      </script>
+
+
+ 
+
+
+
+
 
 
      <script type="text/javascript">

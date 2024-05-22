@@ -228,7 +228,7 @@ $slider_second = slider::where('status','1')
         //  $slidersCount= $slidersCount + $quickLinkSliderCount;
         //dd($quickLinkSliders);
         //End of Slider part
-//dd($quickLinkSliders);
+//dd($slidersCount);
 
           // $welcome_message = PostBody::join('attachments','post_bodies.id','attachments.destination_id')
           //   //->select('post_bodies.*','attachments.attachment')

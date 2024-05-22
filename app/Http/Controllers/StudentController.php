@@ -8,6 +8,7 @@ use App\Models\lodge;
 use App\Models\relation;
 use App\Models\classg;
 use App\Models\session;
+use App\Models\designation;
 
 use App\Http\Requests\StorestudentRequest;
 use App\Http\Requests\UpdatestudentRequest;
@@ -24,19 +25,26 @@ class StudentController extends Controller
      */
     public function index()
     {
-         $datas = student::get();
-          $classes = classg::where('class',request('classg'))
-          ->get();
 
+       $search="iflag";
+         $datas = student::get();
+          $classes = classg::get();
+
+  //$classes = classg::where('class',request('classg'))
+          //->get();
            $sessions = session::where('class_name',request('classg'))
                  ->get();
-         // dd($sessions);
-             return view('admins.students.index',compact('datas','sessions','classes'));
+         // dd($classes);
+             return view('admins.students.index',compact('datas','sessions','search','classes'));
     }
+
 
     public function research(request $request)
     {
+     //dd('search');
      
+     $search="sflag";
+
          $datas = student::where('class',request('classg'))
          ->where('session',request('session'))
          ->get();
@@ -51,8 +59,37 @@ class StudentController extends Controller
  $selected_class=request('classg');
 
           $classes = classg::get();
-             return view('admins.students.index',compact('datas','sessions','classes','selected_session','selected_class'));
+             return view('admins.students.index',compact('datas','search','sessions','classes','selected_session','selected_class'));
     }
+
+
+
+    public function search(request $request,$x,$y)
+    {
+     //dd($x);
+     
+     $search="sflag";
+
+         $datas = student::where('class',$x)
+         ->where('session',$y)
+         ->get();
+
+          $sessions = session::where('class_name',request('classg'))
+                   ->where('session','!=',request('session'))
+                 ->get();
+
+         //dd($sessions);
+ 
+ $selected_session=request('session');
+ $selected_class=request('classg');
+
+          $classes = classg::get();
+             return view('admins.students.index',compact('datas','search','sessions','classes','selected_session','selected_class'));
+    }
+
+
+
+
     /**
      * Show the form for creating a new resource.
      *
@@ -64,9 +101,13 @@ class StudentController extends Controller
       $tribes = tribe::orderBy('tribe', 'asc')->get();
        $lodges = lodge::orderBy('lodge_name', 'asc')->get();
         $relations = relation::orderBy('relation', 'asc')->get();
+         $designations = designation::orderBy('designation', 'asc')->get();
 
-        //dd($relations);
-          return view('admins.students.add',compact('tribes','lodges','relations'));
+
+$classes = classg::get();
+  $sessions = session::get();
+        //dd($designations);
+          return view('admins.students.add',compact('tribes','lodges','classes','sessions','relations','designations'));
     }
 
     /**
@@ -80,20 +121,7 @@ class StudentController extends Controller
       
 
            $pin=rand(10000,99999);
-           // $storeType=request('edit');
-           //  $itDaysBefore=itinerary::where('program_id',request('id'))
-           //   ->where('tour_addon',$type)
-           //   ->get()->first();  
-
-//   $pinFound=student::where('pin',$pin)
-//         ->first();
-// dd($pinFound);
-
-
-// if($pinFound !=null)
-// {
-// $pin=$pin
-// }
+    
          
           $student =  student::UpdateOrCreate(
             [   'pin'=>$pin],
@@ -123,6 +151,7 @@ class StudentController extends Controller
 
 
                  'designation'=>request('designation'),
+ 'located'=>request('located'),
 
 'gurdian_name'=>request('gurdian_name'),
 'parental_status'=>request('parental_status'),
@@ -184,7 +213,7 @@ class StudentController extends Controller
               //   ]
               //   );   
 
-              dd('no photo');       
+              dd('no photo');      
          }
         }
       }
@@ -213,29 +242,29 @@ class StudentController extends Controller
        $lodges = lodge::orderBy('lodge_name', 'asc')->get();
 
         $relations = relation::orderBy('relation', 'asc')->get();
-    
+         $designations = designation::orderBy('designation', 'asc')->get();
 //dd($datas);
-             return view('admins.students.edit-student',compact('datas','tribes','lodges','relations'));
+             return view('admins.students.edit-student',compact('datas','tribes','lodges','relations','designations'));
      }
 
 
 
 
 
-    public function show($id)
+    public function show(Request $request,$id)
     {
 
-        // return view('admins.students.user-details',compact('datas'));
-//dd($id);
+    $search=request('searchf');
+
            $student=student::where('status','Active')
            ->where('id',$id)
            ->first();
 
                       //dd($students);
-         return view('admins.students.user-details',compact('student'));
-      // return redirect()->route('programs.index')->with('success','Created successfuly');
-
+         return view('admins.students.user-details',compact('student','search'));    
     }
+
+
 
     /**
      * Show the form for editing the specified resource.
@@ -288,7 +317,8 @@ class StudentController extends Controller
         'no_children'=>request('no_children'),
 
 
-                 'designation'=>request('designation'),
+  'designation'=>request('designation'),
+ 'located'=>request('located'),
 
 'gurdian_name'=>request('gurdian_name'),
 'parental_status'=>request('parental_status'),
@@ -302,7 +332,7 @@ class StudentController extends Controller
             ]);
 
 
-//dd($student->id);
+//dd($studentUpdate->id);
 
 
    if(request('attachment')){
@@ -325,7 +355,7 @@ class StudentController extends Controller
             {
       //dd('printintcxx');   
 
-             $toupdate = student::where('id',$student->id)
+             $toupdate = student::where('id',$studentUpdate->id)
             // ->where('type', $type)
              ->update([
             'photo'=>$imageToStore

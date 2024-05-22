@@ -41,8 +41,7 @@
   <link href="../../assets/corporate/css/custom.css" rel="stylesheet"> -->
 
 
-
-    <link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/style.css">
 
 
 

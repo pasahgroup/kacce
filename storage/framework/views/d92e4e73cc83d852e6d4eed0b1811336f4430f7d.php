@@ -16,10 +16,11 @@
             <div class="col-md-1">
             </div>
             <div class="col-md-11 form-box">
-                <form method="post" id="post_form" role="form" class="registration-form" action="<?php echo e(route('students.update',$datas->id)); ?>" enctype="multipart/form-data">
+                <form method="POST" id="post_form" role="form" class="registration-form" action="<?php echo e(route('students.update',$datas->id)); ?>" enctype="multipart/form-data">
 
                     <fieldset>
                            <?php echo csrf_field(); ?>
+                              <input type="hidden" name="_method" value="PUT">
                         <div class="form-top">
                             <div class="form-top-left">
                                 <h3><span><i class="fa fa-calendar-check-o" aria-hidden="true"></i></span>Personal Information</h3>
@@ -242,10 +243,24 @@
                                     <label>Current residence</label>
                                     <input type="text" class="form-control" value="<?php echo e($datas->current_residence); ?>" name="current_residence">
                                 </div>
-                                 <div class="form-group col-md-12 col-sm-12">
+
+                                 <div class="form-group col-md-6 col-sm-6">
                                          <label>Designation</label>
-                                        <select class="form-control" name="designation">
+                                        <select class="form-control" name="designation" id="designation">
                                            <option><?php echo e($datas->designation); ?></option>
+                                            <option></option>
+                                           
+                                             <?php $__currentLoopData = $designations; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $designation): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?> 
+  <option><?php echo e($designation->designation); ?></option>
+ <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?> 
+                                        </select>
+                                    </div>
+                                
+
+<div class="form-group col-md-6 col-sm-6">
+                                         <label>Located</label>
+                                        <select class="form-control" name="located" id="located">
+                                           <option><?php echo e($datas->located); ?></option>
                                             <option></option>
                                            
                                              <?php $__currentLoopData = $lodges; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $lodge): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?> 
@@ -253,7 +268,7 @@
  <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?> 
                                         </select>
                                     </div>
-                                
+
                             </div>
 
                              

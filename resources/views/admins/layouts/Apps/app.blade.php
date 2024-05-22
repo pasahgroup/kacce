@@ -254,6 +254,34 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-eye"></i>
               <p>
+                Trainee
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/trainee" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Trainee</p>
+                </a>
+              </li>       
+                 <!--        <li class="nav-item">
+                <a href="/quickLink" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Page Content</p>
+                </a>
+              </li>   -->  
+                        
+
+            </ul>
+          </li>
+    
+
+            {{-- Theme --}}
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-eye"></i>
+              <p>
                 Theme
                 <i class="right fas fa-angle-left"></i>
               </p>
@@ -275,7 +303,6 @@
 
             </ul>
           </li>
-    
 
          {{-- Pages --}}
    <li class="nav-item">
@@ -334,12 +361,7 @@
                 </a>
               </li> -->
 
-                <li class="nav-item">
-                <a href="/students" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Student</p>
-                </a>
-              </li>
+          
          <li class="nav-item">
                 <a href="/mailing" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
@@ -347,14 +369,20 @@
                 </a>
               </li>
 
-           <li class="nav-item">
+      <li class="nav-item">
+                <a href="/designation" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Designation</p>
+                </a>
+              </li>
+         <!--   <li class="nav-item">
             <a href="/tourcostsummary" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
               <p>
                 Tour cost summary
              </p>
             </a>
-          </li>
+          </li> -->
               <li class="nav-item">
                 <a href="/relation" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>

@@ -19,6 +19,10 @@
                     </div>
                     <!-- Dashboard Links -->
                     <div class="widget dashboard-links">
+
+                        <input type="text" class="form-control" name="classg" value="<?php echo e($student->last_name); ?>">
+                          <input type="text" class="form-control" name="session" value="<?php echo e($student->last_name); ?>">
+
                        <div><a class="my-1 d-inline-block" href="">Addmission: <b><?php echo e($student->addmission_no); ?></b></a></div>
                         <div><a class="my-1 d-inline-block" href="">Session: <b><?php echo e($student->session); ?></b></a></div>
                        
@@ -66,12 +70,30 @@
                                        <div class="widget change-password">
                         <h3 class="widget-header user">Designation</h3>                        
                    <div>Current designation: <b><?php echo e($student->designation); ?></b></div>
+                    <div>Current location: <b><?php echo e($student->located); ?></b></div>
                     </div>  
                     </div>
                     <div class="row">
+                       <?php if($search =='sflag'): ?>
                  <a href="/students" class="btn btn-primary">
               <i class="fa fa-angle-double-left"></i>
-            </a> 
+            </a>
+            <?php endif; ?>
+
+                    <?php if($search =='iflag'): ?>
+
+
+          <form method="post" id="post_form" role="form" class="registration-form" action="<?php echo e(route('search',$student->class,$student->session)); ?>" enctype="multipart/form-data">
+
+      <?php echo csrf_field(); ?>
+             <input type="hidden" name="user_id" value="POST">
+
+ 
+<button type="submit" role="button" class="btn btn-primary"> <i class="fa fa-angle-double-left"></i></button>
+           </form> 
+            <?php endif; ?>
+
+
 <div class="float-right">
                   <?php if(Auth::user()->role =='Admin'): ?>
                 <a href="/editStudent/<?php echo e($student->id); ?>" class="btn btn-success float-right">

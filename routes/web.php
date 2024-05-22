@@ -46,13 +46,14 @@ use App\Http\Controllers\BankController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TribeController;
 use App\Http\Controllers\LodgeController;
-
+use App\Http\Controllers\LodgetraineeController;
 
 use App\Http\Controllers\ClassgController;
 use App\Http\Controllers\SessionController;
 
 
 use App\Http\Controllers\RelationController;
+use App\Http\Controllers\DesignationController;
 
 use App\Http\Controllers\Auth\AuthController;
 use Illuminate\Support\Facades\Route;
@@ -141,11 +142,24 @@ Route::get('/accommodation-Destroy/{x}', [accommodationController::class, 'destr
 //End of accommodation controller
 Route::resource('/dashboard', dashboardController::class);
 Route::resource('/programs', programController::class);
+
 Route::resource('/students', StudentController::class);
 Route::get('/editStudent/{x}', [StudentController::class, 'editStudent'])->name('editStudent');
 Route::post('/search-student', [StudentController::class, 'research'])->name('research');
 
+Route::get('/search-student', [StudentController::class, 'search'])->name('search');
 Route::get('/getA/{p}', [StudentController::class,'getA']);
+
+//Tarinee
+Route::resource('/trainee', LodgetraineeController::class);
+Route::get('/editTrainee/{x}', [LodgetraineeController::class, 'editTrainee'])->name('editTrainee');
+// Route::post('/search-student', [LodgetraineeController::class, 'research'])->name('research');
+
+// Route::get('/search-student', [LodgetraineeController::class, 'search'])->name('search');
+// Route::get('/getA/{p}', [LodgetraineeController::class,'getA']);
+
+
+
 
 Route::resource('/itineraries', itineraryController::class);
 });
@@ -408,6 +422,13 @@ Route::resource('/relation',RelationController::class);
 Route::get('/addrelation',[RelationController::class, 'addrelation'])->name('addrelation');
 Route::get('/editRelation/{x}',[RelationController::class, 'editRelation'])->name('editRelation');
 Route::get('/destroyRelation/{x}',[RelationController::class, 'destroy'])->name('destroy');
+
+
+Route::resource('/designation',DesignationController::class);
+Route::get('/adddesignation',[DesignationController::class, 'adddesignation'])->name('adddesignation');
+Route::get('/editDesignation/{x}',[DesignationController::class, 'editDesignation'])->name('editDesignation');
+Route::get('/destroyDesignation/{x}',[DesignationController::class, 'destroy'])->name('destroy');
+
 // Home page route
 Route::resource('/page',homeController::class);
 Route::get('/pages',[homeController::class,'addPage']);

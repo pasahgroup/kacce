@@ -37,7 +37,9 @@
                                     <label>Class</label>
                                 <select class="form-control" name="class">
                                     <option></option>
-                                    <option>Vulnerable youth</option>
+                                                                   @foreach ($classes as $class) 
+  <option>{{$class->class}}</option>
+ @endforeach 
                                
                                 </select>
                             </div>
@@ -45,8 +47,9 @@
                                     <label>Session</label>
                                 <select class="form-control" name="session">
                                      <option></option>
-                                    <option>March 2023</option>
-                                    <option>June 2023</option>
+                                                                @foreach ($sessions as $session) 
+  <option>{{$session->session}}</option>
+ @endforeach 
                                 </select>
                             </div>
                             </div>
@@ -226,9 +229,24 @@
                                     <label>Current residence</label>
                                     <input type="text" class="form-control" placeholder="current residence" name="current_residence">
                                 </div>
-                                 <div class="form-group col-md-12 col-sm-12">
+
+
+                                 <div class="form-group col-md-6 col-sm-6">
                                          <label>Designation</label>
-                                        <select class="form-control" name="designation">
+                                        <select class="form-control" name="designation" id="designation">
+                                            <option></option>
+                                            <option>None</option>
+  @foreach ($designations as $designation) 
+  <option>{{$designation->designation}}</option>
+ @endforeach 
+              
+                                        </select>
+                                    </div>
+
+
+   <div class="form-group col-md-6 col-sm-6">
+                                         <label>Located</label>
+                                        <select class="form-control" name="located" id="located">
                                             <option></option>
                                             <option>None</option>
   @foreach ($lodges as $lodge) 

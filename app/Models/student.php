@@ -34,6 +34,7 @@ class student extends Model
 'no_children',
 
         'designation',
+        'located',
         'gurdian_name',
         'relationship',
         'guardian_mobile',
