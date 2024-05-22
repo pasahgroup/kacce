@@ -153,11 +153,9 @@
 <div class="row">
 
 
-   <div class="col-lg-6 col-md-12 col-sm-12">
-                      
+   
 
-   <div class="row">
-                                <div class="form-group col-md-12 col-sm-12">
+                                <div class="form-group col-md-4 col-sm-4">
                                 <label>Marital status</label>
                                         <select class="form-control" name="marital_status">
                                             <option></option>
@@ -166,19 +164,18 @@
                                             <option>Other</option>
                                         </select>
                                 </div>
-                                  <div class="form-group col-md-12 col-sm-12">
+                                  <div class="form-group col-md-4 col-sm-4">
                                     <label>Number of children</label>
                                     <input type="number" class="form-control" placeholder="0" name="no_children">
                                 </div>                               
                                   
-                            </div>
-
-            </div>
+                       
 
 
 
 
-  <div class="col-lg-4 col-md-12 col-sm-12">
+
+ <div class="form-group col-md-4 col-sm-4">
                                     <x-label for="password_confirmation" :value="__('Photo')" />
                                     <div class="form-group">
                                     <input type="file" name="attachment[]" onChange="displayImage(this)" id="attachment" accept="image/*" class="" style="display:block;"> 
