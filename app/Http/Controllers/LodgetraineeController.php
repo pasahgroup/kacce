@@ -36,6 +36,56 @@ class LodgetraineeController extends Controller
              return view('admins.trainee.trainee',compact('datas','sessions','search','classes'));
     }
 
+
+
+  public function researcht(request $request)
+    {
+     //dd('search');
+     
+     $search="sflag";
+
+         $datas = lodgetrainee::where('class',request('classg'))
+         ->where('session',request('session'))
+         ->get();
+
+          $sessions = session::where('class_name',request('classg'))
+                   ->where('session','!=',request('session'))
+                 ->get();
+
+         //dd($sessions);
+ 
+ $selected_session=request('session');
+ $selected_class=request('classg');
+
+          $classes = classg::get();
+             return view('admins.trainee.trainee',compact('datas','search','sessions','classes','selected_session','selected_class'));
+    }
+
+
+
+    public function searcht(request $request,$x,$y)
+    {
+     //dd($x);
+     
+     $search="sflag";
+
+         $datas = lodgetrainee::where('class',$x)
+         ->where('session',$y)
+         ->get();
+
+          $sessions = session::where('class_name',request('classg'))
+                   ->where('session','!=',request('session'))
+                 ->get();
+
+         //dd($sessions);
+ 
+ $selected_session=request('session');
+ $selected_class=request('classg');
+
+          $classes = classg::get();
+             return view('admins.trainee.trainee',compact('datas','search','sessions','classes','selected_session','selected_class'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -157,6 +207,7 @@ class LodgetraineeController extends Controller
       public function editTrainee($id)
     {
         //dd($id);
+
        $datas = lodgetrainee::where('id', $id)->first();  
         $tribes = tribe::orderBy('tribe', 'asc')->get(); 
        $lodges = lodge::orderBy('lodge_name', 'asc')->get();
@@ -178,15 +229,14 @@ class LodgetraineeController extends Controller
     public function show(Request $request,$id)
     {
 
-//dd($id);
+//dd(request('searchf'));
     $search=request('searchf');
-
-           $student=lodgetrainee::where('status','Active')
-           ->where('id',$id)
+           $trainee=lodgetrainee::where('id',$id)
            ->first();
 
+//dd($trainee);
                       //dd($students);
-         return view('admins.trainee.trainee-details',compact('student','search'));    
+         return view('admins.trainee.trainee-details',compact('trainee','search'));    
     }
 
     /**

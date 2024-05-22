@@ -12,25 +12,24 @@
                     <div class="widget user">
                         <!-- User Image -->
                         <div class="image d-flex justify-content-center">
-                            <img src="{{ URL::asset('/storage/trainee/'.$student->photo) }}" alt="" class="">
+                            <img src="{{ URL::asset('/storage/trainee/'.$trainee->photo) }}" alt="" class="">
                         </div>
                         <!-- User Name -->
-                        <h5 class="text-center">{{$student->first_name}} {{$student->middle_name}} {{$student->last_name}}</h5>
-                        <p class="text-center">{{$student->first_name}} {{$student->middle_name}} {{$student->last_name}}</p>
+                        <h5 class="text-center">{{$trainee->first_name}} {{$trainee->middle_name}} {{$trainee->last_name}}</h5>
+                        <p class="text-center">{{$trainee->first_name}} {{$trainee->middle_name}} {{$trainee->last_name}}</p>
                     </div>
                     <!-- Dashboard Links -->
                     <div class="widget dashboard-links">
 
-                        <input type="text" class="form-control" name="classg" value="{{$student->last_name}}">
-                          <input type="text" class="form-control" name="session" value="{{$student->last_name}}">
+                        <input type="text" class="form-control" name="classg" value="{{$trainee->last_name}}">
+                          <input type="text" class="form-control" name="session" value="{{$trainee->last_name}}">
 
-                       <div><a class="my-1 d-inline-block" href="">Addmission: <b>{{$student->addmission_no}}</b></a></div>
-                        <div><a class="my-1 d-inline-block" href="">Session: <b>{{$student->session}}</b></a></div>
+                       <div><a class="my-1 d-inline-block" href="">Addmission: <b>{{$trainee->addmission_no}}</b></a></div>
+                        <div><a class="my-1 d-inline-block" href="">Session: <b>{{$trainee->session}}</b></a></div>
                        
-                        <div><a class="my-1 d-inline-block" href="">Mobile: <b>{{$student->mobile_no}}</b></a></div>
-                        <div><a class="my-1 d-inline-block" href="">Email: <b>{{$student->email}}</b></a></div>
-                          <div><a class="my-1 d-inline-block" href="">Marital status: <b>{{$student->marital_status}}</b></a></div>
-                        <div><a class="my-1 d-inline-block" href="">No of Children: <b>{{$student->no_children}}</b></a></div>
+                        <div><a class="my-1 d-inline-block" href="">Mobile: <b>{{$trainee->mobile_no}}</b></a></div>
+                        <div><a class="my-1 d-inline-block" href="">Email: <b>{{$trainee->email}}</b></a></div>
+                        
                     </div>
                 </div>
             </div>
@@ -44,52 +43,34 @@
                     <div class="col-lg-6 col-md-6">
                         <div class="widget personal-info">
                             <h3 class="widget-header user">Extras Information</h3> 
-                             <div><a class="my-1 d-inline-block" href="">Birth Date: <b>{{$student->birth_date}}</b></a></div>
-                             <div><a class="my-1 d-inline-block" href="">Gender: <b>{{$student->gender}}</b></a></div>
-                             <div><a class="my-1 d-inline-block" href="">Religion: <b>{{$student->religion}}</b></a></div>
-                        <div><a class="my-1 d-inline-block" href="">Tribe: <b>{{$student->tribe}}</b></a></div>
-                         <div><a class="my-1 d-inline-block" href="">Parental status: <b>{{$student->parental_status}}</b></a></div>
+                          
+                             <div><a class="my-1 d-inline-block" href="">Gender: <b>{{$trainee->gender}}</b></a></div>
+                             
 
                         <hr>  
-                            <div><a class="my-1 d-inline-block" href="">Education Level: <b>{{$student->education_level}}</b></a></div> 
-                             <div><a class="my-1 d-inline-block" href="">Year of Complete: <b>{{$student->graduate}}</b></a></div>                         
-                        <hr>
-                              <div><a class="my-1 d-inline-block" href="">Current residence: <b>{{$student->current_residence}}</b></a></div>
-                        <div><a class="my-1 d-inline-block" href="">Place of Origin: <b>{{$student->place_origin}}</b></a></div> 
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-6">
-                        <!-- Change Password -->
+                    <div class="col-lg-6 col-md-6">         
+
                     <div class="widget change-password">
-                        <h3 class="widget-header user">Guardian detail</h3> 
-                <div>Guardian relationship: <b>{{$student->relationship}}</b></div>                       
-                   <div>Guardian name: <b>{{$student->gurdian_name}}</b></div> 
-                   <div>Guardian mobile: <b>{{$student->guardian_mobile}}</b></div>
-                    </div> 
-
-
-                                       <div class="widget change-password">
                         <h3 class="widget-header user">Designation</h3>                        
-                   <div>Current designation: <b>{{$student->designation}}</b></div>
-                    <div>Current location: <b>{{$student->located}}</b></div>
+                   <div>Current designation: <b>{{$trainee->designation}}</b></div>
+                    <div>Current location: <b>{{$trainee->located}}</b></div>
                     </div>  
                     </div>
                     <div class="row">
                        @if($search =='sflag')
-                 <a href="/students" class="btn btn-primary">
+                 <a href="/trainee" class="btn btn-primary">
               <i class="fa fa-angle-double-left"></i>
             </a>
             @endif
 
                     @if($search =='iflag')
 
-
-          <form method="post" id="post_form" role="form" class="registration-form" action="{{ route('search',$student->class,$student->session) }}" enctype="multipart/form-data">
+          <form method="post" id="post_form" role="form" class="registration-form" action="{{ route('searcht',$trainee->class,$trainee->session) }}" enctype="multipart/form-data">
 
       @csrf
-             <input type="hidden" name="user_id" value="POST">
-
- 
+             <input type="hidden" name="user_id" value="POST"> 
 <button type="submit" role="button" class="btn btn-primary"> <i class="fa fa-angle-double-left"></i></button>
            </form> 
             @endif
@@ -97,7 +78,7 @@
 
 <div class="float-right">
                   @if(Auth::user()->role =='Admin')
-                <a href="/editStudent/{{$student->id}}" class="btn btn-success float-right">
+                <a href="/editTrainee/{{$trainee->id}}" class="btn btn-success float-right">
               <i class="fas fa-pencil-alt"></i> Edit
             </a>
 @endif

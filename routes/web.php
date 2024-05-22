@@ -153,9 +153,9 @@ Route::get('/getA/{p}', [StudentController::class,'getA']);
 //Tarinee
 Route::resource('/trainee', LodgetraineeController::class);
 Route::get('/editTrainee/{x}', [LodgetraineeController::class, 'editTrainee'])->name('editTrainee');
-// Route::post('/search-student', [LodgetraineeController::class, 'research'])->name('research');
+Route::post('/search-trainee', [LodgetraineeController::class, 'researcht'])->name('researcht');
 
-// Route::get('/search-student', [LodgetraineeController::class, 'search'])->name('search');
+ Route::get('/search-trainee', [LodgetraineeController::class, 'searcht'])->name('searcht');
 // Route::get('/getA/{p}', [LodgetraineeController::class,'getA']);
 
 
