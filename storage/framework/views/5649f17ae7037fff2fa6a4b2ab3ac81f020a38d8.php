@@ -66,7 +66,7 @@
 
                     <?php if($search =='iflag'): ?>
 
-          <form method="post" id="post_form" role="form" class="registration-form" action="<?php echo e(route('search',$trainee->class,$trainee->session)); ?>" enctype="multipart/form-data">
+          <form method="post" id="post_form" role="form" class="registration-form" action="<?php echo e(route('searcht',$trainee->class,$trainee->session)); ?>" enctype="multipart/form-data">
 
       <?php echo csrf_field(); ?>
              <input type="hidden" name="user_id" value="POST"> 

@@ -21,8 +21,8 @@
                     <!-- Dashboard Links -->
                     <div class="widget dashboard-links">
 
-                        <input type="text" class="form-control" name="classg" value="{{$trainee->last_name}}">
-                          <input type="text" class="form-control" name="session" value="{{$trainee->last_name}}">
+                        <input type="hidden" class="form-control" name="classg" value="{{$trainee->last_name}}">
+                          <input type="hidden" class="form-control" name="session" value="{{$trainee->last_name}}">
 
                        <div><a class="my-1 d-inline-block" href="">Addmission: <b>{{$trainee->addmission_no}}</b></a></div>
                         <div><a class="my-1 d-inline-block" href="">Session: <b>{{$trainee->session}}</b></a></div>
