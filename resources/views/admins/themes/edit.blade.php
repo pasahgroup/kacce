@@ -32,8 +32,12 @@
               </div>
               <div class="container-fluid x_content">
                 <br />
-              <form  method="post" id="post_form" action="{{ route('themes.store') }}" enctype="multipart/form-data" data-parsley-validate class="form-horizontal form-label-left">
+            
+
+                  <form method="post" id="post_form" role="form" class="registration-form" action="{{ route('themes.update',$sliders->id) }}" enctype="multipart/form-data">
+
                @csrf
+                <input type="hidden" name="_method" value="PUT">   
             <input type="hidden" name="user_id" value="{{ Auth::id() }}">
                 <div class="card-body">
                     <div class="row">

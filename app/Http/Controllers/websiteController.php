@@ -171,6 +171,7 @@ class websiteController extends Controller
 
 
  $sliderCount = slider::where('status','1')
+ ->where('section','Main slider')
                   ->count();
 
                   //dd($sliderCount );
@@ -179,6 +180,8 @@ class websiteController extends Controller
           //->select('sliders.*')
           // ->offset(1)
           ->limit(1)->first();
+
+  //dd($slider_first);
 
 $slider_second = slider::where('status','1')
           //->select('sliders.*')
@@ -197,6 +200,7 @@ $slider_second = slider::where('status','1')
         
 
            $sliders = slider::where('status','1')
+           ->where('section','Main slider')
           // ->select('sliders.*')
            ->offset(1)
           ->limit(8)->get();

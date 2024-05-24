@@ -31,7 +31,7 @@
                         
                       
                     <div class="carousel-inner">                      
-                        <div class="carousel-item position-relative active" style="height: 430px;">
+                        <div class="carousel-item position-relative active" style="height: 500px;">
                             <img class="position-absolute w-100 h-100" src="{{URL::asset('/storage/uploads/'.$slider_first->attachment)}}" style="object-fit: cover;">
                             <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                                 <div class="p-3" style="max-width: 700px;">
@@ -43,7 +43,7 @@
                         </div>
 
                          @foreach ($sliders as $slides)                      
-                        <div class="carousel-item position-relative" style="height: 430px;">
+                        <div class="carousel-item position-relative" style="height: 500px;">
                             <img class="position-absolute w-100 h-100" src="{{URL::asset('/storage/uploads/'.$slides->attachment)}}" style="object-fit: cover;">
                             <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                                 <div class="p-3" style="max-width: 700px;">
@@ -58,14 +58,14 @@
                 </div>
             </div>
             <div class="col-lg-4">
-                <div class="product-offer mb-30" style="height: 200px;">
+                <div class="product-offer mb-30" style="height: 240px;">
                     <img class="img-fluid" src="{{URL::asset('/storage/uploads/'.$slider_first->attachment)}}" alt="">
                     <div class="offer-text">
                         <h6 class="text-white text-uppercase">{{ $slider_first->title }}</h6>
                            <a href="#" class="btn btn-primary">Read More</a>
                     </div>
                 </div>
-                <div class="product-offer mb-30" style="height: 200px;">
+                <div class="product-offer mb-30" style="height: 230px;">
                     <img class="img-fluid" src="{{URL::asset('/storage/uploads/'.$slider_second->attachment)}}" alt="">
                     <div class="offer-text">
                         <h6 class="text-white text-uppercase">{{ $slider_second->title }}</h6>

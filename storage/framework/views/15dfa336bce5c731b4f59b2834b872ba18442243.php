@@ -31,8 +31,12 @@
               </div>
               <div class="container-fluid x_content">
                 <br />
-              <form  method="post" id="post_form" action="<?php echo e(route('themes.store')); ?>" enctype="multipart/form-data" data-parsley-validate class="form-horizontal form-label-left">
+            
+
+                  <form method="post" id="post_form" role="form" class="registration-form" action="<?php echo e(route('themes.update',$sliders->id)); ?>" enctype="multipart/form-data">
+
                <?php echo csrf_field(); ?>
+                <input type="hidden" name="_method" value="PUT">   
             <input type="hidden" name="user_id" value="<?php echo e(Auth::id()); ?>">
                 <div class="card-body">
                     <div class="row">
@@ -61,8 +65,8 @@
                             <div class="form-group row">
                                 <div class="col-sm-12 col-md-12">
 
-                              <select name="tour_id" id="" class="form-control">
-                              <option value="<?php echo e($sliders->tour_id); ?>"><?php echo e($sliders->tour_name); ?></option>
+                              <select name="section" id="section" class="form-control">
+                              <option><?php echo e($sliders->section); ?></option>
                                  <option>Main slider</option>
                            <option>Slider1</option>
                            <option>Slider2</option>
