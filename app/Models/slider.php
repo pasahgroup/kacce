@@ -11,7 +11,7 @@ class slider extends Model
     protected $fillable = [
         'title',
         'description',
-        'tour_id',
+        'section',
         'attachment',
         'status'
     ];

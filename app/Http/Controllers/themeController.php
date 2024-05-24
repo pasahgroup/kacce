@@ -16,11 +16,12 @@ class themeController extends Controller
     public function index()
     {
         //$sliders = slider::get();
-         $sliders = slider::join('programs','programs.id','sliders.tour_id')
-          ->select('sliders.*','programs.tour_name')
+         $sliders = slider::where('status',1)
           ->get();
-        $tours = program::get();
-        return view('admins.themes.slider',compact('sliders','tours'));
+
+dd($sliders);
+       /// $tours = program::get();
+        return view('admins.themes.slider',compact('sliders'));
     }
 
     /**
@@ -58,28 +59,17 @@ class themeController extends Controller
             $imageToStore = $filename.'_'.time().'.'.$extension;
             //upload the image
             $path = request('attachment')->storeAs('public/uploads/', $imageToStore);
+//dd(request('section'));
 
             $slider = slider::UpdateOrCreate(
-                [ 'tour_id'=>request('tour_id')],
+                [ 'section'=>request('section')],
                 ['title'=>request('title'),
                 'status'=>request('status'),
                     'description'=>request('description'),                   
                     'attachment'=>$imageToStore
                 ]);                
                 return redirect()->back()->with('success','Slider created succesfully');
-       }
-       else
-       {
-//dd('d2');
-             $slider = slider::UpdateOrCreate(
-                [ 'tour_id'=>request('tour_id')],
-                ['title'=>request('title'),
-                'status'=>request('status'),
-                    'description'=>request('description')                   
-                    //'attachment'=>$imageToStore
-                ]);               
-                return redirect()->route('themes.index')->with('success','Slider created succesfully');
-       }
+       }   
 
     }
 

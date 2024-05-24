@@ -51,7 +51,8 @@ public function addlodge(){
         'email'=>request('email'), 
         'location'=>request('location'),
          'gm_contact'=>request('gm_contact'), 
-        'gm_email'=>request('gm_email')         
+        'gm_email'=>request('gm_email'),
+         'status'=>request('status')            
            ]);
                   
            return redirect()->back()->with('success','Lodge recorded successfully');
@@ -106,7 +107,8 @@ public function addlodge(){
         'email'=>request('email'), 
         'location'=>request('location'),
           'gm_contact'=>request('gm_contact'), 
-        'gm_email'=>request('gm_email')   
+        'gm_email'=>request('gm_email'),
+           'status'=>request('status')    
         ]);
     return redirect()->route('lodge.index')->with('success','Lodge created successfully');
     }

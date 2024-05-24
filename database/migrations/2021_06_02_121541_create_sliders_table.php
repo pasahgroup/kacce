@@ -17,7 +17,7 @@ class CreateSlidersTable extends Migration
             $table->bigIncrements('id');
             $table->string('title')->nullable();
             $table->string('description',850)->nullable();
-            $table->integer('tour_id')->unique();
+               $table->string('section')->nullable();
             $table->string('attachment')->nullable();
             $table->string('status')->nullable();
             $table->timestamps();

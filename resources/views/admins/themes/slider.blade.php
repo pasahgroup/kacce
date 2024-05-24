@@ -79,15 +79,16 @@
                         </div>
                         <div class="col-lg-2 col-md-2 col-sm-6 col-xs-12">
 
-                            <label for="inputEmail3">Tour Name</label>
+                            <label for="inputEmail3">Section</label>
                             <div class="form-group row">
                                 <div class="col-sm-12 col-md-12">
 
-                              <select name="tour_id" id="" class="form-control">
-                              <option value="">Select Tour name</option>
-                            @foreach ($tours as $tour)
-                                <option value="{{ $tour->id }}">{{ $tour->tour_name }}</option>
-                            @endforeach                           
+                              <select name="section" id="section" class="form-control">
+                              <option value="">--Select section name--</option>
+                           <option>Main slider</option>
+                           <option>Slider1</option>
+                           <option>Slider2</option>
+                              <option>Footer slider</option>                          
                             </select>
 
                                 </div>
@@ -138,7 +139,7 @@
                     <th>#</th>
                     <th>Title</th>
                     <th>Description</th>
-                    <th>Tour name</th>
+                    <th>Section</th>
                     <th>Attachment</th>
                     <th>Status</th>
                     <th>Action</th>
@@ -150,7 +151,7 @@
                         <td>{{$slide->id  }}</td>
                         <td>{{$slide->title  }}</td>
                         <td>{{$slide->description  }}</td>
-                        <td>{{$slide->tour_name  }}</td>
+                        <td>{{$slide->section  }}</td>
                         <td>{{$slide->attachment  }}</td>
                         <td>{{$slide->status  }}</td>
                         <td><a href="{{ route('themes.edit',$slide->id) }}"><i class="fa fa-edit"></i></a>  <a href="/themes-destroy/{{$slide->id}}" onclick="return confirm('Are you sure? You want to delete {{ $slide->tour_name}}','Inclusive')"><i class="fa fa-trash red"></i></a></td>

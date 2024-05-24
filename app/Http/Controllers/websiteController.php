@@ -149,18 +149,7 @@ class websiteController extends Controller
   ->limit(5)->get();
 
 
-//dd($popular_historicalf);
-
-
-    $scheduledGroupTours = departures::join('programs','departures.tour_id','programs.id')
-       ->join('attachments','attachments.destination_id','programs.id')
-        ->select('departures.*','programs.*','attachments.attachment')
-        ->where('departures.status','Active')
-        // ->where('departures.group_tour_category','GS')
-        ->whereIn('departures.group_tour_category',['GS','UN','SO'])
-        ->where('attachments.type','Programs')
-        ->groupBy('departures.group_tour_category')
-        ->get();
+//
 
 //dd($scheduledGroupTours);
 
@@ -174,10 +163,10 @@ class websiteController extends Controller
           ->limit(6)->latest()->get();
   
          //Slider part         
-          $slidersf = slider::join('programs','programs.id','sliders.tour_id')
-          ->where('sliders.status','1')
-          ->select('sliders.*','programs.tour_name')
-          ->limit(1)->first();
+          // $slidersf = slider::join('programs','programs.id','sliders.tour_id')
+          // ->where('sliders.status','1')
+          // ->select('sliders.*','programs.tour_name')
+          // ->limit(1)->first();
 
 
 
@@ -214,10 +203,10 @@ $slider_second = slider::where('status','1')
 
   // dd($sliders);
 
-           $slidersCount = slider::join('programs','programs.id','sliders.tour_id')
-           ->where('sliders.status','1')
-          ->count();
-          // dd($slidersCount);
+          //  $slidersCount = slider::join('programs','programs.id','sliders.tour_id')
+          //  ->where('sliders.status','1')
+          // ->count();
+         
 
           
          $quickLinkSliderCount=quicklink::where('slider','Yes')
@@ -297,7 +286,7 @@ $slider_second = slider::where('status','1')
            ->limit(12)->get();
 //dd($students);
 
-         return view('website.home.index',compact('offers_private','student_webs','slider_first','slider_second','sliderCount','offers_group','popular_safarif','popular_trekking','popular_trekkingf','popular_safari','popular_holiday','popular_holidayf','popular_historicalf','popular_historical','place_to_visit','sliders','slidersf','slidersCount','testimonies','offers','welcome_message','scheduledGroupTours','datasLink','title','description','keywords','contacts','testimonies_one','quickLinkSliders','historical_first','historical','geographical_first','geographical','culture_first','culture','wildlife_first','wildlife'));
+         return view('website.home.index',compact('offers_private','student_webs','slider_first','slider_second','sliderCount','offers_group','popular_safarif','popular_trekking','popular_trekkingf','popular_safari','popular_holiday','popular_holidayf','popular_historicalf','popular_historical','place_to_visit','sliders','slidersCount','testimonies','offers','welcome_message','datasLink','title','description','keywords','contacts','testimonies_one','quickLinkSliders','historical_first','historical','geographical_first','geographical','culture_first','culture','wildlife_first','wildlife'));
     }
 
     /**

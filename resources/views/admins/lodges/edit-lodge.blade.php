@@ -67,7 +67,7 @@
               </div>
 
                    <div class="row">         
-             <div class="col-md-4">
+             <div class="col-md-3">
              <div class="card-body">                       
                     <label>GM contact</label>
                     <input class="form-control" type="text" name="gm_contact" value="{{$lodges->gm_contact}}">
@@ -75,7 +75,7 @@
              </div> 
              </div>
 
-             <div class="col-md-4">
+             <div class="col-md-3">
              <div class="card-body">                       
                     <label>GM email</label>
                     <input class="form-control" type="email" name="gm_email" value="{{$lodges->gm_email}}">
@@ -84,11 +84,26 @@
              </div>
 
 
-             <div class="col-md-4">
+             <div class="col-md-3">
              <div class="card-body">                       
                     <label>Location</label>
                      <input class="form-control" type="text" name="location" value="{{$lodges->location}}">
                     
+             </div> 
+             </div>
+
+              <div class="col-md-3">
+             <div class="card-body">                       
+                    <label>Status</label>
+                    
+                    <select class="form-control" name="status">
+                     
+                      <option>{{$lodges->status}}</option>
+                      <option>None</option>
+                        <option>Active</option>
+                          <option>Inactive</option>
+                    </select>
+                                        
              </div> 
              </div>
               </div> 

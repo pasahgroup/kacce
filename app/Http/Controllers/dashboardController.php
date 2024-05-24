@@ -8,6 +8,10 @@ use App\Models\partner;
 use App\Models\tourGuide;
 use App\Models\contacts;
 use App\Models\enquiry;
+use App\Models\lodge;
+use App\Models\student;
+use App\Models\lodgetrainee;
+
 use DB;
 use Illuminate\Http\Request;
 
@@ -35,7 +39,14 @@ $enquiries=enquiry::where('status','Active')->count();
         ->where('tour_equiry_forms.tour_type','Group')
         ->count();
 
-        return view('admins.Dashboard.index',compact('agents','tailorMades','customers','partiners','tourGuides','contacts','enquiries','activeGroupTrip'));
+        
+    $trainees=lodgetrainee::count();
+        
+        $students=student::count();
+            $lodges=lodge::count();
+
+//dd($trainee);
+        return view('admins.Dashboard.index',compact('agents','lodges','students','trainees','tailorMades','customers','partiners','tourGuides','contacts','enquiries','activeGroupTrip'));
     }
 
     /**

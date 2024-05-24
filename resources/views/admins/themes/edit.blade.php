@@ -58,15 +58,16 @@
                         </div>
                         <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
 
-                            <label for="inputEmail3">Tour Name</label>
+                            <label for="inputEmail3">Section</label>
                             <div class="form-group row">
                                 <div class="col-sm-12 col-md-12">
 
-                              <select name="tour_id" id="" class="form-control">
-                              <option value="{{$sliders->tour_id}}">{{$sliders->tour_name}}</option>
-                            @foreach ($tours as $tour)
-                                <option value="{{ $tour->id }}">{{ $tour->tour_name }}</option>
-                            @endforeach                           
+                              <select name="section" id="section" class="form-control">
+                              <option>{{$sliders->section}}</option>
+                                 <option>Main slider</option>
+                           <option>Slider1</option>
+                           <option>Slider2</option>
+                              <option>Footer slider</option>                            
                             </select>
 
                                 </div>

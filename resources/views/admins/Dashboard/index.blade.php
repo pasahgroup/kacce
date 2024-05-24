@@ -23,68 +23,52 @@
           <h3 class="card-title">Welcome:<b> {{auth()->user()->name}}</b></h3>
 
           <div class="card-tools">
-             <a href="/contacts" class="btn btn-success" >
-              <i class="fas fa-plus"></i> Contacts(<b class="red">{{$contacts}}</b>)
+           
+             <a href="/students" class="btn btn-default" >
+              <i class="fas fa-plus"></i> Students(<b class="red">{{$students->count()}}</b>)
             </a>
-             <a href="/enquiry" class="btn btn-default" >
-              <i class="fas fa-plus"></i> Enquiry(<b class="red">{{$enquiries}}</b>)
-            </a>
-             <a href="/tailorMade" class="btn btn-success" >
-              <i class="fas fa-plus"></i> Tailor Made(<b class="red">{{$tailorMades}}</b>)
-            </a>
-             <a href="/activeGroupTrip" class="btn btn-primary" >
-              <i class="fas fa-plus"></i> Active Group(<b class="red">{{$activeGroupTrip}}</b>)
+             <a href="/trainee" class="btn btn-success" >
+              <i class="fas fa-plus"></i>Trainees(<b class="red">{{$trainees}}</b>)
             </a>
           </div>
         </div>
-        <div class="card-body">
+
+
+         <div class="card-header">
+         
+          <div class="card-tools">
+             <a href="/lodge" class="btn btn-success" >
+              <i class="fas fa-plus"></i> Lodges(<b class="red">{{$lodges}}</b>)
+            </a>
+            
+            
+          </div>
+        </div>
+
+        
+        <div class="card">
             <div class="card-body">
                <div class="span12">
               <div class="action-nav-normal">
               <div class="row-fluid">
                <div class="span2 action-nav-button">
  @if(Auth::user()->role == 'Admin' || Auth::user()->role =='accountant')
-                        <a href="/customers">
+                        <a href="/students">
                         <i class="fa fa-users"></i>
-                        <span>Customers(<b class="blue">{{$customers}}</b>)</span>
+                        <span>Students(<b class="blue">{{$students->count()}}</b>)</span>
 
                         </a>
 
                     </div>
 
-                    <div class="span2 action-nav-button">
-                        <a href="/Agents">
-
-                        <i class="fa fa-dollar-sign"></i>
-                         <span>Agents(<b class="blue">{{$agents}}</b>)</span>
-                        
-                        </a>
-                    </div>
-                     <div class="span2 action-nav-button">
-                        <a href="/Partner">
-
-                        <i class="fa fa-dollar-sign"></i>
-  <span>Partiners(<b class="blue">{{$partiners}}</b>)</span>
-                    
-                        </a>
-
-                    </div>
-                     <div class="span2 action-nav-button">
-                        <a href="/Tour-Guide">
-
-                        <i class="fa fa-dollar-sign"></i>
-  <span>Tour-Guide(<b class="blue">{{$tourGuides}}</b>)</span>
-                        
-                        </a>
-
-                    </div>
+                  
                     @endif
                     @if(Auth::user()->role == 'Admin' || Auth::user()->role =='accountant' || Auth::user()->role =='Cultural')
                      <div class="span2 action-nav-button">
-                        <a href="/Tour-Guide">
+                        <a href="/trainee">
 
-                        <i class="fa fa-dollar-sign"></i>
-                        <span>Tour-Guide(<b class="blue">{{$tourGuides}}</b>)</span>
+                        <i class="fa fa-users"></i>
+                        <span>Trainee(<b class="blue">{{$trainees}}</b>)</span>
                         
                         </a>
 
@@ -95,7 +79,8 @@
               </div>
               </div>
 
-        </div>
+        </div> 
+
         <!-- /.card-body -->
         <div class="card-footer">
           Footer

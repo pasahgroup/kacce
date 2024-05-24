@@ -15,7 +15,8 @@ class lodge extends Model
          'email',
           'location',
          'gm_contact',
-         'gm_email'      
+         'gm_email',
+         'status'      
 
     ];
 }

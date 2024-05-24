@@ -52,6 +52,7 @@
                     <th>Location</th> 
                     <th>GM_contact</th> 
                     <th>GM_email</th>
+                     <th>Status</th>
                     <th>Action</th> 
                                  
                   </tr>
@@ -67,7 +68,9 @@
                                 <td><a href="/editLodge/<?php echo e($lodge->id); ?>"><?php echo e($lodge->email); ?></a></td>
                                   <td><a href="/editLodge/<?php echo e($lodge->id); ?>"><?php echo e($lodge->location); ?></a></td>
                                   <td><a href="/editLodge/<?php echo e($lodge->id); ?>"><?php echo e($lodge->gm_contact); ?></a></td>
-                                <td><a href="/editLodge/<?php echo e($lodge->id); ?>"><?php echo e($lodge->gm_email); ?></a></td>              
+                                <td><a href="/editLodge/<?php echo e($lodge->id); ?>"><?php echo e($lodge->gm_email); ?></a></td>    
+                                 <td><?php echo e($lodge->status); ?></a></td>
+
                     <td><a href="/editLodge/<?php echo e($lodge->id); ?>"><i class="fa fa-edit"></i></a>
                      <a href="/destroyLodge/<?php echo e($lodge->id); ?>" onclick="return confirm('Are you sure? You want to delete <?php echo e($lodge->lodge_name); ?>','Lodge')"><i class="fa fa-trash red"></i></a></td>
                                 </tr>
@@ -83,7 +86,8 @@
                     <th>Email</th> 
                     <th>Location</th>
                         <th>GM_contact</th> 
-                    <th>GM_email</th>              
+                    <th>GM_email</th> 
+                    <th>Status</th>             
                     <th>Action</th>     
                   </tr>
                   </tfoot>

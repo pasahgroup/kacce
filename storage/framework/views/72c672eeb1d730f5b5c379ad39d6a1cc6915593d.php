@@ -20,8 +20,8 @@
                     <!-- Dashboard Links -->
                     <div class="widget dashboard-links">
 
-                        <input type="text" class="form-control" name="classg" value="<?php echo e($student->last_name); ?>">
-                          <input type="text" class="form-control" name="session" value="<?php echo e($student->last_name); ?>">
+                        <input type="hidden" class="form-control" name="classg" value="<?php echo e($student->last_name); ?>">
+                          <input type="hidden" class="form-control" name="session" value="<?php echo e($student->last_name); ?>">
 
                        <div><a class="my-1 d-inline-block" href="">Addmission: <b><?php echo e($student->addmission_no); ?></b></a></div>
                         <div><a class="my-1 d-inline-block" href="">Session: <b><?php echo e($student->session); ?></b></a></div>
