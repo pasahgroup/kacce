@@ -27,7 +27,7 @@
                              
                              <div class="carousel-item active">
                           <div class="row px-xl-5">
-            <div class="col-lg-5 mb-30">
+            <div class="col-lg-5 mb-30" style="height: 500px;">
                     <img class="w-100 h-100" src="{{URL::asset('/storage/uploads/'.$detail->attachment)}}" alt="Image">
             </div>   
                         
@@ -58,7 +58,7 @@
                
                         <div class="carousel-item">
              <div class="row px-xl-5">
-            <div class="col-lg-5 mb-30">
+            <div class="col-lg-5 mb-30" style="height: 500px;">
                             <img class="w-100 h-100" src="{{URL::asset('/storage/uploads/'.$slides->attachment)}}" alt="Image">
                                                </div>   
                         

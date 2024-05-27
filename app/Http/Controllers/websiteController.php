@@ -264,9 +264,6 @@ $footer3 = slider::where('status','1')
           // ->count();
          
 
-
-
-
           
          $quickLinkSliderCount=quicklink::where('slider','Yes')
          ->count();

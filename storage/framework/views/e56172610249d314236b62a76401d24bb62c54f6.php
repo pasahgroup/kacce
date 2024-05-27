@@ -61,14 +61,14 @@
                     <img class="img-fluid" src="<?php echo e(URL::asset('/storage/uploads/'.$slider1->attachment)); ?>" alt="">
                     <div class="offer-text">
                         <h6 class="text-white text-uppercase"><?php echo e($slider1->title); ?></h6>
-                           <a href="#" class="btn btn-primary">Read More</a>
+                           <a href="/detail-page/<?php echo e($slider1->id); ?>" class="btn btn-primary">Read More</a>
                     </div>
                 </div>
                 <div class="product-offer mb-30" style="height: 240px;">
                     <img class="img-fluid" src="<?php echo e(URL::asset('/storage/uploads/'.$slider2->attachment)); ?>" alt="" style="object-fit: cover;">
                     <div class="offer-text">
                         <h6 class="text-white text-uppercase"><?php echo e($slider2->title); ?></h6>
-                        <a href="/detail-page/<?php echo e($slider1->id); ?>" class="btn btn-primary">Read More</a>
+                        <a href="/detail-page/<?php echo e($slider2->id); ?>" class="btn btn-primary">Read More</a>
                     </div>
                 </div>
             </div>
@@ -111,30 +111,63 @@
     <!-- Offer Start -->
     <div class="container-fluid pt-5 pb-3">
         <div class="row px-xl-5">
+           
             <div class="col-md-4">
-                <div class="carousel-item position-relative active" style="height: 400px;">
-                            <img class="position-absolute w-100 h-100" src="<?php echo e(URL::asset('/storage/uploads/'.$footer1->attachment)); ?>" style="object-fit: cover;">
+                     
+                     <div id="header-carousel" class="carousel slide carousel-fade mb-30 mb-lg-0" data-ride="carousel">
+            
+                    <ol class="carousel-indicators">
+                        
+                       <?php for($x =0; $x <=$sliderCount-1; $x++): ?>
+                        <li data-target="#header-carousel" data-slide-to="$x"></li>
+                          <?php endfor; ?> 
+                    </ol>
+                        
+                      
+                    <div class="carousel-inner">                      
+                        <div class="carousel-item position-relative active" style="height: 400px;">
+                            <img class="position-absolute w-100 h-100" src="<?php echo e(URL::asset('/storage/uploads/'.$slider_first->attachment)); ?>" style="object-fit: cover;">
                             <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                                 <div class="p-3" style="max-width: 700px;">
-                                    <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown"><?php echo e($footer1->title); ?></h1>
-                                    <p class="mx-md-5 px-5 animate__animated animate__bounceIn"><?php echo e($footer1->description); ?></p>
-                                    <a class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp" href="#">Read More</a>
+                                    <h2 class="display-4 text-white mb-3 animate__animated animate__fadeInDown"><?php echo e($slider_first->title); ?></h2>
+                                    
+                                    <a class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp" href="/detail-page/<?php echo e($slider_first->id); ?>" target="_blank">Read More</a>
                                 </div>
                             </div>
                         </div>
+
+                         <?php $__currentLoopData = $sliders; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $slides): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>                      
+                        <div class="carousel-item position-relative" style="height: 400px;">
+                            <img class="position-absolute w-100 h-100" src="<?php echo e(URL::asset('/storage/uploads/'.$slides->attachment)); ?>" style="object-fit: cover;">
+                            <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                                <div class="p-3" style="max-width: 700px;">
+                                    <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown"><?php echo e($slides->title); ?></h1>
+                                   
+                                    <a class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp" href="/detail-page/<?php echo e($slider_first->id); ?>">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                           <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                    </div>
+                </div>
+
+
             </div>
-            <div class="col-md-4">
-                   <div class="carousel-item position-relative active" style="height: 400px;">
+            
+            <div class="col-md-4">                   
+                      <div class="carousel-item position-relative active" style="height: 400px;">
                             <img class="position-absolute w-100 h-100" src="<?php echo e(URL::asset('/storage/uploads/'.$footer2->attachment)); ?>" style="object-fit: cover;">
                             <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                                 <div class="p-3" style="max-width: 700px;">
                                     <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown"><?php echo e($footer2->title); ?></h1>
                                     <p class="mx-md-5 px-5 animate__animated animate__bounceIn"><?php echo e($footer2->description); ?></p>
-                                    <a class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp" href="#">Read More</a>
+                                    <a class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp" href="/detail-page/<?php echo e($footer2->id); ?>">Read More</a>
                                 </div>
                             </div>
                         </div>
+
             </div>
+
             <div class="col-md-4">
                      <div class="carousel-item position-relative active" style="height: 400px;">
                             <img class="position-absolute w-100 h-100" src="<?php echo e(URL::asset('/storage/uploads/'.$footer3->attachment ?? '')); ?>" style="object-fit: cover;">
@@ -142,11 +175,13 @@
                                 <div class="p-3" style="max-width: 700px;">
                                     <p class="display-4 text-white mb-3 animate__animated animate__fadeInDown"><?php echo e($footer3->title); ?></p>
                                     <p class="mx-md-5 px-5 animate__animated animate__bounceIn"><?php echo e($footer3->description); ?></p>
-                                    <a class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp" href="#">Read More</a>
+                                    <a class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp" href="/detail-page/<?php echo e($footer3->id); ?>">Read More</a>
                                 </div>
                             </div>
                         </div>
+
             </div>
+
         </div>
     </div>
     <!-- Offer End -->
