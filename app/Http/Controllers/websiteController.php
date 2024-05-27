@@ -202,6 +202,19 @@ $detail = slider::where('id',$id)->first();
  ->where('section','Main slider')
                   ->count();
 
+
+ $sliderCountFooter1 = slider::where('status','1')
+ ->where('section','Footer1')
+                  ->count();
+
+
+ $sliderCountFooter3 = slider::where('status','1')
+ ->where('section','Footer3')
+                  ->count();
+
+//dd($sliderCountFooter1);
+
+
 $slider_first = slider::where('status','1')
                  ->where('section','Main slider')
           //->select('sliders.*')
@@ -219,13 +232,31 @@ $slider1 = slider::where('section','slider1')
 
   //dd($slider_first);
 
-$slider2 = slider::where('section','slider2')
-                ->where('status','1')
+
+
+ $sliderCountFooter2 = slider::where('status','1')
+ ->where('section','Footer2')
+                  ->count();
+
+                  $footer2 = slider::where('status','1')
+                 ->where('section','footer2')
           //->select('sliders.*')
           // ->offset(1)
           ->limit(1)->first();
 
- 
+
+
+ $footer2_slider = slider::where('status','1')
+                 ->where('section','Footer2')
+          //->select('sliders.*')
+            ->offset(1)
+           ->limit(8)->get();
+
+
+
+
+//dd($footer2_slider);
+
 
 
 $footer1 = slider::where('status','1')
@@ -235,11 +266,38 @@ $footer1 = slider::where('status','1')
           ->limit(1)->first();
 
 
-$footer2 = slider::where('status','1')
-                 ->where('section','footer2')
+          $slider2 = slider::where('section','slider2')
+                ->where('status','1')
           //->select('sliders.*')
           // ->offset(1)
           ->limit(1)->first();
+
+$footer1_slider = slider::where('status','1')
+                 ->where('section','footer1')
+          //->select('sliders.*')
+            ->offset(1)
+           ->limit(8)->get();
+
+
+
+
+      $footer3_slider = slider::where('status','1')
+                 ->where('section','footer3')
+          //->select('sliders.*')
+            ->offset(1)
+           ->limit(8)->get();
+
+//dd($footer1_slider);
+
+ // $sliders = slider::where('status','1')
+ //           ->where('section','Main slider')
+ //          // ->select('sliders.*')
+ //           ->offset(1)
+ //          ->limit(8)->get();
+
+
+
+
 
 //dd($footer2);
 
@@ -257,7 +315,7 @@ $footer3 = slider::where('status','1')
            ->offset(1)
           ->limit(8)->get();
 
-  // dd($sliders);
+  //dd($sliders);
 
           //  $slidersCount = slider::join('programs','programs.id','sliders.tour_id')
           //  ->where('sliders.status','1')
@@ -342,7 +400,10 @@ $footer3 = slider::where('status','1')
            ->limit(12)->get();
 //dd($students);
 
-         return view('website.home.index',compact('offers_private','student_webs','footer1','footer2','footer3','slider_first','slider1','slider2','sliderCount','offers_group','popular_safarif','popular_trekking','popular_trekkingf','popular_safari','popular_holiday','popular_holidayf','popular_historicalf','popular_historical','place_to_visit','sliders','slidersCount','testimonies','offers','welcome_message','datasLink','title','description','keywords','contacts','testimonies_one','quickLinkSliders','historical_first','historical','geographical_first','geographical','culture_first','culture','wildlife_first','wildlife'));
+
+
+
+         return view('website.home.index',compact('offers_private','student_webs','footer1','footer2','footer3','slider_first','slider1','slider2','sliderCount','offers_group','popular_safarif','popular_trekking','popular_trekkingf','popular_safari','popular_holiday','popular_holidayf','popular_historicalf','popular_historical','place_to_visit','sliders','slidersCount','testimonies','offers','welcome_message','datasLink','title','description','keywords','contacts','testimonies_one','quickLinkSliders','historical_first','historical','geographical_first','geographical','culture_first','culture','wildlife_first','wildlife','sliderCountFooter1','sliderCountFooter2','sliderCountFooter3','footer1_slider','footer2_slider','footer3_slider'));
     }
 
     /**
