@@ -60,10 +60,9 @@ class themeController extends Controller
 
 //dd(request('section'));
 
-            $slider = slider::UpdateOrCreate(
-                [ 'title'=>request('title')],
-               
-                ['section'=>request('section'),
+            $slider = slider::Create(
+                [ 'title'=>request('title')               
+                'section'=>request('section'),
                 'status'=>request('status'),
                     'description'=>request('description'),                   
                     'attachment'=>$imageToStore
