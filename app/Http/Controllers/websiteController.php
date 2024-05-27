@@ -27,6 +27,34 @@ class websiteController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+ public function detailPage($id)
+    {
+$detail = slider::where('id',$id)
+          //->select('sliders.*')
+          // ->offset(1)
+          ->first();
+     $sliders = slider::where('status','1')
+           ->where('section','Main slider')
+          // ->select('sliders.*')
+           ->offset(1)
+          ->limit(8)->get();
+
+
+//dd($sliders);
+ return view('website.detailPage.detail-page',compact('detail','sliders'));
+    }
+
+
+ public function detail($id)
+    {
+$detail = slider::where('id',$id)->first();
+        
+
+//dd($detail);
+ return view('website.detailPage.detail',compact('detail'));
+    }
+
     public function index()
     {
 
@@ -174,30 +202,54 @@ class websiteController extends Controller
  ->where('section','Main slider')
                   ->count();
 
-                  //dd($sliderCount );
+$slider_first = slider::where('status','1')
+                 ->where('section','Main slider')
+          //->select('sliders.*')
+          // ->offset(1)
+          ->limit(1)->first();
 
-  $slider_first = slider::where('status','1')
+
+
+                  //dd($sliderCount );
+$slider1 = slider::where('section','slider1')
+                ->where('status','1')
           //->select('sliders.*')
           // ->offset(1)
           ->limit(1)->first();
 
   //dd($slider_first);
 
-$slider_second = slider::where('status','1')
+$slider2 = slider::where('section','slider2')
+                ->where('status','1')
           //->select('sliders.*')
-           ->offset(1)
+          // ->offset(1)
           ->limit(1)->first();
 
-        //    $sliders = slider::join('programs','programs.id','sliders.tour_id')
-        //   ->where('sliders.status','1')
-        //   ->select('sliders.*','programs.tour_name')
-        //   // ->offset(1)
-        //   ->limit(5)->get();
-        // //  $slidersCount=DB::select('select count(title) title from sliders');
-        // $slidersCount=slider::where('status','1')
-        // ->count();
-     
-        
+ 
+
+
+$footer1 = slider::where('status','1')
+                 ->where('section','footer1')
+          //->select('sliders.*')
+          // ->offset(1)
+          ->limit(1)->first();
+
+
+$footer2 = slider::where('status','1')
+                 ->where('section','footer2')
+          //->select('sliders.*')
+          // ->offset(1)
+          ->limit(1)->first();
+
+//dd($footer2);
+
+$footer3 = slider::where('status','1')
+                 ->where('section','footer3')
+          //->select('sliders.*')
+          // ->offset(1)
+          ->limit(1)->first();
+
+
 
            $sliders = slider::where('status','1')
            ->where('section','Main slider')
@@ -211,6 +263,9 @@ $slider_second = slider::where('status','1')
           //  ->where('sliders.status','1')
           // ->count();
          
+
+
+
 
           
          $quickLinkSliderCount=quicklink::where('slider','Yes')
@@ -290,7 +345,7 @@ $slider_second = slider::where('status','1')
            ->limit(12)->get();
 //dd($students);
 
-         return view('website.home.index',compact('offers_private','student_webs','slider_first','slider_second','sliderCount','offers_group','popular_safarif','popular_trekking','popular_trekkingf','popular_safari','popular_holiday','popular_holidayf','popular_historicalf','popular_historical','place_to_visit','sliders','slidersCount','testimonies','offers','welcome_message','datasLink','title','description','keywords','contacts','testimonies_one','quickLinkSliders','historical_first','historical','geographical_first','geographical','culture_first','culture','wildlife_first','wildlife'));
+         return view('website.home.index',compact('offers_private','student_webs','footer1','footer2','footer3','slider_first','slider1','slider2','sliderCount','offers_group','popular_safarif','popular_trekking','popular_trekkingf','popular_safari','popular_holiday','popular_holidayf','popular_historicalf','popular_historical','place_to_visit','sliders','slidersCount','testimonies','offers','welcome_message','datasLink','title','description','keywords','contacts','testimonies_one','quickLinkSliders','historical_first','historical','geographical_first','geographical','culture_first','culture','wildlife_first','wildlife'));
     }
 
     /**

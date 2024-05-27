@@ -282,7 +282,7 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-eye"></i>
               <p>
-                Theme
+                Themes
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
@@ -400,6 +400,13 @@
                 <a href="/tribe" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Tribe</p>
+                </a>
+              </li>
+              <hr>
+               <li class="nav-item">
+                <a href="/assignee" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Assignee</p>
                 </a>
               </li>
                <hr>

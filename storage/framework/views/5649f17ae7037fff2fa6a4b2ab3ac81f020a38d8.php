@@ -17,19 +17,7 @@
                         <h5 class="text-center"><?php echo e($trainee->first_name); ?> <?php echo e($trainee->middle_name); ?> <?php echo e($trainee->last_name); ?></h5>
                         <p class="text-center"><?php echo e($trainee->first_name); ?> <?php echo e($trainee->middle_name); ?> <?php echo e($trainee->last_name); ?></p>
                     </div>
-                    <!-- Dashboard Links -->
-                    <div class="widget dashboard-links">
-
-                        <input type="hidden" class="form-control" name="classg" value="<?php echo e($trainee->last_name); ?>">
-                          <input type="hidden" class="form-control" name="session" value="<?php echo e($trainee->last_name); ?>">
-
-                       <div><a class="my-1 d-inline-block" href="">Addmission: <b><?php echo e($trainee->addmission_no); ?></b></a></div>
-                        <div><a class="my-1 d-inline-block" href="">Session: <b><?php echo e($trainee->session); ?></b></a></div>
-                       
-                        <div><a class="my-1 d-inline-block" href="">Mobile: <b><?php echo e($trainee->mobile_no); ?></b></a></div>
-                        <div><a class="my-1 d-inline-block" href="">Email: <b><?php echo e($trainee->email); ?></b></a></div>
-                        
-                    </div>
+                  
                 </div>
             </div>
             <div class="col-md-10 offset-md-1 col-lg-9 offset-lg-0">
@@ -45,9 +33,14 @@
                           
                              <div><a class="my-1 d-inline-block" href="">Gender: <b><?php echo e($trainee->gender); ?></b></a></div>
                              
-
-                        <hr>  
+      <div><a class="my-1 d-inline-block" href="">Addmission: <b><?php echo e($trainee->addmission_no); ?></b></a></div>
+                        <div><a class="my-1 d-inline-block" href="">Session: <b><?php echo e($trainee->session); ?></b></a></div>
+                       
+                        <div><a class="my-1 d-inline-block" href="">Mobile: <b><?php echo e($trainee->mobile_no); ?></b></a></div>
+                        <div><a class="my-1 d-inline-block" href="">Email: <b><?php echo e($trainee->email); ?></b></a></div>
+                  
                         </div>
+
                     </div>
                     <div class="col-lg-6 col-md-6">         
 
@@ -87,6 +80,9 @@
             </div>
         </div>
     </div>
+<!-- Table Assignee -->
+
+
 </section>
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('admins.layouts.Apps.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\hmff\resources\views/admins/trainee/trainee-details.blade.php ENDPATH**/ ?>

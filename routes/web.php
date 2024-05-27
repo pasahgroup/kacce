@@ -50,10 +50,11 @@ use App\Http\Controllers\LodgetraineeController;
 
 use App\Http\Controllers\ClassgController;
 use App\Http\Controllers\SessionController;
-
+use App\Http\Controllers\AssigneeController;
 
 use App\Http\Controllers\RelationController;
 use App\Http\Controllers\DesignationController;
+use App\Http\Controllers\SubscribeController;
 
 use App\Http\Controllers\Auth\AuthController;
 use Illuminate\Support\Facades\Route;
@@ -150,6 +151,10 @@ Route::post('/search-student', [StudentController::class, 'research'])->name('re
 Route::get('/search-student', [StudentController::class, 'search'])->name('search');
 Route::get('/getA/{p}', [StudentController::class,'getA']);
 
+//Subscribe
+Route::resource('/subscribe',SubscribeController::class);
+//Assignee
+Route::resource('/assignee', AssigneeController::class);
 //Tarinee
 Route::resource('/trainee', LodgetraineeController::class);
 Route::get('/editTrainee/{x}', [LodgetraineeController::class, 'editTrainee'])->name('editTrainee');
@@ -247,6 +252,10 @@ Route::get('/offers', [saleController::class, 'offers'])->name('offers');
 
 Route::get('popularExperienceClient',[websiteController::class,'popularExperienceClient'])->name('popularExperienceClient');
 Route::get('/circuitTour/{x}', [websiteController::class, 'circuitTour'])->name('circuitTour');
+Route::get('/detail-page/{x}', [websiteController::class, 'detailPage'])->name('detail-page');
+
+Route::get('/detailp/{x}', [websiteController::class, 'detail'])->name('detail');
+
 
 Route::get('/attachmentTailorMade/{x}', [TailorMadeController::class, 'attachmentTailorMade'])->name('attachmentTailorMade');
 

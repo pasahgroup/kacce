@@ -20,7 +20,7 @@
 
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
   
-  <!-- <link href="../css/all.min.css" rel="stylesheet"> -->
+  <link href="../css/all.min.css" rel="stylesheet">
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="../website/css/style.css" rel="stylesheet">
@@ -98,7 +98,7 @@
 
             </div>
             <div class="col-lg-3 col-6 text-right">
-                <p class="m-0">Customer Service</p>
+                <b class="m-0">Contact</b>
                 <h5 class="m-0">+255 742 400 000</h5>
             </div>
         </div>
@@ -176,9 +176,12 @@
                     <div class="col-md-4 mb-5">
                         <h5 class="text-secondary text-uppercase mb-4">Newsletter</h5>
                         <p></p>
-                        <form action="">
+                       <form method="POST" id="post_form" role="form" class="registration-form" action="{{ route('subscribe.store') }}" enctype="multipart/form-data">
+
+      @csrf
+                          
                             <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Your Email Address">
+                                <input type="email" class="form-control" name="email" id="email" placeholder="email">
                                 <div class="input-group-append">
                                     <button class="btn btn-primary">Sign Up</button>
                                 </div>

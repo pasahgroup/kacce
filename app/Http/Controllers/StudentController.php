@@ -260,8 +260,12 @@ $classes = classg::get();
            ->where('id',$id)
            ->first();
 
-                      //dd($students);
-         return view('admins.students.user-details',compact('student','search'));    
+  $datas = student::join('assignees','assignees.student_id','students.id')
+         ->where('students.id',$id)
+         ->get();
+
+
+         return view('admins.students.user-details',compact('student','search','datas'));    
     }
 
 

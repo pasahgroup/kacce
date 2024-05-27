@@ -37,7 +37,7 @@
                                 <div class="p-3" style="max-width: 700px;">
                                     <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown">{{ $slider_first->title }}</h1>
                                     <p class="mx-md-5 px-5 animate__animated animate__bounceIn">{{ $slider_first->description }}</p>
-                                    <a class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp" href="#">Read More</a>
+                                    <a class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp" href="/detail-page/{{ $slider_first->id}}" target="_blank">Read More</a>
                                 </div>
                             </div>
                         </div>
@@ -49,7 +49,7 @@
                                 <div class="p-3" style="max-width: 700px;">
                                     <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown">{{ $slides->title }}</h1>
                                     <p class="mx-md-5 px-5 animate__animated animate__bounceIn">{{ $slides->description }}</p>
-                                    <a class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp" href="#">Read More</a>
+                                    <a class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp" href="/detail-page/{{ $slider_first->id}}">Read More</a>
                                 </div>
                             </div>
                         </div>
@@ -58,18 +58,18 @@
                 </div>
             </div>
             <div class="col-lg-4">
-                <div class="product-offer mb-30" style="height: 240px;">
-                    <img class="img-fluid" src="{{URL::asset('/storage/uploads/'.$slider_first->attachment)}}" alt="">
+                <div class="product-offer mb-30" style="height: 230px;">
+                    <img class="img-fluid" src="{{URL::asset('/storage/uploads/'.$slider1->attachment)}}" alt="">
                     <div class="offer-text">
-                        <h6 class="text-white text-uppercase">{{ $slider_first->title }}</h6>
+                        <h6 class="text-white text-uppercase">{{ $slider1->title }}</h6>
                            <a href="#" class="btn btn-primary">Read More</a>
                     </div>
                 </div>
-                <div class="product-offer mb-30" style="height: 230px;">
-                    <img class="img-fluid" src="{{URL::asset('/storage/uploads/'.$slider_second->attachment)}}" alt="">
+                <div class="product-offer mb-30" style="height: 240px;">
+                    <img class="img-fluid" src="{{URL::asset('/storage/uploads/'.$slider2->attachment)}}" alt="" style="object-fit: cover;">
                     <div class="offer-text">
-                        <h6 class="text-white text-uppercase">{{ $slider_second->title }}</h6>
-                        <a href="#" class="btn btn-primary">Read More</a>
+                        <h6 class="text-white text-uppercase">{{ $slider2->title }}</h6>
+                        <a href="/detail-page/{{ $slider1->id}}" class="btn btn-primary">Read More</a>
                     </div>
                 </div>
             </div>
@@ -114,11 +114,11 @@
         <div class="row px-xl-5">
             <div class="col-md-4">
                 <div class="carousel-item position-relative active" style="height: 400px;">
-                            <img class="position-absolute w-100 h-100" src="{{URL::asset('/storage/uploads/'.$slider_second->attachment)}}" style="object-fit: cover;">
+                            <img class="position-absolute w-100 h-100" src="{{URL::asset('/storage/uploads/'.$footer1->attachment)}}" style="object-fit: cover;">
                             <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                                 <div class="p-3" style="max-width: 700px;">
-                                    <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown">{{ $slider_second->title }}</h1>
-                                    <p class="mx-md-5 px-5 animate__animated animate__bounceIn">{{ $slider_second->description }}</p>
+                                    <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown">{{ $footer1->title }}</h1>
+                                    <p class="mx-md-5 px-5 animate__animated animate__bounceIn">{{ $footer1->description }}</p>
                                     <a class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp" href="#">Read More</a>
                                 </div>
                             </div>
@@ -126,11 +126,11 @@
             </div>
             <div class="col-md-4">
                    <div class="carousel-item position-relative active" style="height: 400px;">
-                            <img class="position-absolute w-100 h-100" src="{{URL::asset('/storage/uploads/'.$slider_first->attachment)}}" style="object-fit: cover;">
+                            <img class="position-absolute w-100 h-100" src="{{URL::asset('/storage/uploads/'.$footer2->attachment)}}" style="object-fit: cover;">
                             <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                                 <div class="p-3" style="max-width: 700px;">
-                                    <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown">{{ $slider_first->title }}</h1>
-                                    <p class="mx-md-5 px-5 animate__animated animate__bounceIn">{{ $slider_first->description }}</p>
+                                    <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown">{{ $footer2->title }}</h1>
+                                    <p class="mx-md-5 px-5 animate__animated animate__bounceIn">{{ $footer2->description }}</p>
                                     <a class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp" href="#">Read More</a>
                                 </div>
                             </div>
@@ -138,11 +138,11 @@
             </div>
             <div class="col-md-4">
                      <div class="carousel-item position-relative active" style="height: 400px;">
-                            <img class="position-absolute w-100 h-100" src="{{URL::asset('/storage/uploads/'.$slider_first->attachment)}}" style="object-fit: cover;">
+                            <img class="position-absolute w-100 h-100" src="{{URL::asset('/storage/uploads/'.$footer3->attachment ?? '')}}" style="object-fit: cover;">
                             <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                                 <div class="p-3" style="max-width: 700px;">
-                                    <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown">{{ $slider_first->title }}</h1>
-                                    <p class="mx-md-5 px-5 animate__animated animate__bounceIn">{{ $slider_first->description }}</p>
+                                    <p class="display-4 text-white mb-3 animate__animated animate__fadeInDown">{{ $footer3->title }}</p>
+                                    <p class="mx-md-5 px-5 animate__animated animate__bounceIn">{{ $footer3->description }}</p>
                                     <a class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp" href="#">Read More</a>
                                 </div>
                             </div>

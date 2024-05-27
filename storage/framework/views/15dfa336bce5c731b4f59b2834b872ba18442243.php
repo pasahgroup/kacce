@@ -70,7 +70,9 @@
                                  <option>Main slider</option>
                            <option>Slider1</option>
                            <option>Slider2</option>
-                              <option>Footer slider</option>                            
+                             <option>Footer1</option>  
+                               <option>Footer2</option>  
+                                <option>Footer3</option>                            
                             </select>
 
                                 </div>

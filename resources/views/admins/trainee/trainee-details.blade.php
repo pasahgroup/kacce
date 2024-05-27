@@ -18,19 +18,7 @@
                         <h5 class="text-center">{{$trainee->first_name}} {{$trainee->middle_name}} {{$trainee->last_name}}</h5>
                         <p class="text-center">{{$trainee->first_name}} {{$trainee->middle_name}} {{$trainee->last_name}}</p>
                     </div>
-                    <!-- Dashboard Links -->
-                    <div class="widget dashboard-links">
-
-                        <input type="hidden" class="form-control" name="classg" value="{{$trainee->last_name}}">
-                          <input type="hidden" class="form-control" name="session" value="{{$trainee->last_name}}">
-
-                       <div><a class="my-1 d-inline-block" href="">Addmission: <b>{{$trainee->addmission_no}}</b></a></div>
-                        <div><a class="my-1 d-inline-block" href="">Session: <b>{{$trainee->session}}</b></a></div>
-                       
-                        <div><a class="my-1 d-inline-block" href="">Mobile: <b>{{$trainee->mobile_no}}</b></a></div>
-                        <div><a class="my-1 d-inline-block" href="">Email: <b>{{$trainee->email}}</b></a></div>
-                        
-                    </div>
+                  
                 </div>
             </div>
             <div class="col-md-10 offset-md-1 col-lg-9 offset-lg-0">
@@ -46,9 +34,14 @@
                           
                              <div><a class="my-1 d-inline-block" href="">Gender: <b>{{$trainee->gender}}</b></a></div>
                              
-
-                        <hr>  
+      <div><a class="my-1 d-inline-block" href="">Addmission: <b>{{$trainee->addmission_no}}</b></a></div>
+                        <div><a class="my-1 d-inline-block" href="">Session: <b>{{$trainee->session}}</b></a></div>
+                       
+                        <div><a class="my-1 d-inline-block" href="">Mobile: <b>{{$trainee->mobile_no}}</b></a></div>
+                        <div><a class="my-1 d-inline-block" href="">Email: <b>{{$trainee->email}}</b></a></div>
+                  
                         </div>
+
                     </div>
                     <div class="col-lg-6 col-md-6">         
 
@@ -88,5 +81,8 @@
             </div>
         </div>
     </div>
+<!-- Table Assignee -->
+
+
 </section>
 @endsection

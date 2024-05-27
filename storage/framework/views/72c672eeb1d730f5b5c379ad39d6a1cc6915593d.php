@@ -4,6 +4,7 @@
 
 <section class="user-profile section">
     <div class="container">
+      <?php if($student !=null): ?>
         <div class="row widget">
             <div class="col-md-10 offset-md-1 col-lg-3 offset-lg-0">
                 <div class="sidebar">
@@ -80,6 +81,12 @@
             </a>
             <?php endif; ?>
 
+                     <?php if($search =='assignee'): ?>
+                 <a href="/assignee" class="btn btn-primary">
+              <i class="fa fa-angle-double-left"></i>
+            </a>
+            <?php endif; ?>
+
                     <?php if($search =='iflag'): ?>
 
 
@@ -105,7 +112,91 @@
                 </div>
             </div>
         </div>
-    </div>
+
+
+ <div class="row widget">
+            <div class="col-md-12">
+              <b>Student Assignee record table</b>
+
+
+                <div class="card-body">
+            <div class="card-body">
+                <table id="example1" class="table table-bordered table-striped">
+                  <thead>
+                  <tr>
+                    <th>#</th>
+                     <th>ID</th>
+                    <th>Name</th>
+                      <th>Lodge</th>
+                    <th>designation</th>
+  <th>Photo</th>
+                    
+                     <th>Date</th>
+<th>Status</th>
+                    <th>Action</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+              
+                 <?php $__currentLoopData = $datas; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $data): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                  <tr>
+                    <td><?php echo e($data->id); ?></td>
+                    <td><?php echo e($data->pin); ?></td>
+                    <td><?php echo e($data->first_name); ?> <?php echo e($data->middle_name); ?> <?php echo e($data->last_name); ?></td>
+                                      <td><span class="badge"> <?php echo e($data->lodge); ?></span></td>
+                    <td><span class="badge"> <?php echo e($data->designation); ?></span></td>
+                  
+                   
+                  <!--    <td><?php echo e($data->main); ?></td>
+                     <td><?php echo e($data->tour_code); ?></td> -->
+                      <td><div class="logo mr-auto"><img src="<?php echo e(URL::asset('/storage/photos/'.$data->photo)); ?>"  style="width:100px; height:90px;"></div></td>
+                       <td><?php echo e($data->date); ?></td>
+                   <td><?php echo e($data->status); ?></td>
+
+                    <td>
+
+    
+  <?php if(Auth::user()->role =='Admin'): ?>
+                      <a role="button" href="<?php echo e(route('assignee.edit',$data->id)); ?>" style="color:green"><i class="fa fa-edit" ></i></a> 
+                      <?php endif; ?>
+                     
+                     <!--  <a role="button" href="/destroyf/<?php echo e($data->id); ?> " onclick="return confirm('Are you sure? You want to delete <?php echo e($data->tour_name); ?>','Inclusive')"><i class="fa fa-trash red"></i></a> -->
+
+                    </td>
+                  </tr>
+                  <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+
+            
+
+                  </tbody>
+                  <tfoot>
+                   <tr>
+                     <th>#</th>
+                     <th>ID</th>
+                    <th>Name</th>
+                      <th>Lodge</th>
+                    <th>designation</th>
+                   <th>Photo</th>
+
+                     <th>Date</th>
+                     <th>Status</th>
+                    <th>Action</th>
+                  </tr>
+                  </tfoot>
+                </table>
+              </div>
+
+        </div>
+            </div>
+          </div>
+    </div> 
+    <?php else: ?>
+<div>Nothing to Display</div>
+<div>
+  <a type="button" class="btn btn-primary" href="/assignee"><i class="fa fa-angle-double-left"></i></a>
+
+</div>
+  <?php endif; ?>      
 </section>
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('admins.layouts.Apps.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\hmff\resources\views/admins/students/user-details.blade.php ENDPATH**/ ?>

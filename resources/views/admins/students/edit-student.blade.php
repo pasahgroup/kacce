@@ -241,7 +241,7 @@
                                 
 
 <div class="form-group col-md-6 col-sm-6">
-                                         <label>Located</label>
+                                         <label>Assignee lodge</label>
                                         <select class="form-control" name="located" id="located">
                                            <option>{{$datas->located}}</option>
                                             <option></option>
