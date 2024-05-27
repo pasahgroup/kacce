@@ -97,16 +97,32 @@
                               </div>
                         </div>
 
-                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12">
 
-                            <label for="inputEmail3">Image</label>
-                            <div class="form-group row">
-                                <div class="col-sm-12 col-md-12">
-                                  <div class="form-group row">
-                                   <input type="file" name="attachment" required>
-                                  </div>
+                                   
+                           <div class="row">
+ <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                        <x-label for="password_confirmation" :value="__('Photo')" />
+                                    <div class="form-group">
+                                    <input type="file" name="attachment[]" onChange="displayImage(this)" id="attachment" accept="image/*" class="" style="display:block;" required="">
+                                   
                                 </div>
-                                </div>
+                              </div>
+          
+           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+             <span class="img-div float-right">
+              <div class="text-center img-placeholder"  onClick="triggerClick()">               
+              </div>
+              <img src="images/no.png" onClick="triggerClick()" id="profileDisplay">
+            </span>
+</div>
+
+
+
+</div>
+
+                           
+
                            </div>
 
 
@@ -176,4 +192,5 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
+
 @endsection

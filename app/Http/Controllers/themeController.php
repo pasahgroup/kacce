@@ -43,32 +43,64 @@ class themeController extends Controller
         
 //dd('print slider');
 
-        if(request('attachment')){
-            //dd('d1');
-            // Get filename with extension
-            $fileNameWithExt = request('attachment')->getClientOriginalName();
-            // Just Filename
-            $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
-              //$filename = strtok($filename, " ");
-            // Get just Extension
-            $extension = request('attachment')->getClientOriginalExtension();
-            //Filename to store
-            $filename = strtok($filename, " ");
-            $imageToStore = $filename.'_'.time().'.'.$extension;
-            //upload the image
-            $path = request('attachment')->storeAs('public/uploads/', $imageToStore);
+//         if(request('attachment')){
+//             //dd('d1');
+//             // Get filename with extension
+//             $fileNameWithExt = request('attachment')->getClientOriginalName();
+//             // Just Filename
+//             $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+//               //$filename = strtok($filename, " ");
+//             // Get just Extension
+//             $extension = request('attachment')->getClientOriginalExtension();
+//             //Filename to store
+//             $filename = strtok($filename, " ");
+//             $imageToStore = $filename.'_'.time().'.'.$extension;
+//             //upload the image
+//             $path = request('attachment')->storeAs('public/uploads/', $imageToStore);
 
-//dd(request('section'));
+// //dd(request('section'));
 
+//             $slider = slider::Create(
+//                 [ 'title'=>request('title'),               
+//                 'section'=>request('section'),
+//                 'status'=>request('status'),
+//                     'description'=>request('description'),                   
+//                     'attachment'=>$imageToStore
+//                 ]);                
+//                 return redirect()->back()->with('success','Slider created succesfully');
+//        }  
+
+
+
+
+   if(request('attachment')){
+                $attach = request('attachment');
+                foreach($attach as $attached){
+
+                     // Get filename with extension
+                     $fileNameWithExt = $attached->getClientOriginalName();
+                     // Just Filename
+                     $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+                     // Get just Extension
+                     $extension = $attached->getClientOriginalExtension();
+                     //Filename to store
+                     $imageToStore = $filename.'_'.time().'.'.$extension;
+                     //upload the image
+                     $path = $attached->storeAs('public/uploads/', $imageToStore);
+
+       
             $slider = slider::Create(
-                [ 'title'=>request('title')               
+                [ 'title'=>request('title'),               
                 'section'=>request('section'),
                 'status'=>request('status'),
                     'description'=>request('description'),                   
                     'attachment'=>$imageToStore
                 ]);                
                 return redirect()->back()->with('success','Slider created succesfully');
-       }   
+     
+        }
+      }
+
 
     }
 
@@ -108,40 +140,90 @@ class themeController extends Controller
     public function update(Request $request, $id)
     {
 
-     
+    // dd('update');
 
-         if(request('attachment')){
-            //dd('d1');
-            // Get filename with extension
-            $fileNameWithExt = request('attachment')->getClientOriginalName();
-            // Just Filename
-            $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
-              //$filename = strtok($filename, " ");
-            // Get just Extension
-            $extension = request('attachment')->getClientOriginalExtension();
-            //Filename to store
-            $filename = strtok($filename, " ");
-            $imageToStore = $filename.'_'.time().'.'.$extension;
-            //upload the image
-            $path = request('attachment')->storeAs('public/uploads/', $imageToStore);
+//          if(request('attachment')){
+//             //dd('d1');
+//             // Get filename with extension
+//             $fileNameWithExt = request('attachment')->getClientOriginalName();
+//             // Just Filename
+//             $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+//               //$filename = strtok($filename, " ");
+//             // Get just Extension
+//             $extension = request('attachment')->getClientOriginalExtension();
+//             //Filename to store
+//             $filename = strtok($filename, " ");
+//             $imageToStore = $filename.'_'.time().'.'.$extension;
+//             //upload the image
+//             $path = request('attachment')->storeAs('public/uploads/', $imageToStore);
 
-// dd('printed1');
+// // dd('printed1');
 
-            $slider = slider::UpdateOrCreate(
-                  [ 'id'=>$id],
+//             $slider = slider::UpdateOrCreate(
+//                   [ 'id'=>$id],
                
-                 ['section'=>request('section'),
-                  'title'=>request('title'),
+//                  ['section'=>request('section'),
+//                   'title'=>request('title'),
+//                 'status'=>request('status'),
+//                     'description'=>request('description'),                   
+//                     'attachment'=>$imageToStore
+//                 ]);                
+//                   return redirect()->route('themes.index')->with('success','Slider created succesfully');
+//        }
+//        else{
+
+// // dd('printed2');
+
+//   $slider = slider::UpdateOrCreate(
+//                 [ 'id'=>$id],              
+
+//                 ['section'=>request('section'),
+//                  'title'=>request('title'),
+//                 'status'=>request('status'),
+//                     'description'=>request('description')
+//                 ]);                
+//                 return redirect()->route('themes.index')->with('success','Slider created succesfully');
+
+//        }
+
+
+
+
+
+  if(request('attachment')){
+
+                $attach = request('attachment');
+                foreach($attach as $attached){
+
+                     // Get filename with extension
+                     $fileNameWithExt = $attached->getClientOriginalName();
+                     // Just Filename
+                     $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+                     // Get just Extension
+                     $extension = $attached->getClientOriginalExtension();
+                     //Filename to store
+                     $imageToStore = $filename.'_'.time().'.'.$extension;
+                     //upload the image
+                     $path = $attached->storeAs('public/uploads/', $imageToStore);
+
+       
+//dd($id);
+
+             $slider = slider::UpdateOrCreate(
+                [ 'id'=>$id],              
+
+                ['section'=>request('section'),
+                 'title'=>request('title'),
                 'status'=>request('status'),
-                    'description'=>request('description'),                   
-                    'attachment'=>$imageToStore
+                    'description'=>request('description'),
+                       'attachment'=>$imageToStore
                 ]);                
-                  return redirect()->route('themes.index')->with('success','Slider created succesfully');
-       }
-       else{
-
-// dd('printed2');
-
+                return redirect()->route('themes.index')->with('success','Slider created succesfully');
+     
+        }
+      }
+      else{
+       
   $slider = slider::UpdateOrCreate(
                 [ 'id'=>$id],              
 
@@ -152,7 +234,7 @@ class themeController extends Controller
                 ]);                
                 return redirect()->route('themes.index')->with('success','Slider created succesfully');
 
-       }
+       }   
     }
 
     /**
