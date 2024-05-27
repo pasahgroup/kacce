@@ -212,7 +212,7 @@ $detail = slider::where('id',$id)->first();
  ->where('section','Footer3')
                   ->count();
 
-//dd($sliderCountFooter1);
+dd($sliderCountFooter3);
 
 
 $slider_first = slider::where('status','1')
