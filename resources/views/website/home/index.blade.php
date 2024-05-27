@@ -31,8 +31,9 @@
                         
                       
                     <div class="carousel-inner">                      
+                       @isset($slider_first)
                         <div class="carousel-item position-relative active" style="height: 500px;">
-                            <img class="position-absolute w-100 h-100" src="{{URL::asset('/storage/uploads/'.$slider_first->attachment)}}" style="object-fit: cover;">
+                            <img class="position-absolute w-100 h-100" src="{{URL::asset('/storage/uploads/'.$slider_first->attachment ?? '')}}" style="object-fit: cover;" alt="No Image">
                             <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                                 <div class="p-3" style="max-width: 700px;">
                                     <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown">{{ $slider_first->title }}</h1>
@@ -41,6 +42,10 @@
                                 </div>
                             </div>
                         </div>
+                        @else
+                       <img class="position-absolute w-100 h-100" src="#" style="object-fit: cover;" alt="No Image">
+                       <div>No Image</div>
+                        @endisset
 
                          @foreach ($sliders as $slides)                      
                         <div class="carousel-item position-relative" style="height: 500px;">
@@ -58,6 +63,7 @@
                 </div>
             </div>
             <div class="col-lg-4">
+                @isset($slider1)
                 <div class="product-offer mb-30" style="height: 230px;">
                     <img class="img-fluid" src="{{URL::asset('/storage/uploads/'.$slider1->attachment)}}" alt="">
                     <div class="offer-text">
@@ -65,6 +71,13 @@
                            <a href="/detail-page/{{ $slider1->id}}" class="btn btn-primary">Read More</a>
                     </div>
                 </div>
+
+                  @else
+                       <img class="position-absolute w-100 h-100" src="#" style="object-fit: cover;" alt="No Image">
+                       <div>No Image</div>
+                        @endisset
+                
+@isset($slider2)
                 <div class="product-offer mb-30" style="height: 240px;">
                     <img class="img-fluid" src="{{URL::asset('/storage/uploads/'.$slider2->attachment)}}" alt="" style="object-fit: cover;">
                     <div class="offer-text">
@@ -72,6 +85,10 @@
                         <a href="/detail-page/{{ $slider2->id}}" class="btn btn-primary">Read More</a>
                     </div>
                 </div>
+                  @else
+                       <img class="position-absolute w-100 h-100" src="#" style="object-fit: cover;" alt="No Image">
+                       <div>No Image</div>
+                        @endisset
             </div>
         </div>
     </div>
@@ -124,6 +141,8 @@
                         
                       
                        <div class="carousel-inner">                      
+                       
+                        @isset($footer1)
                         <div class="carousel-item position-relative active" style="height: 400px;">
                             <img class="position-absolute w-100 h-100" src="{{URL::asset('/storage/uploads/'.$footer1->attachment)}}" style="object-fit: cover;">
                             <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
@@ -134,6 +153,11 @@
                                 </div>
                             </div>
                         </div>
+
+                           @else
+                       <img class="position-absolute w-100 h-100" src="#" style="object-fit: cover;" alt="No Image">
+                       <div>No Image</div>
+                        @endisset
 
                          @foreach ($footer1_slider as $slide_f1)                      
                         <div class="carousel-item position-relative" style="height: 400px;">
@@ -164,6 +188,8 @@
                         
                       
                        <div class="carousel-inner">                      
+                        
+                         @isset($footer2)
                         <div class="carousel-item position-relative active" style="height: 400px;">
                             <img class="position-absolute w-100 h-100" src="{{URL::asset('/storage/uploads/'.$footer2->attachment)}}" style="object-fit: cover;">
                             <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
@@ -174,6 +200,11 @@
                                 </div>
                             </div>
                         </div>
+
+                           @else
+                       <img class="position-absolute w-100 h-100" src="#" style="object-fit: cover;" alt="No Image">
+                       <div>No Image</div>
+                        @endisset
 
                          @foreach ($footer2_slider as $slide_f2)                      
                         <div class="carousel-item position-relative" style="height: 400px;">
@@ -204,6 +235,9 @@
                         
                       
                        <div class="carousel-inner">                      
+                       
+
+ @isset($footer3)
                         <div class="carousel-item position-relative active" style="height: 400px;">
                             <img class="position-absolute w-100 h-100" src="{{URL::asset('/storage/uploads/'.$footer3->attachment)}}" style="object-fit: cover;">
                             <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
@@ -214,6 +248,11 @@
                                 </div>
                             </div>
                         </div>
+
+                           @else
+                       <img class="position-absolute w-100 h-100" src="#" style="object-fit: cover;" alt="No Image">
+                       <div>No Image</div>
+                        @endisset
 
                          @foreach ($footer3_slider as $slide_f3)                      
                         <div class="carousel-item position-relative" style="height: 400px;">
