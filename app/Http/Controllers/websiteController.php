@@ -202,17 +202,20 @@ $detail = slider::where('id',$id)->first();
  ->where('section','Main slider')
                   ->count();
 
-
  $sliderCountFooter1 = slider::where('status','1')
  ->where('section','Footer1')
                   ->count();
 
 
+ $sliderCountFooter2 = slider::where('status','1')
+ ->where('section','Footer2')
+                  ->count();
+                  
  $sliderCountFooter3 = slider::where('status','1')
  ->where('section','Footer3')
                   ->count();
 
-dd($sliderCountFooter3);
+//dd($sliderCountFooter3);
 
 
 $slider_first = slider::where('status','1')
@@ -234,16 +237,12 @@ $slider1 = slider::where('section','slider1')
 
 
 
- $sliderCountFooter2 = slider::where('status','1')
- ->where('section','Footer2')
-                  ->count();
 
-                  $footer2 = slider::where('status','1')
+           $footer2 = slider::where('status','1')
                  ->where('section','footer2')
           //->select('sliders.*')
           // ->offset(1)
           ->limit(1)->first();
-
 
 
  $footer2_slider = slider::where('status','1')
