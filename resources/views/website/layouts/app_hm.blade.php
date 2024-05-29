@@ -121,10 +121,12 @@
                             <a href="/" class="nav-item nav-link active">Home</a>
                          
                             <div class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages <i class="fa fa-angle-down mt-1"></i></a>
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Vulnarable<i class="fa fa-angle-down mt-1"></i></a>
                                 <div class="dropdown-menu bg-primary rounded-0 border-0 m-0">
-                                    <a href="cart.html" class="dropdown-item">Shopping Cart</a>
-                                    <a href="checkout.html" class="dropdown-item">Checkout</a>
+                                    <br>
+                                    <a href="/trained/trained-students" class="dropdown-item">Vulnarable Youth</a>
+                                    <a href="/trained-lodges/lodges" class="dropdown-item">Trained lodges</a>
+                                    <a href="/trained-lodges/lodges" class="dropdown-item">Trained lodges</a>
                                 </div>
                             </div>
                                <a href="/aboutus" class="nav-item nav-link">About us</a>
@@ -135,12 +137,10 @@
             </div>
         </div>
     </div>
-
    
 
     <!-- Navbar End -->
  @yield('content')
-
      <!-- Featured End -->
 
     <!-- Footer Start -->

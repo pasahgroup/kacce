@@ -14,6 +14,7 @@ use App\Models\title;
 use App\Models\quickLink;
 use App\Models\attraction;
 use App\Models\tribe;
+use App\Models\lodgetrainee;
 
 use App\Models\student;
 use DB;
@@ -401,8 +402,30 @@ $footer3 = slider::where('status','1')
 
 
 
-
          return view('website.home.index',compact('offers_private','student_webs','footer1','footer2','footer3','slider_first','slider1','slider2','sliderCount','offers_group','popular_safarif','popular_trekking','popular_trekkingf','popular_safari','popular_holiday','popular_holidayf','popular_historicalf','popular_historical','place_to_visit','sliders','slidersCount','testimonies','offers','welcome_message','datasLink','title','description','keywords','contacts','testimonies_one','quickLinkSliders','historical_first','historical','geographical_first','geographical','culture_first','culture','wildlife_first','wildlife','sliderCountFooter1','sliderCountFooter2','sliderCountFooter3','footer1_slider','footer2_slider','footer3_slider'));
+    }
+
+ public function trained($id)
+    {
+
+  $student_webs = student::select('first_name','last_name','class','session','photo')
+           ->limit(16)->get();
+//dd($student_webs);
+return view('website.vulnarable.vulnarable',compact('student_webs'));
+
+    }
+
+
+ public function trainedLodges($id)
+    {
+
+  $trained_lodges = lodgetrainee::select('id','lodge','status')
+           ->groupby('lodge')
+         ->get();
+ //dd($trained_lodges);
+
+     return view('website.vulnarable.lodge-list',compact('trained_lodges'));
+
     }
 
     /**
