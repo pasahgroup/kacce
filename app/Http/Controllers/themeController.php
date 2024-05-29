@@ -17,7 +17,9 @@ class themeController extends Controller
     {
         //$sliders = slider::get();
          $sliders = slider::where('status',1)
+          ->orderBy('id', 'desc')
           ->get();
+//dd($sliders);
 
         return view('admins.themes.slider',compact('sliders'));
     }
@@ -27,10 +29,14 @@ class themeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+      public function create()
     {
-        //
+         $sliders = slider::where('status',1)
+          ->get();
+        //dd($designations);
+          return view('admins.themes.add-slider',compact('sliders'));
     }
+
 
     /**
      * Store a newly created resource in storage.

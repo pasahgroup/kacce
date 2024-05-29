@@ -18,7 +18,7 @@
     <link href="../website/lib/animate/animate.min.css" rel="stylesheet">
     <link href="../website/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+  <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet"> -->
   
   <link href="../css/all.min.css" rel="stylesheet">
 
