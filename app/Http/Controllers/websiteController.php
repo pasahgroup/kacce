@@ -429,9 +429,11 @@ return view('website.vulnarable.vulnarable',compact('student_webs'));
  public function trainedStaff($id)
     {
 //dd($id);
-  $trained_lodges = lodgetrainee::select('id','lodge','status')
+  $trained_lodges = lodgetrainee::select('id','first_name','middle_name','last_name','photo','lodge','designation')
            ->groupby('lodge')
          ->limit(16)->get();
+
+         //dd($trained_lodges);
      return view('website.vulnarable.trainee-staff',compact('trained_lodges'));
 
     }
