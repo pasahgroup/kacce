@@ -125,7 +125,8 @@
                                 <div class="dropdown-menu bg-primary rounded-0 border-0 m-0">
                                     <br>
                                     <a href="/trained/trained-students" class="dropdown-item">Vulnarable Youth</a>
-                                    <a href="/trained-lodges/lodges" class="dropdown-item">Trained lodges</a>
+                                    <a href="/trained-staff/trained-staff" class="dropdown-item">Trained Staff</a>
+                                    <a href="/trained-lodges/lodges" class="dropdown-item">Trained Lodges</a>
                                 </div>
                             </div>
                                <a href="/aboutus" class="nav-item nav-link">About us</a>

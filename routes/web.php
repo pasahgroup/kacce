@@ -259,6 +259,7 @@ Route::get('/detailp/{x}', [websiteController::class, 'detail'])->name('detail')
 //Trained students
 Route::get('/trained/{x}', [websiteController::class, 'trained'])->name('trained');
 Route::get('/trained-lodges/{x}', [websiteController::class, 'trainedLodges'])->name('trainedLodges');
+Route::get('/trained-staff/{x}', [websiteController::class, 'trainedStaff'])->name('trainedStaff');
 
 
 Route::get('/attachmentTailorMade/{x}', [TailorMadeController::class, 'attachmentTailorMade'])->name('attachmentTailorMade');
