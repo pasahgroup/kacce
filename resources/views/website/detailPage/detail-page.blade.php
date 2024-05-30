@@ -8,8 +8,7 @@
             <div class="col-12">
                 <nav class="breadcrumb bg-light mb-30">
                     <a class="breadcrumb-item text-dark" href="#">Home</a>
-                    <a class="breadcrumb-item text-dark" href="#">Shop</a>
-                    <span class="breadcrumb-item active">Shop Detail</span>
+                    <span class="breadcrumb-item active">{{$detail->title}}</span>
                 </nav>
             </div>
         </div>
@@ -70,13 +69,12 @@
                   
                     
                     <div class="d-flex mb-4">
-                        <strong class="text-dark mr-3">Description:</strong>
+                        <strong class="text-dark mr-3">Description: bnm</strong>
                        <p class="mb-4">{{$slides->description}}</p>
                     </div>
-                   
-                      <a type="button"  class="btn btn-primary px-3" href="/detailp/{{$slides->id}}"><i class="#"></i>Read More</a>
-                                     
-                </div>
+                    <a  type="button" class="btn btn-primary px-3" href="/"><i class="fa fa-angle-double-left"></i> </a>
+                      <a type="button"  class="btn btn-primary px-3" href="/detailp/{{$slides->id}}"><i class="#"></i>Read More</a>                                     
+                      </div>
 
 
 
@@ -86,7 +84,6 @@
                         @endforeach
                     </div>
 
-
                     <a class="carousel-control-prev" href="#product-carousel" data-slide="prev">
                         <i class="fa fa-2x fa-angle-left text-dark"></i>
                     </a>
@@ -94,10 +91,16 @@
                         <i class="fa fa-2x fa-angle-right text-dark"></i>
                     </a>
                 </div>
-            </div>
+        
 
-         
+         <div class="d-flex align-items-center mb-4 pt-2">                       
+                        <a  type="button" class="btn btn-primary px-3" href="/"><i class="fa fa-angle-double-left"></i> </a>
+                    </div>
+
+                        </div>
+
         </div>
     </div>
+
     <!-- Shop Detail End -->
  @endsection

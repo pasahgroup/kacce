@@ -6,8 +6,7 @@
             <div class="col-12">
                 <nav class="breadcrumb bg-light mb-30">
                     <a class="breadcrumb-item text-dark" href="#">Home</a>
-                    <a class="breadcrumb-item text-dark" href="#">Shop</a>
-                    <span class="breadcrumb-item active">Shop Detail</span>
+                    <span class="breadcrumb-item active"><?php echo e($detail->title); ?></span>
                 </nav>
             </div>
         </div>
@@ -68,13 +67,12 @@
                   
                     
                     <div class="d-flex mb-4">
-                        <strong class="text-dark mr-3">Description:</strong>
+                        <strong class="text-dark mr-3">Description: bnm</strong>
                        <p class="mb-4"><?php echo e($slides->description); ?></p>
                     </div>
-                   
-                      <a type="button"  class="btn btn-primary px-3" href="/detailp/<?php echo e($slides->id); ?>"><i class="#"></i>Read More</a>
-                                     
-                </div>
+                    <a  type="button" class="btn btn-primary px-3" href="/"><i class="fa fa-angle-double-left"></i> </a>
+                      <a type="button"  class="btn btn-primary px-3" href="/detailp/<?php echo e($slides->id); ?>"><i class="#"></i>Read More</a>                                     
+                      </div>
 
 
 
@@ -84,7 +82,6 @@
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </div>
 
-
                     <a class="carousel-control-prev" href="#product-carousel" data-slide="prev">
                         <i class="fa fa-2x fa-angle-left text-dark"></i>
                     </a>
@@ -92,11 +89,17 @@
                         <i class="fa fa-2x fa-angle-right text-dark"></i>
                     </a>
                 </div>
-            </div>
+        
 
-         
+         <div class="d-flex align-items-center mb-4 pt-2">                       
+                        <a  type="button" class="btn btn-primary px-3" href="/"><i class="fa fa-angle-double-left"></i> </a>
+                    </div>
+
+                        </div>
+
         </div>
     </div>
+
     <!-- Shop Detail End -->
  <?php $__env->stopSection(); ?>
 <?php echo $__env->make('website.layouts.app_hm', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\hmff\resources\views/website/detailPage/detail-page.blade.php ENDPATH**/ ?>

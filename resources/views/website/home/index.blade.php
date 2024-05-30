@@ -37,7 +37,7 @@
                             <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                                 <div class="p-3" style="max-width: 700px;">
                                     <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown">{{ $slider_first->title }}</h1>
-                                    <p class="mx-md-5 px-5 animate__animated animate__bounceIn">{{ $slider_first->description }}</p>
+                                    <p class="mx-md-5 px-5 animate__animated animate__bounceIn demo-1">{{ $slider_first->description }}</p>
                                     <a class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp" href="/detail-page/{{ $slider_first->id}}" target="_blank">Read More</a>
                                 </div>
                             </div>
@@ -53,7 +53,7 @@
                             <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                                 <div class="p-3" style="max-width: 700px;">
                                     <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown">{{ $slides->title }}</h1>
-                                    <p class="mx-md-5 px-5 animate__animated animate__bounceIn">{{ $slides->description }}</p>
+                                    <p class="mx-md-5 px-5 animate__animated animate__bounceIn demo-1">{{ $slides->description }}</p>
                                     <a class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp" href="/detail-page/{{ $slider_first->id}}">Read More</a>
                                 </div>
                             </div>
