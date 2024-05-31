@@ -99,8 +99,8 @@
 
             </div>
             <div class="col-lg-3 col-6 text-right">
-                <b class="m-0">Contact</b>
-                <h5 class="m-0">+255 742 400 000</h5>
+                <b class="m-0"><?php if(isset($contact->phone)): ?><?php echo e($contact->phone); ?> <?php endif; ?></b>
+                <h5 class="m-0"><?php if(isset($contact->email)): ?><?php echo e($contact->email); ?> <?php endif; ?></h5>
             </div>
         </div>
     </div>
@@ -202,9 +202,9 @@
                <div class="col-lg-4 col-md-12 mb-5 pr-3 pr-xl-5">
                 <h5 class="text-secondary text-uppercase mb-4">Contact</h5>
                 
-                <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i><?php echo e($contact->address); ?></p>
-                <p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i><?php echo e($contact->email); ?></p>
-                <p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i><?php echo e($contact->phone); ?></p>
+                <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i><?php if(isset($contact->address)): ?><?php echo e($contact->address); ?> <?php endif; ?></p>
+                <p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i><?php if(isset($contact->email)): ?><?php echo e($contact->email); ?> <?php endif; ?></p>
+                <p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i><?php if(isset($contact->phone)): ?><?php echo e($contact->phone); ?> <?php endif; ?></p>
             </div>
         </div>
         <div class="row border-top mx-xl-5 py-4" style="border-color: rgba(256, 256, 256, .1) !important;">

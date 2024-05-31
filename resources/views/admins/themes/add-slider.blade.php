@@ -73,12 +73,12 @@
 
                               <select name="section" id="section" class="form-control">
                               <option value="">--Select section name--</option>
-                             <option>Bee Keeping</option>
-                             <option>Blog</option>   
-                            <option>Entrepreneurship</option>
-                           <option>Tree Planting</option>
-                             <option>Health</option>  
-                               <option>Vulnarable Children</option>                          
+                             <option>Main slider</option>
+                             <option>Slider1</option>   
+                            <option>Slider2</option>
+                           <option>Footer1</option>
+                             <option>Footer2</option>  
+                               <option>Footer3</option>                          
                             </select>
 
                                 </div>
