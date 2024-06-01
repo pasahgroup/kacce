@@ -130,6 +130,16 @@
                                     <a href="/trained-lodges/lodges" class="dropdown-item">Trained Lodges</a>
                                 </div>
                             </div>
+
+                              <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Opportunity<i class="fa fa-angle-down mt-1"></i></a>
+                                <div class="dropdown-menu bg-primary rounded-0 border-0 m-0">
+                                    <br>
+                                    <a href="#" class="dropdown-item">Trainee Registration</a>
+                                    <a href="#" class="dropdown-item">Vulnarable Youth Registration</a>
+                                </div>
+                            </div>
+
                                <a href="/aboutus" class="nav-item nav-link">About us</a>
                             <a href="/mailing" class="nav-item nav-link">Contact</a>
                         </div>                      
@@ -166,7 +176,8 @@
                      <div class="col-md-4 mb-5">
                         <h5 class="text-secondary text-uppercase mb-4">Quick Links</h5>
                         <div class="d-flex flex-column justify-content-start">
-                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Online Addmission</a>
+                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Trainee Registration</a>
+                             <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Vulnarable Youth Registration</a>
                             <!-- <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Our Shop</a> -->
                           <!--   <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Shop Detail</a>
                             <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Shopping Cart</a>
