@@ -67,7 +67,7 @@
                 <div class="product-offer mb-30" style="height: 230px;">
                     <img class="img-fluid" src="{{URL::asset('/storage/uploads/'.$slider1->attachment)}}" alt="">
                     <div class="offer-text">
-                        <h6 class="text-white text-uppercase">{{ $slider1->title }}</h6>
+                        <h6 class="text-white">{{ $slider1->title }}</h6>
                            <a href="/detail-page/{{ $slider1->id}}" class="btn btn-primary">Read More</a>
                     </div>
                 </div>
@@ -81,7 +81,7 @@
                 <div class="product-offer mb-30" style="height: 240px;">
                     <img class="img-fluid" src="{{URL::asset('/storage/uploads/'.$slider2->attachment)}}" alt="" style="object-fit: cover;">
                     <div class="offer-text">
-                        <h6 class="text-white text-uppercase">{{ $slider2->title }}</h6>
+                        <h6 class="text-white">{{ $slider2->title }}</h6>
                         <a href="/detail-page/{{ $slider2->id}}" class="btn btn-primary">Read More</a>
                     </div>
                 </div>
@@ -95,7 +95,7 @@
   
     <!-- Categories Start -->
     <div class="container-fluid pt-5">
-        <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">Trained Students</span></h2>
+        <h2 class="section-title position-relative mx-xl-5 mb-4"><span class="bg-secondary pr-3">Trained Students</span></h2>
         <div class="row px-xl-5 pb-3">
  @foreach ($student_webs as $student)   
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">

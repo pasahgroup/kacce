@@ -66,7 +66,7 @@
                 <div class="product-offer mb-30" style="height: 230px;">
                     <img class="img-fluid" src="<?php echo e(URL::asset('/storage/uploads/'.$slider1->attachment)); ?>" alt="">
                     <div class="offer-text">
-                        <h6 class="text-white text-uppercase"><?php echo e($slider1->title); ?></h6>
+                        <h6 class="text-white"><?php echo e($slider1->title); ?></h6>
                            <a href="/detail-page/<?php echo e($slider1->id); ?>" class="btn btn-primary">Read More</a>
                     </div>
                 </div>
@@ -80,7 +80,7 @@
                 <div class="product-offer mb-30" style="height: 240px;">
                     <img class="img-fluid" src="<?php echo e(URL::asset('/storage/uploads/'.$slider2->attachment)); ?>" alt="" style="object-fit: cover;">
                     <div class="offer-text">
-                        <h6 class="text-white text-uppercase"><?php echo e($slider2->title); ?></h6>
+                        <h6 class="text-white"><?php echo e($slider2->title); ?></h6>
                         <a href="/detail-page/<?php echo e($slider2->id); ?>" class="btn btn-primary">Read More</a>
                     </div>
                 </div>
@@ -94,7 +94,7 @@
   
     <!-- Categories Start -->
     <div class="container-fluid pt-5">
-        <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">Trained Students</span></h2>
+        <h2 class="section-title position-relative mx-xl-5 mb-4"><span class="bg-secondary pr-3">Trained Students</span></h2>
         <div class="row px-xl-5 pb-3">
  <?php $__currentLoopData = $student_webs; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $student): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>   
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
