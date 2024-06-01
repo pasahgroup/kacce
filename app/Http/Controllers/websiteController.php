@@ -31,6 +31,7 @@ class websiteController extends Controller
 
  public function detailPage($id)
     {
+     // dd($id);
 $detail = slider::where('id',$id)
           //->select('sliders.*')
           // ->offset(1)

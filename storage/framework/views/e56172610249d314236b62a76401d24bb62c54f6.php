@@ -53,7 +53,7 @@
                                 <div class="p-3" style="max-width: 700px;">
                                     <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown"><?php echo e($slides->title); ?></h1>
                                     <p class="mx-md-5 px-5 animate__animated animate__bounceIn demo-1"><?php echo e($slides->description); ?></p>
-                                    <a class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp" href="/detail-page/<?php echo e($slider_first->id); ?>">Read More</a>
+                                    <a class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp" href="/detail-page/<?php echo e($slides->id); ?>">Read More</a>
                                 </div>
                             </div>
                         </div>
