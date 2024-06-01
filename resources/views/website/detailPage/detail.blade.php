@@ -6,7 +6,7 @@
     <!-- Shop Detail Start -->
     <div class="container-fluid pb-5">
         <div class="row px-xl-5">
-            <div class="col-lg-5 mb-30">
+            <div class="col-lg-6 mb-30">
                 <div id="product-carousel" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner bg-light">
                         <div class="carousel-item active">
@@ -23,7 +23,7 @@
              </div>
 
             
-            <div class="col-lg-7 h-auto mb-30">
+            <div class="col-lg-6 h-auto mb-30">
                 <div class="h-100 bg-light p-30">
                     <h3>{{$detail->title}}</h3>                               
                 </div>
