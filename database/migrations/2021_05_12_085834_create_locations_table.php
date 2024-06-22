@@ -16,15 +16,8 @@ class CreateLocationsTable extends Migration
         Schema::create('locations', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('location_name')->nullable();
-            $table->string('country')->nullable();
-            $table->string('region')->nullable();
-            $table->string('district')->nullable();
-            $table->string('ward_town')->nullable();
-            $table->float('lat')->default(0.0);
-            $table->float('long')->default(0.0);
             $table->integer('user_id')->unsigned();
             $table->timestamps();
-
         });
     }
 

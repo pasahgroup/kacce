@@ -44,9 +44,16 @@ use App\Http\Controllers\PeoplePercentController;
 use App\Http\Controllers\BankController;
 
 use App\Http\Controllers\StudentController;
-use App\Http\Controllers\TribeController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\SubcategoryController;
+use App\Http\Controllers\AssetconditionController;
+
 use App\Http\Controllers\LodgeController;
 use App\Http\Controllers\LodgetraineeController;
+
+
+use App\Http\Controllers\AssetController;
+use App\Http\Controllers\AssetCateController;
 
 use App\Http\Controllers\ClassgController;
 use App\Http\Controllers\SessionController;
@@ -69,6 +76,15 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
+// Route::resource('/addAsset', [AssetCateController::class]);
+
+Route::resource('/addAsset', AssetCateController::class);
+
+Route::get('/getEmployees/{id}', [AssetController::class, 'getEmployees']);
+Route::get('/getD/{p}', [AssetController::class,'getD']);
+
 
 // website routes
  Route::resource('/', websiteController::class);
@@ -151,6 +167,7 @@ Route::post('/search-student', [StudentController::class, 'research'])->name('re
 Route::get('/search-student', [StudentController::class, 'search'])->name('search');
 Route::get('/getA/{p}', [StudentController::class,'getA']);
 
+
 //Subscribe
 Route::resource('/subscribe',SubscribeController::class);
 //Assignee
@@ -164,7 +181,11 @@ Route::post('/search-trainee', [LodgetraineeController::class, 'researcht'])->na
 // Route::get('/getA/{p}', [LodgetraineeController::class,'getA']);
 
 
+Route::resource('/asset',AssetController::class);
+Route::get('/editAsset/{x}', [AssetController::class, 'editAsset'])->name('editAsset');
+Route::get('/getB/{p}', [AssetController::class,'getB']);
 
+Route::get('/getC/{p}', [AssetController::class,'getC']);
 
 Route::resource('/itineraries', itineraryController::class);
 });
@@ -296,7 +317,7 @@ Route::resource('/grouptour', GrouptourController::class);
 // Route::get('/search-tour', [TourController::class,'searchTour']);
 Route::post('search-tour', [TourController::class, 'searchTour'])->name('search-tour');
 //Galleries
-Route::get('/safaris-gallery', [galleryController::class, 'safarisGallery'])->name('safaris-gallery');
+Route::get('/tree', [galleryController::class, 'treeGallery'])->name('tree-gallery');
  Route::get('/hiking-gallery', [galleryController::class, 'hikingGallery'])->name('hiking-gallery');
   Route::get('/beach-gallery', [galleryController::class, 'beachGallery'])->name('beach-gallery');
    Route::get('/group-gallery', [galleryController::class, 'groupGallery'])->name('group-gallery');
@@ -421,10 +442,26 @@ Route::get('/editSession/{x}',[SessionController::class, 'editSession'])->name('
 Route::get('/destroySession/{x}',[SessionController::class, 'destroy'])->name('destroy');
 
 
-Route::resource('/tribe',TribeController::class);
-Route::get('/addtribe',[TribeController::class, 'addtribe'])->name('addtribe');
-Route::get('/editTribe/{x}',[TribeController::class, 'editTribe'])->name('editTribe');
-Route::get('/destroyTribe/{x}',[TribeController::class, 'destroy'])->name('destroy');
+Route::resource('/category',CategoryController::class);
+Route::get('/addcategory',[CategoryController::class, 'addCategory'])->name('addCategory');
+Route::get('/editCategory/{x}',[CategoryController::class, 'editCategory'])->name('editCategory');
+Route::get('/destroyCategory/{x}',[CategoryController::class, 'destroy'])->name('destroy');
+
+Route::resource('/subcategory',SubcategoryController::class);
+Route::get('/addSubcategory',[SubcategoryController::class, 'addSubcategory'])->name('addSubcategory');
+Route::get('/editSubcategory/{x}',[SubcategoryController::class, 'editSubcategory'])->name('editSubcategory');
+Route::get('/destroySubcategory/{x}',[SubcategoryController::class, 'destroy'])->name('destroy');
+
+Route::get('/getS/{p}', [SubcategoryController::class,'getS']);
+
+//AssetconditionController
+
+Route::resource('/condition',AssetconditionController::class);
+Route::get('/addCondition',[AssetconditionController::class, 'addCondition'])->name('addCondition');
+Route::get('/editCondition/{x}',[AssetconditionController::class, 'editCondition'])->name('editCondition');
+Route::get('/destroyCondition/{x}',[AssetconditionController::class, 'destroy'])->name('destroy');
+
+
 
 Route::resource('/lodge',LodgeController::class);
 Route::get('/addlodge',[LodgeController::class, 'addlodge'])->name('addlodge');

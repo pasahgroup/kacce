@@ -1,24 +1,23 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\program;
+use App\Models\slider;
 use Illuminate\Http\Request;
 
 class galleryController extends Controller
 {
     //
-  public function safarisGallery()
+  public function treeGallery()
     {
-        $title='Wildlife Safaris';
-         $safaris = program::
-  join('attachments','attachments.destination_id','programs.id')
-  ->select('programs.*','attachments.attachment')
-  ->where('programs.type','Wildlife Safaris')
-  // ->orwhere('programs.type','Combined Tours')
-  // ->orwhere('programs.type','Day Tours')
-  // ->where('programs.popular_experience','Yes')
-  ->where('attachments.type','Programs')
-->get();
+        $title='Tree Planting';
+   
+
+   $sliders = slider::where('status','1')
+           ->where('section','tree')
+                   ->limit(10)->get();
+
+   
+
      return view('website.galleries.gallery',compact('safaris','title'));
     }
 

@@ -42,11 +42,8 @@ class student extends Model
         'user_id'
     ];
 
-        public static function getAsset($n){
-   
+        public static function getAsset($n){   
       $value = DB::select('select id,session from sessions where class_name="'.$n.'" order by class_name');
-
-//dd($value);
       return $value;
     }
 }

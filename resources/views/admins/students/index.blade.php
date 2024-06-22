@@ -219,7 +219,7 @@
              if(response['dataA'] != null){
                len = response['dataA'].length;
              }
-           //  alet(len);
+            //alet(len);
 
                        if(len > 0){
                // Read data and create <option >

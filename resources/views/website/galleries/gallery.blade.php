@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-@extends('website.layouts.apps')
+@extends('website.layouts.app_hm')
 @section('content')
 <style type="text/css">
   .imgf{
@@ -96,7 +96,7 @@
                 <div class="filter-v1">
                   <ul class="mix-filter">
                    
-                    <li data-filter="category_1" class="filter active"><a href="/safaris-gallery">Wildlife Safaris</a></li>
+                    <li data-filter="category_1" class="filter active"><a href="/tree-gallery">Tree Planting</a></li>
                     <li data-filter="category_2" class="filter"><a href="/hiking-gallery"><i class="fas fa-hiking"></i> Hiking And Trekking</a></li>
                     <li data-filter="category_3" class="filter"><a href="/beach-gallery">Beach Holidays</a></li>
                     <li data-filter="category_3" class="filter"><a href="/group-gallery">Group Tours</a></li>

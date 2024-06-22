@@ -298,8 +298,6 @@ $footer1_slider = slider::where('status','1')
 
 
 
-
-
 //dd($footer2);
 
 $footer3 = slider::where('status','1')
@@ -358,7 +356,7 @@ $footer3 = slider::where('status','1')
        
      //Seach Engine
        // $seo = title::where('title','What We Offer')->first();
-       $title = "HM Academy";
+       $title = "Asset Control";
        $description = "";
        $keywords = "";
 

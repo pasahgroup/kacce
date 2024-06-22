@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>HM Academy</title>
+  <title>Asset Management System</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -254,7 +254,7 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-eye"></i>
               <p>
-                Trainee
+                Assets
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
@@ -265,12 +265,12 @@
                   <p>Trainee</p>
                 </a>
               </li>       
-                 <!--        <li class="nav-item">
-                <a href="/quickLink" class="nav-link">
+                        <li class="nav-item">
+                <a href="/asset" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Page Content</p>
+                  <p>Asset list</p>
                 </a>
-              </li>   -->  
+              </li>    
                         
 
             </ul>
@@ -367,7 +367,7 @@
                   <i class="far fa-circle nav-icon"></i>
                   <p>Mailing</p>
                 </a>
-              </li>
+        </li>
 
       <li class="nav-item">
                 <a href="/designation" class="nav-link">
@@ -384,9 +384,9 @@
             </a>
           </li> -->
               <li class="nav-item">
-                <a href="/relation" class="nav-link">
+                <a href="/locations" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Relation</p>
+                  <p>Location</p>
                 </a>
               </li>
                <li class="nav-item">
@@ -396,12 +396,27 @@
                 </a>
               </li>
 
+  <hr>
                <li class="nav-item">
-                <a href="/tribe" class="nav-link">
+                <a href="/condition" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Tribe</p>
+                  <p>Condition</p>
                 </a>
               </li>
+                 <li class="nav-item">
+                <a href="/category" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Category</p>
+                </a>
+              </li>
+              
+                <li class="nav-item">
+                <a href="/subcategory" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Subcategory</p>
+                </a>
+              </li>
+             
               <hr>
                <li class="nav-item">
                 <a href="/assignee" class="nav-link">
@@ -520,7 +535,7 @@
     <div class="float-right d-none d-sm-block">
       <b>Version</b> 3.1.0
     </div>
-    <strong>Copyright &copy; 2021 <a href="#">HM Academy</a>.</strong> All rights reserved.
+    <strong>Copyright &copy; 2024 <a href="#">Pasah Group</a>.</strong> All rights reserved.
   </footer>
 
   <!-- Control Sidebar -->

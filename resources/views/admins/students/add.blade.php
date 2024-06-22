@@ -6,7 +6,11 @@
 <!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
  -->
+
+   <script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="../js/jquery311.min.js"></script>
  <link rel="stylesheet" href="../../css/mformf.css">
 
 <!------ Include the above in your HEAD tag ---------->
@@ -35,7 +39,7 @@
                                 </div>
                                 <div class="form-group col-md-4 col-sm-6" >
                                     <label>Class</label>
-                                <select class="form-control" name="class">
+                                <select class="form-control" name="class" id="class">
                                     <option></option>
                                                                    @foreach ($classes as $class) 
   <option>{{$class->class}}</option>
@@ -45,7 +49,7 @@
                             </div>
                                  <div class="form-group col-md-4 col-sm-6">
                                     <label>Session</label>
-                                <select class="form-control" name="session">
+                                <select class="form-control" name="session" id="session">
                                      <option></option>
                                                                 @foreach ($sessions as $session) 
   <option>{{$session->session}}</option>
@@ -378,6 +382,69 @@
    
 });
     </script>
+
+
+      <script type="text/javascript">
+       $(document).ready(function(){
+      // Department Change
+      $('#class').change(function(){
+         // ward
+
+  
+
+         var v = $(this).val();
+              //  alert(v);
+           // Empty the dropdown
+          $('#session').find('option').not(':first').remove();
+             // document.getElementById("classgf").value =v;
+         // $('#village').find('option').not(':first').remove();
+         // $('#project_name').find('option').not(':first').remove();
+         // $('#project_activities').find('option').not(':first').remove();
+
+
+// alert(v);
+         // AJAX request
+         $.ajax({
+           url: 'getA/'+v,
+           type: 'get',
+           dataType: 'json',
+           success: function(response){
+
+             var len = 0;
+                //alet(len);
+
+             if(response['dataA'] != null){
+               len = response['dataA'].length;
+             }
+           // alet(len);
+
+                       if(len > 0){
+               // Read data and create <option >
+               for(var i=0; i<len; i++){
+
+                 var id = response['dataA'][i].session;
+                 var name = response['dataA'][i].session;
+                 var option = "<option value='"+id+"'>"+name+"</option>";
+                 $("#session").append(option);
+               }
+             }
+             //DAta are here
+
+           }
+        });
+      });
+    });
+     </script>
+
+   <script type="text/javascript">
+  function setMetanameFunction(id) {
+   // alert('passed');
+    var elementM = document.getElementById("metaname_model").value;
+     //alert(elementM);
+ $('#metaname_id').val(elementM);
+         document.getElementById("data_display").style.display = "none";
+  }
+</script>
 
     <script src="../../img_library/scripts.js" type="text/javascript"></script>
       @endsection

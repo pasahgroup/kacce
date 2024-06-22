@@ -3,10 +3,10 @@
 
 <head>
     <meta charset="utf-8">
-     <title>{{$title ?? 'HM Academy'}}</title>
+     <title>{{$title ?? 'Asset Management System'}}</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="HM Academy" name="keywords">
-    <meta content="HM Academy" name="description">
+    <meta content="Asset Management System" name="keywords">
+    <meta content="Asset Management System" name="description">
 
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
@@ -80,8 +80,8 @@
         <div class="row align-items-center bg-light py-3 px-xl-5 d-none d-lg-flex">
             <div class="col-lg-4">
                 <a href="" class="text-decoration-none">
-                    <span class="h3 text-uppercase text-primary bg-dark px-2">HM</span>
-                    <span class="h3 text-uppercase text-dark bg-primary2 px-2 ml-n1" style="background-color:red">Academy</span>
+                    <span class="h3 text-uppercase text-primary bg-dark px-2">Asset</span>
+                    <span class="h3 text-uppercase text-dark bg-primary2 px-2 ml-n1" style="background-color:red">Control</span>
                 </a>
             </div>
             <div class="col-lg-5 col-6 text-left">                          
@@ -221,7 +221,7 @@
         <div class="row border-top mx-xl-5 py-4" style="border-color: rgba(256, 256, 256, .1) !important;">
             <div class="col-md-6 px-xl-0">
                 <p class="mb-md-0 text-center text-md-left text-secondary">
-                    &copy; <a class="text-primary text-center" href="#">HM Academy</a>. All Rights Reserved by Hakuna Matata Academy.
+                    &copy; <a class="text-primary text-center" href="#">Pasah Group</a>. All Rights Reserved by Pasah Group.
                 </p>
             </div>
             <div class="col-md-6 px-xl-0 text-center text-md-right">

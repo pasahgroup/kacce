@@ -378,6 +378,7 @@ $classes = classg::get();
        echo json_encode($aData);
        exit;
      }
+
     /**
      * Remove the specified resource from storage.
      *

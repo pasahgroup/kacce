@@ -47,53 +47,6 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                        <div class="form-group row">
-                          <label for="inputEmail3" class="col-sm-4 col-form-label">Country</label>
-                          <div class="col-sm-8">
-                            <input type="text" class="form-control" name="country" placeholder="Country">
-                          </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                          <div class="form-group row">
-                            <label for="inputEmail3" class="col-sm-4 col-md-4 col-form-label">Region</label>
-                            <div class="col-sm-8 col-md-8">
-                              <input type="text" class="form-control" name="region" placeholder="Region">
-                            </div>
-                              </div>
-                          </div>
-
-                          <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                            <div class="form-group row">
-                              <label for="inputEmail3" class="col-sm-4 col-md-6 col-form-label">District</label>
-                              <div class="col-sm-8 col-md-6">
-                             <input type="text" class="form-control" name="district"  placeholder="District">
-                              </div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                                <div class="form-group row">
-                                  <label for="inputEmail3" class="col-sm-4 col-md-6 col-form-label">Ward / Town</label>
-                                  <div class="col-sm-8 col-md-6">
-                                 <input type="text"class="form-control" name="ward_town" id="" placeholder="Ward / Town">
-                                  </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-4 col-md-4  col-sm-12 col-xs-12">
-                                    <div class="form-group row">
-                                      <label for="inputEmail3" class="col-sm-4 col-md-4 col-form-label">Location GPS</label>
-                                      <div class="col-sm-4 col-md-4">
-                                     <input type="number" class="form-control" placeholder="Latitude" name="lat">
-                                      </div>
-                                      <div class="col-sm-4 col-md-4">
-                                        <input type="number" class="form-control" placeholder="Longitude" name="long">
-                                         </div>
-                                        </div>
-                                    </div>
                     </div>
                 </div>
                 <div class="form-group row">
