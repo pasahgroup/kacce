@@ -106,13 +106,6 @@ class EmployeeController extends Controller
                      //upload the image
                      $path = $attached->storeAs('public/employees/', $imageToStore);
 
-       
-           // $id = attachment::where('destination_id', '=', $program->id)
-           //  ->where('type', $type)
-           //  ->get()->first();
-     
-     //dd($imageToStore);      
-//dd(request('attachment'));
 
           if(request('attachment') !=null)
             {
@@ -124,7 +117,6 @@ class EmployeeController extends Controller
             'photo'=>$imageToStore
            ]);
 
-//dd('printin bnmn');   
 
            }else
            {
@@ -151,9 +143,16 @@ class EmployeeController extends Controller
      * @param  \App\Models\employee  $employee
      * @return \Illuminate\Http\Response
      */
-    public function show(employee $employee)
+    public function show($id)
     {
-        //
+       //dd(request('searchf'));
+    $search=request('searchf');
+           $employee=employee::where('id',$id)
+           ->first();
+
+//dd($trainee);
+                      //dd($students);
+         return view('admins.employee.employee-details',compact('employee','search'));
     }
 
     /**
@@ -188,11 +187,11 @@ class EmployeeController extends Controller
      * @param  \App\Models\employee  $employee
      * @return \Illuminate\Http\Response
      */
-    public function update($request,$id)
+    public function update($id)
     {
         
-        dd($id);
-         $studentUpdate = employee::UpdateOrCreate(
+      //  dd($id);
+         $employeeUpdate = employee::UpdateOrCreate(
            ['id'=>$id],
            
             [
@@ -208,6 +207,54 @@ class EmployeeController extends Controller
                      'status'=>request('status'),
                 'user_id'=>auth()->id()
             ]);
+  
+
+
+
+  if(request('attachment')){
+                $attach = request('attachment');
+                foreach($attach as $attached){
+
+                     // Get filename with extension
+                     $fileNameWithExt = $attached->getClientOriginalName();
+                     // Just Filename
+                     $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+                     // Get just Extension
+                     $extension = $attached->getClientOriginalExtension();
+                     //Filename to store
+                     $imageToStore = $filename.'_'.time().'.'.$extension;
+                     //upload the image
+                     $path = $attached->storeAs('public/employees/', $imageToStore);
+
+
+          if(request('attachment') !=null)
+            {
+      //dd('printintcxx');   
+
+             $toupdate = employee::where('id',$employeeUpdate->id)
+            // ->where('type', $type)
+             ->update([
+            'photo'=>$imageToStore
+           ]);
+
+
+           }else
+           {
+              // attachment::Create(
+              //   [
+              //   'destination_id'=>$program->id,
+              //   'attachment'=>$imageToStore,
+              //   'type'=> $type
+              //   ]
+              //   );   
+
+              dd('no photo');      
+         }
+        }
+      }
+       
+   return redirect()->route('employee.index')->with('success','Employee recorded successfuly');
+
     }
 
     /**

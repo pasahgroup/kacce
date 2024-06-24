@@ -13,10 +13,11 @@
             <div class="col-md-1">
             </div>
             <div class="col-md-11 form-box">
-                <form method="post" id="post_form" role="form" class="registration-form" action="{{ route('employee.update') }}" enctype="multipart/form-data">
+                <form method="POST" id="post_form" role="form" class="registration-form" action="{{ route('employee.update',$employee->id) }}" enctype="multipart/form-data">
 
                     <fieldset>
-                           @csrf                     
+                           @csrf  
+                             <input type="hidden" name="_method" value="PUT">                      
                         <div class="form-top">
                             <div class="form-top-left">
                                 <h3><span><i class="fa fa-calendar-check-o" aria-hidden="true"></i></span>Employee registration form</h3>

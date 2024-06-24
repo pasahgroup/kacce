@@ -12,11 +12,11 @@
                     <div class="widget user">
                         <!-- User Image -->
                         <div class="image d-flex justify-content-center">
-                            <img src="{{ URL::asset('/storage/trainee/'.$trainee->photo) }}" alt="" class="">
+                            <img src="{{ URL::asset('/storage/employee/'.$employee->photo) }}" alt="" class="">
                         </div>
                         <!-- User Name -->
-                        <h5 class="text-center">{{$trainee->first_name}} {{$trainee->middle_name}} {{$trainee->last_name}}</h5>
-                        <p class="text-center">{{$trainee->first_name}} {{$trainee->middle_name}} {{$trainee->last_name}}</p>
+                        <h5 class="text-center">{{$employee->full_name}}</h5>
+                        <p class="text-center">{{$employee->full_name}}</p>
                     </div>
                   
                 </div>
@@ -32,13 +32,13 @@
                         <div class="widget personal-info">
                             <h3 class="widget-header user">Extras Information</h3> 
                           
-                             <div><a class="my-1 d-inline-block" href="">Gender: <b>{{$trainee->gender}}</b></a></div>
+                             <div><a class="my-1 d-inline-block" href="">Gender: <b>{{$employee->gender}}</b></a></div>
                              
-      <div><a class="my-1 d-inline-block" href="">Addmission: <b>{{$trainee->addmission_no}}</b></a></div>
-                        <div><a class="my-1 d-inline-block" href="">Session: <b>{{$trainee->session}}</b></a></div>
+      <div><a class="my-1 d-inline-block" href="">Addmission: <b>{{$employee->addmission_no}}</b></a></div>
+                        <div><a class="my-1 d-inline-block" href="">Session: <b>{{$employee->session}}</b></a></div>
                        
-                        <div><a class="my-1 d-inline-block" href="">Mobile: <b>{{$trainee->mobile_no}}</b></a></div>
-                        <div><a class="my-1 d-inline-block" href="">Email: <b>{{$trainee->email}}</b></a></div>
+                        <div><a class="my-1 d-inline-block" href="">Mobile: <b>{{$employee->mobile_no}}</b></a></div>
+                        <div><a class="my-1 d-inline-block" href="">Email: <b>{{$employee->email}}</b></a></div>
                   
                         </div>
 
@@ -47,20 +47,20 @@
 
                     <div class="widget change-password">
                         <h3 class="widget-header user">Designation</h3>                        
-                   <div>Current designation: <b>{{$trainee->designation}}</b></div>
-                    <div>Current location: <b>{{$trainee->located}}</b></div>
+                   <div>Current designation: <b>{{$employee->designation}}</b></div>
+                    <div>Current location: <b>{{$employee->located}}</b></div>
                     </div>  
                     </div>
                     <div class="row">
                        @if($search =='sflag')
-                 <a href="/trainee" class="btn btn-primary">
+                 <a href="/employee" class="btn btn-primary">
               <i class="fa fa-angle-double-left"></i>
             </a>
             @endif
 
                     @if($search =='iflag')
 
-          <form method="post" id="post_form" role="form" class="registration-form" action="{{ route('searcht',$trainee->class,$trainee->session) }}" enctype="multipart/form-data">
+          <form method="post" id="post_form" role="form" class="registration-form" action="{{ route('searcht',$employee->class,$employee->session) }}" enctype="multipart/form-data">
 
       @csrf
              <input type="hidden" name="user_id" value="POST"> 
@@ -71,7 +71,7 @@
 
 <div class="float-right">
                   @if(Auth::user()->role =='Admin')
-                <a href="/editTrainee/{{$trainee->id}}" class="btn btn-success float-right">
+                <a href="/editemployee/{{$employee->id}}" class="btn btn-success float-right">
               <i class="fas fa-pencil-alt"></i> Edit
             </a>
 @endif
