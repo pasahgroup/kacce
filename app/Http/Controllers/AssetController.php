@@ -20,6 +20,7 @@ use App\Models\session;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreassetRequest;
 use App\Http\Requests\UpdateassetRequest;
+use DB;
 
 class AssetController extends Controller
 {
@@ -36,15 +37,13 @@ class AssetController extends Controller
          $search="iflag";
          $assets = asset::get();
           $categories = category::get();
-            $datas = student::get();
-
-
+      
   //$classes = classg::where('class',request('classg'))
           //->get();
          $sessions = session::where('class_name',request('classg'))
                ->get();
           //dd($assets);
-             return view('admins.assets.asset',compact('assets','categories','sessions','datas','search'));
+             return view('admins.assets.asset',compact('assets','categories','sessions','search'));
     
 
 //  // Fetch departments
@@ -246,7 +245,7 @@ class AssetController extends Controller
      * @param  \App\Models\asset  $asset
      * @return \Illuminate\Http\Response
      */
-    public function show(asset $asset)
+    public function show(asset $asset,$id)
     {
         dd('Show');
     }

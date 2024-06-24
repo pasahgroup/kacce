@@ -426,15 +426,15 @@
               </li>
                <hr>
                 <li class="nav-item">
-                <a href="/class" class="nav-link">
+                <a href="/employee" class="nav-link">
                   <i class="far fa-dot-circle nav-icon"></i>
-                  <p>Class</p>
+                  <p>Employee</p>
                 </a>
               </li>
                <li class="nav-item">
-                <a href="/session" class="nav-link">
+                <a href="/supply" class="nav-link">
                   <i class="far fa-dot-circle nav-icon"></i>
-                  <p>Session</p>
+                  <p>Supply</p>
                 </a>
               </li>
               <hr>

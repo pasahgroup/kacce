@@ -10,6 +10,16 @@
     .red{
       color: red;
     }
+    .green{
+      color: green;
+    }
+
+     .btnn{
+      color: green;
+      padding: 1px 10px;
+  border-radius: 10px;
+    }
+
   </style>
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -18,7 +28,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Asset Page</h1>
+            <h4>Asset list</h4>
           </div>
           <div class="col-sm-6">
              @if(Auth::user()->role =='Admin')
@@ -91,48 +101,54 @@
                   <thead>
                   <tr>
                     <th>#</th>
-                     <th>ID</th>
-                    <th>Name</th>
-                      <th>Gender</th>
-                      <th>Phone</th>
-                      <th>No topics</th>
-                     <th>Trained topics</th>
-                      <th>Photo</th>
-                         <th>Lodge</th>
-                      
-                    <th>Session</th>
-                    <th>Designation</th>
+                      <th>Asset</th>
+                  
+                    <th>Category</th>
+                      <th>Subcategory</th>
+                      <th>Serial No</th>
+                     <th>Tagged_no</th>
+                      <th>Barcode</th>
+                          <th>Location</th>
+                         <th>photo</th>
+                                 
+                      <th>Assigned_to</th>
+                        <th>Assigned_date</th>
+                    <th>Owner</th>
+                    <th>Status</th>
                     <th>Action</th>
                   </tr>
                   </thead>
                   <tbody>
                       @foreach ($assets as $data)
                   <tr>
-                    <td>{{ $data->id }}</td>
-                    <td>{{ $data->pin }}</td>
-                    <td><a href="{{ route('inclusive.show',$data->id) }}">{{ $data->first_name }} {{ $data->middle_name }} {{ $data->last_name }}<inclusive.show></a></td>
+                     <td>{{ $data->id }}</td>
+                    <td>{{ $data->asset_name }}</td>
+                           <td><span class="badge"> {{ $data->category }}</span></td>              
                                   
-                    <td><span class="badge"> {{ $data->gender }}</span></td>
-                      <td><span class="badge"> {{ $data->mobile_no}}</span></td>
-                    <td>{{ $data->no_topic }}</td>
-                   <td>{{ $data->trained_topic }}</td>
+                    <td><span class="badge"> {{ $data->subcategory }}</span></td>
+                      <td><span class="badge"> {{ $data->serial_no}}</span></td>
+                    <td>{{ $data->tag_no }}</td>
+                   <td>{{ $data->barcode }}</td>
+                   <td>{{ $data->location }}</td>
 
                   <!--    <td>{{ $data->main }}</td>
                      <td>{{ $data->tour_code }}</td> -->
-                      <td><div class="logo mr-auto"><img src="{{ URL::asset('/storage/trainee/'.$data->photo) }}"  style="width:100px; height:80px;"></div></td>
-                       <td>{{ $data->lodge }}</td>
-                   <td>{{ $data->session }}</td>
-  <td>{{ $data->designation }}</td>
+                      <td><div class="logo mr-auto"><img src="{{ URL::asset('/storage/photos/'.$data->photo) }}"  style="width:100px; height:60px;"></div></td>
+                     
+    <td>{{ $data->assigned_to }}</td>
+    <td>{{ $data->assigned_date }}</td>
+    <td>{{ $data->owned_by }}</td>
+   <td>{{ $data->status }}</td>
                     <td>
 
      <form method="GET" id="post_form" role="form" class="registration-form" action="{{ route('trainee.show',$data->id) }}" enctype="multipart/form-data">
 
       @csrf
-             <input type="text" name="user_id" value="PUT">
-             <input type="text" name="classgf" id="classgf" value="{{ $data->class }}">
-<input type="text" name="sessionf" id="sessionf" value="{{ $data->session }}">
+             <input type="hidden" name="user_id" value="PUT">
+             <input type="hidden" name="classgf" id="classgf" value="{{ $data->class }}">
+<input type="hidden" name="sessionf" id="sessionf" value="{{ $data->session }}">
 
-<input type="text" name="searchf" id="searchf" value="{{ $search }}">
+<input type="hidden" name="searchf" id="searchf" value="{{ $search }}">
 
 
 <button type="submit" role="button"><i class="fa fa-bars"></i></button>
@@ -142,7 +158,7 @@
                       <a role="button" href="{{ route('editTrainee',$data->id) }}"><i class="fa fa-edit"></i></a> 
                       @endif
                      
-                     <!--  <a role="button" href="/destroyf/{{$data->id}} " onclick="return confirm('Are you sure? You want to delete {{ $data->tour_name}}','Inclusive')"><i class="fa fa-trash red"></i></a> -->
+                      <a role="button" class="btnn btn-success" href="/destroyf/{{$data->id}} " onclick="return confirm('Are you sure? You want to delete {{ $data->tour_name}}','Inclusive')">History</i></a>
 
                     </td>
                   </tr>
@@ -151,20 +167,21 @@
                   </tbody>
                   <tfoot>
                    <tr>
-                    <th>#</th>
-                     <th>ID</th>
-                     <th>Name</th>
-
-                       <th>Gender</th>
-                       <th>Phone</th>
-                      <th>No topics</th>
-                     <th>Trained topics</th>
-                      
-                       <th>Photo</th>
-                     <th>Lodge</th>
-                                   
-                       <th>Session</th>
-                     <th>Designation</th>
+                   <th>#</th>
+                      <th>Asset</th>
+                  
+                    <th>Category</th>
+                      <th>Subcategory</th>
+                      <th>Serial No</th>
+                     <th>Tagged_no</th>
+                      <th>Barcode</th>
+                          <th>Location</th>
+                         <th>photo</th>
+                                 
+                      <th>Assigned_to</th>
+                        <th>Assigned_date</th>
+                    <th>Owner</th>
+                    <th>Status</th>
                     <th>Action</th>
                   </tr>
                   </tfoot>

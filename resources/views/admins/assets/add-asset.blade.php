@@ -90,7 +90,7 @@
 
                                       <div class="form-group col-md-4 col-sm-6">
                                     <label>Bought price</label>
-                                    <input type="number" class="form-control" name="bprice">
+                                    <input type="number" class="form-control" name="bprice" value="0.00">
                                 </div>
 
                              </div>

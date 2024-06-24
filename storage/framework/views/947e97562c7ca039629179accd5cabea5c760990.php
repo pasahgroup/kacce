@@ -9,6 +9,16 @@
     .red{
       color: red;
     }
+    .green{
+      color: green;
+    }
+
+     .btnn{
+      color: green;
+      padding: 1px 10px;
+  border-radius: 10px;
+    }
+
   </style>
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -17,7 +27,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Asset Page</h1>
+            <h4>Asset list</h4>
           </div>
           <div class="col-sm-6">
              <?php if(Auth::user()->role =='Admin'): ?>
@@ -90,48 +100,54 @@
                   <thead>
                   <tr>
                     <th>#</th>
-                     <th>ID</th>
-                    <th>Name</th>
-                      <th>Gender</th>
-                      <th>Phone</th>
-                      <th>No topics</th>
-                     <th>Trained topics</th>
-                      <th>Photo</th>
-                         <th>Lodge</th>
-                      
-                    <th>Session</th>
-                    <th>Designation</th>
+                      <th>Asset</th>
+                  
+                    <th>Category</th>
+                      <th>Subcategory</th>
+                      <th>Serial No</th>
+                     <th>Tagged_no</th>
+                      <th>Barcode</th>
+                          <th>Location</th>
+                         <th>photo</th>
+                                 
+                      <th>Assigned_to</th>
+                        <th>Assigned_date</th>
+                    <th>Owner</th>
+                    <th>Status</th>
                     <th>Action</th>
                   </tr>
                   </thead>
                   <tbody>
                       <?php $__currentLoopData = $assets; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $data): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                   <tr>
-                    <td><?php echo e($data->id); ?></td>
-                    <td><?php echo e($data->pin); ?></td>
-                    <td><a href="<?php echo e(route('inclusive.show',$data->id)); ?>"><?php echo e($data->first_name); ?> <?php echo e($data->middle_name); ?> <?php echo e($data->last_name); ?><inclusive.show></a></td>
+                     <td><?php echo e($data->id); ?></td>
+                    <td><?php echo e($data->asset_name); ?></td>
+                           <td><span class="badge"> <?php echo e($data->category); ?></span></td>              
                                   
-                    <td><span class="badge"> <?php echo e($data->gender); ?></span></td>
-                      <td><span class="badge"> <?php echo e($data->mobile_no); ?></span></td>
-                    <td><?php echo e($data->no_topic); ?></td>
-                   <td><?php echo e($data->trained_topic); ?></td>
+                    <td><span class="badge"> <?php echo e($data->subcategory); ?></span></td>
+                      <td><span class="badge"> <?php echo e($data->serial_no); ?></span></td>
+                    <td><?php echo e($data->tag_no); ?></td>
+                   <td><?php echo e($data->barcode); ?></td>
+                   <td><?php echo e($data->location); ?></td>
 
                   <!--    <td><?php echo e($data->main); ?></td>
                      <td><?php echo e($data->tour_code); ?></td> -->
-                      <td><div class="logo mr-auto"><img src="<?php echo e(URL::asset('/storage/trainee/'.$data->photo)); ?>"  style="width:100px; height:80px;"></div></td>
-                       <td><?php echo e($data->lodge); ?></td>
-                   <td><?php echo e($data->session); ?></td>
-  <td><?php echo e($data->designation); ?></td>
+                      <td><div class="logo mr-auto"><img src="<?php echo e(URL::asset('/storage/photos/'.$data->photo)); ?>"  style="width:100px; height:60px;"></div></td>
+                     
+    <td><?php echo e($data->assigned_to); ?></td>
+    <td><?php echo e($data->assigned_date); ?></td>
+    <td><?php echo e($data->owned_by); ?></td>
+   <td><?php echo e($data->status); ?></td>
                     <td>
 
      <form method="GET" id="post_form" role="form" class="registration-form" action="<?php echo e(route('trainee.show',$data->id)); ?>" enctype="multipart/form-data">
 
       <?php echo csrf_field(); ?>
-             <input type="text" name="user_id" value="PUT">
-             <input type="text" name="classgf" id="classgf" value="<?php echo e($data->class); ?>">
-<input type="text" name="sessionf" id="sessionf" value="<?php echo e($data->session); ?>">
+             <input type="hidden" name="user_id" value="PUT">
+             <input type="hidden" name="classgf" id="classgf" value="<?php echo e($data->class); ?>">
+<input type="hidden" name="sessionf" id="sessionf" value="<?php echo e($data->session); ?>">
 
-<input type="text" name="searchf" id="searchf" value="<?php echo e($search); ?>">
+<input type="hidden" name="searchf" id="searchf" value="<?php echo e($search); ?>">
 
 
 <button type="submit" role="button"><i class="fa fa-bars"></i></button>
@@ -141,7 +157,7 @@
                       <a role="button" href="<?php echo e(route('editTrainee',$data->id)); ?>"><i class="fa fa-edit"></i></a> 
                       <?php endif; ?>
                      
-                     <!--  <a role="button" href="/destroyf/<?php echo e($data->id); ?> " onclick="return confirm('Are you sure? You want to delete <?php echo e($data->tour_name); ?>','Inclusive')"><i class="fa fa-trash red"></i></a> -->
+                      <a role="button" class="btnn btn-success" href="/destroyf/<?php echo e($data->id); ?> " onclick="return confirm('Are you sure? You want to delete <?php echo e($data->tour_name); ?>','Inclusive')">History</i></a>
 
                     </td>
                   </tr>
@@ -150,20 +166,21 @@
                   </tbody>
                   <tfoot>
                    <tr>
-                    <th>#</th>
-                     <th>ID</th>
-                     <th>Name</th>
-
-                       <th>Gender</th>
-                       <th>Phone</th>
-                      <th>No topics</th>
-                     <th>Trained topics</th>
-                      
-                       <th>Photo</th>
-                     <th>Lodge</th>
-                                   
-                       <th>Session</th>
-                     <th>Designation</th>
+                   <th>#</th>
+                      <th>Asset</th>
+                  
+                    <th>Category</th>
+                      <th>Subcategory</th>
+                      <th>Serial No</th>
+                     <th>Tagged_no</th>
+                      <th>Barcode</th>
+                          <th>Location</th>
+                         <th>photo</th>
+                                 
+                      <th>Assigned_to</th>
+                        <th>Assigned_date</th>
+                    <th>Owner</th>
+                    <th>Status</th>
                     <th>Action</th>
                   </tr>
                   </tfoot>

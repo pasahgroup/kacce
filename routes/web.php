@@ -59,6 +59,11 @@ use App\Http\Controllers\ClassgController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\AssigneeController;
 
+use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\SupplyController;
+
+
+
 use App\Http\Controllers\RelationController;
 use App\Http\Controllers\DesignationController;
 use App\Http\Controllers\SubscribeController;
@@ -440,6 +445,17 @@ Route::resource('/session',SessionController::class);
 Route::get('/addsession',[SessionController::class, 'addsession'])->name('addsession');
 Route::get('/editSession/{x}',[SessionController::class, 'editSession'])->name('editSession');
 Route::get('/destroySession/{x}',[SessionController::class, 'destroy'])->name('destroy');
+
+
+Route::resource('/employee',EmployeeController::class);
+Route::get('/addemployee',[EmployeeController::class, 'addemployee'])->name('addemployee');
+Route::get('/editemployee/{x}',[EmployeeController::class, 'editemployee'])->name('editemployee');
+Route::get('/destroyEmployee/{x}',[EmployeeController::class, 'destroy'])->name('destroy');
+
+Route::resource('/supply',SupplyController::class);
+Route::get('/addSupply',[SupplyController::class, 'addSupply'])->name('addSupply');
+Route::get('/editSupply/{x}',[SupplyController::class, 'editSupply'])->name('editSupply');
+Route::get('/destroySupply/{x}',[SupplyController::class, 'destroy'])->name('destroy');
 
 
 Route::resource('/category',CategoryController::class);
