@@ -71,12 +71,24 @@
 
 
                            <div class="row">                             
-                               <div class="form-group col-md-4 col-sm-6">
+                               <div class="form-group col-md-8 col-sm-8">
+                                    <label>Mac Address</label>
+                                    <input type="text" class="form-control" name="mac_address">
+                                </div>
+
+                              
+<div class="form-group col-md-4 col-sm-4">
                                     <label>Tagged no</label>
                                     <input type="text" class="form-control" name="tag_no">
                                 </div>
 
-                                 <div class="form-group col-md-4 col-sm-4">
+                             </div>
+
+
+                              <div class="row">                             
+                               
+
+                                 <div class="form-group col-md-8 col-sm-8">
                                          <label>Supply</label>
                                         <select class="form-control" name="supply" id="supply">
                                             <option>Benson</option>

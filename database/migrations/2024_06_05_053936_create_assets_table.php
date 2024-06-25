@@ -24,6 +24,8 @@ $table->string('serial_no')->nullable();
 
 $table->string('tag_no')->nullable();
 $table->string('barcode')->nullable();
+$table->string('mac_address',64)->nullable();
+
 $table->string('photo')->nullable();
 
              $table->string('assign_date')->nullable();

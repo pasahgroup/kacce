@@ -166,6 +166,7 @@ class AssetController extends Controller
                  'model'=>request('model'),
                  'tag_no'=>request('tag_no'),
                  'barcode'=>request('barcode'),
+                   'mac_address'=>request('mac_address'),
                  'assign_date'=>request('assign_date'),
                  'location'=>request('location'),
                  'owned_by'=>request('owned_by'),

@@ -18,6 +18,7 @@ class asset extends Model
         'serial_no',
         'tag_no',
         'barcode',
+        'mac_address',
         'photo',
         'assign_date',
         'location',
