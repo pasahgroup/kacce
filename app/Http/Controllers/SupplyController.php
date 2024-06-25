@@ -96,9 +96,17 @@ class SupplyController extends Controller
      * @param  \App\Models\supply  $supply
      * @return \Illuminate\Http\Response
      */
-    public function show(supply $supply)
+    public function show($id)
     {
-        //
+        
+            //dd(request('searchf'));
+    $search=request('searchf');
+           $supplies=supply::where('id',$id)
+           ->first();
+
+//dd($trainee);
+                      //dd($students);
+         return view('admins.supply.supply-details',compact('supplies','search'));
     }
 
     /**
@@ -134,7 +142,7 @@ class SupplyController extends Controller
      * @param  \App\Models\supply  $supply
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdatesupplyRequest $request, supply $supply)
+    public function update($id)
     {
         
            $supplyUpdate = supply::UpdateOrCreate(

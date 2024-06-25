@@ -112,7 +112,7 @@
       <td><?php echo e($data->status); ?></td>
                     <td>
 
-     <form method="GET" id="post_form" role="form" class="registration-form" action="<?php echo e(route('employee.show',$data->id)); ?>" enctype="multipart/form-data">
+     <form method="GET" id="post_form" role="form" class="registration-form" action="<?php echo e(route('supply.show',$data->id)); ?>" enctype="multipart/form-data">
 
       <?php echo csrf_field(); ?>
              <input type="hidden" name="user_id" value="PUT">

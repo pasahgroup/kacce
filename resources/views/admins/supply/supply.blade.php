@@ -113,7 +113,7 @@
       <td>{{ $data->status }}</td>
                     <td>
 
-     <form method="GET" id="post_form" role="form" class="registration-form" action="{{ route('employee.show',$data->id) }}" enctype="multipart/form-data">
+     <form method="GET" id="post_form" role="form" class="registration-form" action="{{ route('supply.show',$data->id) }}" enctype="multipart/form-data">
 
       @csrf
              <input type="hidden" name="user_id" value="PUT">
