@@ -36,10 +36,7 @@
                              <div><a class="my-1 d-inline-block" href="">VRN: <b>{{$supplies->vrn}}</b></a></div>
                              
       <div><a class="my-1 d-inline-block" href="">Current location: <b>{{$supplies->location}}</b></a></div>
-                       
-                        <div><a class="my-1 d-inline-block" href="">Mobile: <b>{{$supplies->phone}}</b></a></div>
-                        <div><a class="my-1 d-inline-block" href="">Email: <b>{{$supplies->email}}</b></a></div>
-                  
+                      
                         </div>
 
                     </div>
@@ -47,7 +44,8 @@
 
                     <div class="widget change-password">
                         <h3 class="widget-header user">Other Information</h3>                        
-                   <div>Registration date: <b>{{$supplies->reg_date}}</b></div>
+                   <div>Mobile: <b>{{$supplies->phone}}</b></div>
+                     <div>Email: <b>{{$supplies->email}}</b></div>
                     <div>Status:<b>{{$supplies->status}}</b></div>
                     </div>  
                     </div>

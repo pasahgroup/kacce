@@ -35,10 +35,7 @@
                              <div><a class="my-1 d-inline-block" href="">VRN: <b><?php echo e($supplies->vrn); ?></b></a></div>
                              
       <div><a class="my-1 d-inline-block" href="">Current location: <b><?php echo e($supplies->location); ?></b></a></div>
-                       
-                        <div><a class="my-1 d-inline-block" href="">Mobile: <b><?php echo e($supplies->phone); ?></b></a></div>
-                        <div><a class="my-1 d-inline-block" href="">Email: <b><?php echo e($supplies->email); ?></b></a></div>
-                  
+                      
                         </div>
 
                     </div>
@@ -46,7 +43,8 @@
 
                     <div class="widget change-password">
                         <h3 class="widget-header user">Other Information</h3>                        
-                   <div>Registration date: <b><?php echo e($supplies->reg_date); ?></b></div>
+                   <div>Mobile: <b><?php echo e($supplies->phone); ?></b></div>
+                     <div>Email: <b><?php echo e($supplies->email); ?></b></div>
                     <div>Status:<b><?php echo e($supplies->status); ?></b></div>
                     </div>  
                     </div>
