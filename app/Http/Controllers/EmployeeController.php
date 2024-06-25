@@ -34,18 +34,6 @@ class EmployeeController extends Controller
          //       ->get();
          // dd($employees);
              return view('admins.employee.employee',compact('employees','search'));
-    
-
-//  // Fetch departments
-//          $departments['data'] = category::orderby("category","asc")
-//               ->select('id','category')
-//               ->get();
-
-// //dd( $departments['data']);
-//          // Load index view
-//         //  return view('index')->with("departments",$departments);
-
-//              return view('admins.index',compact('departments'));
     }
 
     /**
@@ -82,7 +70,6 @@ class EmployeeController extends Controller
                    'designation'=>request('designation'),
                  'location'=>request('location'),
                
-                 'photo'=>request('photo'),
                  'reg_date'=>request('reg_date'),
                      'status'=>request('status'),
                 'user_id'=>auth()->id()
@@ -202,7 +189,6 @@ class EmployeeController extends Controller
                    'designation'=>request('designation'),
                  'location'=>request('location'),
                
-                 'photo'=>request('photo'),
                  'reg_date'=>request('reg_date'),
                      'status'=>request('status'),
                 'user_id'=>auth()->id()
@@ -211,7 +197,9 @@ class EmployeeController extends Controller
 
 
 
-  if(request('attachment')){
+  if(request('attachment') !=null){
+   // dd('not null');
+
                 $attach = request('attachment');
                 foreach($attach as $attached){
 
@@ -273,7 +261,7 @@ class EmployeeController extends Controller
             return redirect()->route('employee.index')->with('info','Employee deleted successfully');
         }    
         else{
-            return redirect()->route('programs.index')->with('error','Widget not exists');
+            return redirect()->route('employee.index')->with('error','Employee not exists');
         }
     }
 }

@@ -3,8 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Models\supply;
+use App\Models\lodge;
+use App\Models\designation;
+
 use App\Http\Requests\StoresupplyRequest;
 use App\Http\Requests\UpdatesupplyRequest;
+
+use Illuminate\Http\Request;
+use DB;
+
 
 class SupplyController extends Controller
 {
@@ -15,7 +22,30 @@ class SupplyController extends Controller
      */
     public function index()
     {
-        //
+        //dd('print3');
+
+         $search="iflag";
+         $supplies =supply::get();
+          // $categories = category::get();
+      
+  //$classes = classg::where('class',request('classg'))
+          //->get();
+         // $sessions = session::where('class_name',request('classg'))
+         //       ->get();
+         //dd($supplies);
+             return view('admins.supply.supply',compact('supplies','search'));
+    
+
+//  // Fetch departments
+//          $departments['data'] = category::orderby("category","asc")
+//               ->select('id','category')
+//               ->get();
+
+// //dd( $departments['data']);
+//          // Load index view
+//         //  return view('index')->with("departments",$departments);
+
+//              return view('admins.index',compact('departments'));
     }
 
     /**
@@ -25,7 +55,14 @@ class SupplyController extends Controller
      */
     public function create()
     {
-        //
+        
+         $lodges = lodge::where('status','Active')->get();
+        $designations = designation::get();
+              // $departments = department::get();
+
+//dd($lodges);
+             // return view('admins.employee.add-employee',compact('departments'));
+          return view('admins.supply.add-supply',compact('lodges','designations'));
     }
 
     /**
@@ -34,9 +71,23 @@ class SupplyController extends Controller
      * @param  \App\Http\Requests\StoresupplyRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoresupplyRequest $request)
+    public function store(Request $request)
     {
-        //
+        
+          $asset =  supply::Create(
+            [  
+                  'supply_name'=>request('supply_name'),
+                  'phone'=>request('phone'),
+                   'email'=>request('email'),
+                 'location'=>request('location'),
+               
+                 'tin'=>request('tin'),
+                 'vrn'=>request('vrn'),
+                     'status'=>request('status'),
+                'user_id'=>auth()->id()
+            ]);
+
+             return redirect()->route('supply.create')->with('success','Employee recorded successfuly');
     }
 
     /**
@@ -61,6 +112,21 @@ class SupplyController extends Controller
         //
     }
 
+
+      public function editsupply($id)
+    {
+        
+       // dd($id);
+        // $lodges = lodge::where('status','Active')
+        //  ->orderBy('lodge_name', 'asc')->get();       
+        //  $designations = designation::orderBy('designation', 'asc')->get();
+
+         $supplies = supply::where('id',$id)->first();
+//dd($supplies);
+
+             return view('admins.supply.edit-supply',compact('supplies'));
+     }
+
     /**
      * Update the specified resource in storage.
      *
@@ -70,7 +136,22 @@ class SupplyController extends Controller
      */
     public function update(UpdatesupplyRequest $request, supply $supply)
     {
-        //
+        
+           $supplyUpdate = supply::UpdateOrCreate(
+           ['id'=>$id],
+           
+            [
+                 'supply_name'=>request('supply_name'),
+                  'phone'=>request('phone'),
+                   'email'=>request('email'),
+                 'location'=>request('location'),
+               
+                 'tin'=>request('tin'),
+                 'vrn'=>request('vrn'),
+                     'status'=>request('status'),
+                'user_id'=>auth()->id()
+            ]);
+     return redirect()->route('supply.index')->with('success','Supply recorded successfuly');
     }
 
     /**
@@ -79,8 +160,17 @@ class SupplyController extends Controller
      * @param  \App\Models\supply  $supply
      * @return \Illuminate\Http\Response
      */
-    public function destroy(supply $supply)
+     public function destroy($id)
     {
-        //
+         //dd($id);
+        $delete = supply::where('id',$id)->first();
+      //dd($delete);
+        if($delete->delete()){
+             DB::statement("delete from supplies where id=$id");
+            return redirect()->route('supply.index')->with('info','Supply deleted successfully');
+        }    
+        else{
+            return redirect()->route('supply.index')->with('error','Supply not exists');
+        }
     }
 }

@@ -32,7 +32,7 @@ class AssetController extends Controller
     public function index()
     {
 
-        //dd('print3');
+        
 
          $search="iflag";
          $assets = asset::get();

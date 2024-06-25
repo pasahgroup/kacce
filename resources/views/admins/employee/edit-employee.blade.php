@@ -20,7 +20,7 @@
                              <input type="hidden" name="_method" value="PUT">                      
                         <div class="form-top">
                             <div class="form-top-left">
-                                <h3><span><i class="fa fa-calendar-check-o" aria-hidden="true"></i></span>Employee registration form</h3>
+                                <h3><span><i class="fa fa-calendar-check-o" aria-hidden="true"></i></span>Employee updating form</h3>
                                 
                             </div>
                         </div>

@@ -454,7 +454,7 @@ Route::get('/destroyEmployee/{x}',[EmployeeController::class, 'destroy'])->name(
 
 Route::resource('/supply',SupplyController::class);
 Route::get('/addSupply',[SupplyController::class, 'addSupply'])->name('addSupply');
-Route::get('/editSupply/{x}',[SupplyController::class, 'editSupply'])->name('editSupply');
+Route::get('/editsupply/{x}',[SupplyController::class, 'editsupply'])->name('editsupply');
 Route::get('/destroySupply/{x}',[SupplyController::class, 'destroy'])->name('destroy');
 
 
