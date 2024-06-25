@@ -12,7 +12,7 @@
                     <div class="widget user">
                         <!-- User Image -->
                         <div class="image d-flex justify-content-center">
-                            <img src="{{ URL::asset('/storage/employee/'.$employee->photo) }}" alt="" class="">
+                            <img src="{{ URL::asset('/storage/employees/'.$employee->photo) }}" alt="" class="">
                         </div>
                         <!-- User Name -->
                         <h5 class="text-center">{{$employee->full_name}}</h5>
@@ -60,11 +60,11 @@
 
                     @if($search =='iflag')
 
-          <form method="post" id="post_form" role="form" class="registration-form" action="{{ route('searcht',$employee->class,$employee->session) }}" enctype="multipart/form-data">
+          <form method="post" id="post_form" role="form" class="registration-form" action="{{ route('employee.index') }}" enctype="multipart/form-data">
 
       @csrf
-             <input type="hidden" name="user_id" value="POST"> 
-<button type="submit" role="button" class="btn btn-primary"> <i class="fa fa-angle-double-left"></i></button>
+             <input type="hidden" name="user_id" value="PUT"> 
+<button type="submit" role="button" class="btn btn-primary"> <i class="fa fa-angle-double-left"> bbbb</i></button>
            </form> 
             @endif
 

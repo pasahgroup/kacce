@@ -32,7 +32,7 @@ class EmployeeController extends Controller
           //->get();
          // $sessions = session::where('class_name',request('classg'))
          //       ->get();
-          //dd($assets);
+         // dd($employees);
              return view('admins.employee.employee',compact('employees','search'));
     
 

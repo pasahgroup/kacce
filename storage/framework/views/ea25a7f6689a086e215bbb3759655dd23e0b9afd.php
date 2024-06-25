@@ -11,7 +11,7 @@
                     <div class="widget user">
                         <!-- User Image -->
                         <div class="image d-flex justify-content-center">
-                            <img src="<?php echo e(URL::asset('/storage/employee/'.$employee->photo)); ?>" alt="" class="">
+                            <img src="<?php echo e(URL::asset('/storage/employees/'.$employee->photo)); ?>" alt="" class="">
                         </div>
                         <!-- User Name -->
                         <h5 class="text-center"><?php echo e($employee->full_name); ?></h5>
@@ -59,11 +59,11 @@
 
                     <?php if($search =='iflag'): ?>
 
-          <form method="post" id="post_form" role="form" class="registration-form" action="<?php echo e(route('searcht',$employee->class,$employee->session)); ?>" enctype="multipart/form-data">
+          <form method="post" id="post_form" role="form" class="registration-form" action="<?php echo e(route('employee.index')); ?>" enctype="multipart/form-data">
 
       <?php echo csrf_field(); ?>
-             <input type="hidden" name="user_id" value="POST"> 
-<button type="submit" role="button" class="btn btn-primary"> <i class="fa fa-angle-double-left"></i></button>
+             <input type="hidden" name="user_id" value="PUT"> 
+<button type="submit" role="button" class="btn btn-primary"> <i class="fa fa-angle-double-left"> bbbb</i></button>
            </form> 
             <?php endif; ?>
 
