@@ -99,11 +99,6 @@
 
 
 
-
-
-
-
-
     <script type='text/javascript'>
     $(document).ready(function(){
 
@@ -205,7 +200,5 @@
    
 });
     </script>
-
-    <script src="../../img_library/scripts.js" type="text/javascript"></script>
       <?php $__env->stopSection(); ?>
 <?php echo $__env->make('admins.layouts.Apps.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\assetf\resources\views/admins/supply/add-supply.blade.php ENDPATH**/ ?>

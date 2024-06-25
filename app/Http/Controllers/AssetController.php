@@ -236,8 +236,6 @@ class AssetController extends Controller
        
    return redirect()->route('addAsset.index')->with('success','Assed recorded successfuly');
 
-
-
     }
 
     /**

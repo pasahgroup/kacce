@@ -77,7 +77,6 @@ class EmployeeController extends Controller
 
 
 
-
   if(request('attachment')){
                 $attach = request('attachment');
                 foreach($attach as $attached){

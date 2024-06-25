@@ -30,14 +30,13 @@
                 <div class="row">
                     <div class="col-lg-6 col-md-6">
                         <div class="widget personal-info">
-                            <h3 class="widget-header user">Extras Information</h3> 
+                            <h3 class="widget-header user">Information</h3> 
                           
-                             <div><a class="my-1 d-inline-block" href="">Gender: <b>{{$employee->gender}}</b></a></div>
+                             <div><a class="my-1 d-inline-block" href="">Current designation: <b>{{$employee->designation}}</b></a></div>
                              
-      <div><a class="my-1 d-inline-block" href="">Addmission: <b>{{$employee->addmission_no}}</b></a></div>
-                        <div><a class="my-1 d-inline-block" href="">Session: <b>{{$employee->session}}</b></a></div>
+      <div><a class="my-1 d-inline-block" href="">Current location: <b>{{$employee->location}}</b></a></div>
                        
-                        <div><a class="my-1 d-inline-block" href="">Mobile: <b>{{$employee->mobile_no}}</b></a></div>
+                        <div><a class="my-1 d-inline-block" href="">Mobile: <b>{{$employee->phone}}</b></a></div>
                         <div><a class="my-1 d-inline-block" href="">Email: <b>{{$employee->email}}</b></a></div>
                   
                         </div>
@@ -46,9 +45,9 @@
                     <div class="col-lg-6 col-md-6">         
 
                     <div class="widget change-password">
-                        <h3 class="widget-header user">Designation</h3>                        
-                   <div>Current designation: <b>{{$employee->designation}}</b></div>
-                    <div>Current location: <b>{{$employee->located}}</b></div>
+                        <h3 class="widget-header user">Other Information</h3>                        
+                   <div>Registration date: <b>{{$employee->reg_date}}</b></div>
+                    <div>Status:<b>{{$employee->status}}</b></div>
                     </div>  
                     </div>
                     <div class="row">
@@ -60,11 +59,11 @@
 
                     @if($search =='iflag')
 
-          <form method="post" id="post_form" role="form" class="registration-form" action="{{ route('employee.index') }}" enctype="multipart/form-data">
+          <form method="get" id="post_form" role="form" class="registration-form" action="{{ route('employee.index') }}" enctype="multipart/form-data">
 
       @csrf
-             <input type="hidden" name="user_id" value="PUT"> 
-<button type="submit" role="button" class="btn btn-primary"> <i class="fa fa-angle-double-left"> bbbb</i></button>
+             <!-- <input type="hidden" name="user_id" value="PUT">  -->
+<button type="submit" role="button" class="btn btn-primary"> <i class="fa fa-angle-double-left"></i></button>
            </form> 
             @endif
 

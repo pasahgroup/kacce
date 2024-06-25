@@ -29,14 +29,13 @@
                 <div class="row">
                     <div class="col-lg-6 col-md-6">
                         <div class="widget personal-info">
-                            <h3 class="widget-header user">Extras Information</h3> 
+                            <h3 class="widget-header user">Information</h3> 
                           
-                             <div><a class="my-1 d-inline-block" href="">Gender: <b><?php echo e($employee->gender); ?></b></a></div>
+                             <div><a class="my-1 d-inline-block" href="">Current designation: <b><?php echo e($employee->designation); ?></b></a></div>
                              
-      <div><a class="my-1 d-inline-block" href="">Addmission: <b><?php echo e($employee->addmission_no); ?></b></a></div>
-                        <div><a class="my-1 d-inline-block" href="">Session: <b><?php echo e($employee->session); ?></b></a></div>
+      <div><a class="my-1 d-inline-block" href="">Current location: <b><?php echo e($employee->location); ?></b></a></div>
                        
-                        <div><a class="my-1 d-inline-block" href="">Mobile: <b><?php echo e($employee->mobile_no); ?></b></a></div>
+                        <div><a class="my-1 d-inline-block" href="">Mobile: <b><?php echo e($employee->phone); ?></b></a></div>
                         <div><a class="my-1 d-inline-block" href="">Email: <b><?php echo e($employee->email); ?></b></a></div>
                   
                         </div>
@@ -45,9 +44,9 @@
                     <div class="col-lg-6 col-md-6">         
 
                     <div class="widget change-password">
-                        <h3 class="widget-header user">Designation</h3>                        
-                   <div>Current designation: <b><?php echo e($employee->designation); ?></b></div>
-                    <div>Current location: <b><?php echo e($employee->located); ?></b></div>
+                        <h3 class="widget-header user">Other Information</h3>                        
+                   <div>Registration date: <b><?php echo e($employee->reg_date); ?></b></div>
+                    <div>Status:<b><?php echo e($employee->status); ?></b></div>
                     </div>  
                     </div>
                     <div class="row">
@@ -59,11 +58,11 @@
 
                     <?php if($search =='iflag'): ?>
 
-          <form method="post" id="post_form" role="form" class="registration-form" action="<?php echo e(route('employee.index')); ?>" enctype="multipart/form-data">
+          <form method="get" id="post_form" role="form" class="registration-form" action="<?php echo e(route('employee.index')); ?>" enctype="multipart/form-data">
 
       <?php echo csrf_field(); ?>
-             <input type="hidden" name="user_id" value="PUT"> 
-<button type="submit" role="button" class="btn btn-primary"> <i class="fa fa-angle-double-left"> bbbb</i></button>
+             <!-- <input type="hidden" name="user_id" value="PUT">  -->
+<button type="submit" role="button" class="btn btn-primary"> <i class="fa fa-angle-double-left"></i></button>
            </form> 
             <?php endif; ?>
 
