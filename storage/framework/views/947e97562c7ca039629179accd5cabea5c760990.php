@@ -154,10 +154,14 @@
 </form>
 
   <?php if(Auth::user()->role =='Admin'): ?>
-                      <a role="button" href="<?php echo e(route('editTrainee',$data->id)); ?>"><i class="fa fa-edit"></i></a> 
+                      <a role="button" href="<?php echo e(route('asset-edit',$data->id)); ?>"><i class="fa fa-edit"></i></a>
+                    <!--       <a role="button" href="/editasset/{x}"><i class="fa fa-edit"></i></a>
+                          <a role="button" href="/asset-edit/{x}"><i class="fa fa-edit"></i></a> -->
+
+                          <a role="button" class="" href="/asset-destroy/<?php echo e($data->id); ?> " onclick="return confirm('Are you sure? You want to delete <?php echo e($data->tour_name); ?>','Inclusive')"><i class="fa fa-trash red"></i></a>
                       <?php endif; ?>
                      
-                      <a role="button" class="btnn btn-success" href="/destroyf/<?php echo e($data->id); ?> " onclick="return confirm('Are you sure? You want to delete <?php echo e($data->tour_name); ?>','Inclusive')">History</i></a>
+                      <a role="button" class="btnn btn-success" href="/destroyf/<?php echo e($data->id); ?> " onclick="return confirm('Are you sure? You want to delete <?php echo e($data->tour_name); ?>','Inclusive')">History</a>
 
                     </td>
                   </tr>

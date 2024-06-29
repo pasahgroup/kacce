@@ -43,7 +43,7 @@
                             </div>
                                  <div class="form-group col-md-4 col-sm-6">
                                     <label>Subcategory</label>
-                                <select class="form-control" name="subcategory" id="subcategory">
+                                <select class="form-control" name="subcategory" id="subcategory" required>
                                      <option value='0'>-- Select subcategory --</option>
                               </select>
                             </div>
@@ -112,16 +112,17 @@
     <div class="row">                             
                                <div class="form-group col-md-4 col-sm-6">
                                     <label>Warranty Year</label>
-                                    <input type="number" class="form-control" name="warranty" min="0" max="10">
+                                    <input type="number" class="form-control" name="warranty" min="0" max="10" maxlength="2" onKeyPress="if(this.value.length==2) return false;">
                                 </div>
 
                                  <div class="form-group col-md-4 col-sm-4">
                                          <label>Bought_By</label>
                                         <select class="form-control" name="owned_by" id="owned_by">
-                                            <option>Active</option>
-                                              <option>Inactive</option>
-                                                <option>Died</option>
-                                                 <option>None</option>  
+                                            <option>Sound vision</option>
+                                              <option>Supply1</option>
+                                                 <option>Supply2</option>
+                                                 <option>Supply3</option>
+                                                 <option>None</option>
                                         </select>
                                     </div>
 
@@ -145,8 +146,8 @@
 
 
 
-                        
-                          <button type="button" class="btn btn-next">Next</button>
+                           <a  href="/asset" role="button" class="previous btn-previous"><i class="fas fa-angle-double-left"></i></a>
+                          <button type="button" class="btn btn-next float-right">Next</button>
                         </div>
                     </fieldset>
                   
@@ -237,8 +238,6 @@
 
 
 
-
-
     <script type='text/javascript'>
     $(document).ready(function(){
 
@@ -253,7 +252,7 @@
 //alert(id);
              // AJAX request 
              $.ajax({
-                 url: 'getEmployees/'+id,
+                 url: 'getSubcategory/'+id,
                  type: 'get',
                  dataType: 'json',
                  success: function(response){
@@ -281,7 +280,6 @@
         });
     });
     </script>
-
 
 
 

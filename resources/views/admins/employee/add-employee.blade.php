@@ -43,7 +43,6 @@
 
 
   <div class="row">
-
     <div class="form-group col-md-4 col-sm-6">
                                     <label>Email</label>
                                     <input type="email" class="form-control" name="email" required>
@@ -94,7 +93,7 @@
               </div>
               <img src="" onClick="triggerClick()" id="profileDisplay">
             </span>
-            </div>         
+            </div>        
 
 
             </div>

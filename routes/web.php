@@ -87,7 +87,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::resource('/addAsset', AssetCateController::class);
 
-Route::get('/getEmployees/{id}', [AssetController::class, 'getEmployees']);
+Route::get('/getSubcategory/{id}', [AssetController::class, 'getSubcategory']);
+Route::post('/getSubcategor/{id}', [AssetController::class, 'getSubcategory']);
 Route::get('/getD/{p}', [AssetController::class,'getD']);
 
 
@@ -188,6 +189,13 @@ Route::post('/search-trainee', [LodgetraineeController::class, 'researcht'])->na
 
 Route::resource('/asset',AssetController::class);
 Route::get('/editAsset/{x}', [AssetController::class, 'editAsset'])->name('editAsset');
+Route::get('/editasset/{x}',[AssetController::class, 'editasset'])->name('editasset');
+
+
+ Route::get('/asset-destroy/{x}', [AssetController::class, 'destroy'])->name('destroy');
+  Route::get('/asset-edit/{x}', [AssetController::class, 'edit'])->name('asset-edit');
+
+// Route::get('/New-Agent-show/{x}', [AgentController::class, 'show'])->name('New-Agent-show');
 Route::get('/getB/{p}', [AssetController::class,'getB']);
 
 Route::get('/getC/{p}', [AssetController::class,'getC']);
