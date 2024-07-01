@@ -72,29 +72,32 @@
    
         <div>
     <!-- Content Header (Page header) -->
-         @if($message = Session::get('success'))
+         <?php if($message = Session::get('success')): ?>
   <div class="alert alert-success">
     <button aria-label="Close" class="close" data-dismiss="alert" type="button">
     <span aria-hidden="true">&times;</span></button>
-    <strong>Well!: </strong> {{$message}}
-  </div>
-  @endif
+    <strong>Well!: </strong> <?php echo e($message); ?>
 
- @if($message = Session::get('info'))
+  </div>
+  <?php endif; ?>
+
+ <?php if($message = Session::get('info')): ?>
   <div class="alert alert-warning">
     <button aria-label="Close" class="close" data-dismiss="alert" type="button">
     <span aria-hidden="true">&times;</span></button>
-    <strong>Ops!: </strong> {{$message}}
-  </div>
-  @endif   
+    <strong>Ops!: </strong> <?php echo e($message); ?>
 
- @if($message = Session::get('error'))
+  </div>
+  <?php endif; ?>   
+
+ <?php if($message = Session::get('error')): ?>
   <div class="alert alert-danger">
     <button aria-label="Close" class="close" data-dismiss="alert" type="button">
     <span aria-hidden="true">&times;</span></button>
-    <strong>Sorry!: </strong> {{$message}}
+    <strong>Sorry!: </strong> <?php echo e($message); ?>
+
   </div>
-  @endif     
+  <?php endif; ?>     
 </div> 
       </li>
 
@@ -129,7 +132,7 @@
  <li class="nav-item dropdown">
          <a class="nav-link" data-toggle="dropdown" href="#">
           <i class="">          
-          <div class="logo mr-auto"><img src="{{ URL::asset('/storage/user/'.auth()->user()->photo)?? 0}}" style="width:60px;height:40px">
+          <div class="logo mr-auto"><img src="<?php echo e(URL::asset('/storage/user/'.auth()->user()->photo)?? 0); ?>" style="width:60px;height:40px">
           </div>
           </i>         
         </a>
@@ -141,11 +144,12 @@
               <img src="../../dist/img/" alt="Profile:" class="img-size-50 mr-3 img-circle">
               <div class="media-body">
                 <h3 class="dropdown-item-title">
-                {{auth()->user()->name}}
+                <?php echo e(auth()->user()->name); ?>
+
                   <span class="float-right text-sm text-danger"><i class=""></i></span>
                 </h3>
-                <p class="text-sm">{{auth()->user()->email}}</p>
-                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i>{{auth()->user()->role}}</p>
+                <p class="text-sm"><?php echo e(auth()->user()->email); ?></p>
+                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i><?php echo e(auth()->user()->role); ?></p>
               </div>
             </div>
             <!-- Message End -->
@@ -175,7 +179,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
    
-    @if(Auth::user()->role =='accountant' || Auth::user()->role =='Normal' || Auth::user()->role =='owner' || Auth::user()->role =='Cultural')
+    <?php if(Auth::user()->role =='accountant' || Auth::user()->role =='Normal' || Auth::user()->role =='owner' || Auth::user()->role =='Cultural'): ?>
           <li class="nav-item">
             <a href="/dashboard" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -207,9 +211,9 @@
             </a>
           </li>
 
-          @endif
-            @if(Auth::user()->role == 'Admin' || Auth::user()->role =='accountant' || Auth::user()->role =='Normalx')
-          {{-- Sales --}}
+          <?php endif; ?>
+            <?php if(Auth::user()->role == 'Admin' || Auth::user()->role =='accountant' || Auth::user()->role =='Normalx'): ?>
+          
   <li class="nav-item">
             <a href="/dashboard" class="nav-link">
            <i class="nav-icon fas fa-users"></i>
@@ -232,7 +236,7 @@
 
        
 
-            {{-- Theme --}}
+            
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-eye"></i>
@@ -259,7 +263,7 @@
             </ul>
           </li>
 
-         {{-- Pages --}}
+         
    <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-eye"></i>
@@ -289,7 +293,7 @@
                 </a>
               </li>
                <li class="nav-item">
-                <a href="{{ route('titles.index') }}" class="nav-link">
+                <a href="<?php echo e(route('titles.index')); ?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Titles</p>
                 </a>
@@ -299,7 +303,7 @@
           </li>
 
 
-           {{-- Settings --}}
+           
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-eye"></i>
@@ -418,7 +422,7 @@
             </ul>
           </li>
       
- {{-- User --}}
+ 
                 
       <li class="nav-item">
             <a href="#" class="nav-link">
@@ -439,12 +443,12 @@
           </li>          
             </ul>
           </li> 
-               @endif      
-         {{-- Other --}}
+               <?php endif; ?>      
+         
 
                  
 
-   {{-- Quick Link--}}
+   
         <!--   <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-users"></i>
@@ -469,7 +473,7 @@
     <!-- /.sidebar -->
   </aside>
   
-@yield('contents')
+<?php echo $__env->yieldContent('contents'); ?>
 
 <footer class="main-footer">
     <div class="float-right d-none d-sm-block">
@@ -549,3 +553,4 @@
    <script src="../../img_library/scripts.js" type="text/javascript"></script>
 </body>
 </html>
+<?php /**PATH C:\xampp\htdocs\kacceff\resources\views/admins/layouts/Apps/app.blade.php ENDPATH**/ ?>
