@@ -259,11 +259,9 @@ $slider1 = slider::where('section','slider1')
           //->select('sliders.*')
           // ->offset(1)
           ->limit(1)->first();
+  
 
   //dd($slider_first);
-
-
-
 
 
   $bee_slider = slider::where('status','1')

@@ -21,6 +21,7 @@ class themeController extends Controller
          ->orderBy('id', 'desc')
           ->get();
 
+//dd('proppr');
         return view('admins.themes.slider',compact('sliders'));
     }
 

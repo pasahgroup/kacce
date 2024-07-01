@@ -12,6 +12,8 @@ use App\Models\lodge;
 use App\Models\student;
 use App\Models\lodgetrainee;
 
+use App\Models\slider;
+
 use DB;
 use Illuminate\Http\Request;
 
@@ -45,8 +47,11 @@ $enquiries=enquiry::where('status','Active')->count();
         $students=student::count();
             $lodges=lodge::count();
 
-//dd($trainee);
-        return view('admins.Dashboard.index',compact('agents','lodges','students','trainees','tailorMades','customers','partiners','tourGuides','contacts','enquiries','activeGroupTrip'));
+   $sliders=slider::where('status','1')
+   ->count();
+
+//dd($sliders);
+        return view('admins.Dashboard.index',compact('agents','sliders','students','trainees','tailorMades','customers','partiners','tourGuides','contacts','enquiries','activeGroupTrip'));
     }
 
     /**
