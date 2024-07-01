@@ -25,7 +25,7 @@
           <div class="card-tools">          
             
              <a href="/themes" class="btn btn-success" >
-              <i class="fas fa-plus"></i>Themes(<b class="red">{{$sliders}}</b>)
+              <i class="fas fa-plus"></i>Sliders(<b class="red">{{$sliders}}</b>)
             </a>
           </div>
         </div>
@@ -40,7 +40,7 @@
  @if(Auth::user()->role == 'Admin' || Auth::user()->role =='accountant')
                         <a href="/students">
                         <i class="fa fa-users"></i>
-                        <span>Themes(<b class="blue">{{$sliders}}</b>)</span>
+                        <span>Sliders(<b class="blue">{{$sliders}}</b>)</span>
 
                         </a>
 
