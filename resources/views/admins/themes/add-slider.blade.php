@@ -79,9 +79,13 @@
                            <option value="tree">Tree Planting</option>
                              <option value="health">Health</option>  
                                <option value="vulnarable">Vulnarable Children</option>  
-                                <option value="Main slider">Main slider</option>                          
-                            </select>
 
+                                 <option value="Main slider">Main slider</option> 
+
+                               <option value="Slider1">Slider1</option>  
+                               <option value="Slider2">Slider2</option>
+                                                       
+                            </select>
                                 </div>
                               </div>
                         </div>
