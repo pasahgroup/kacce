@@ -24,7 +24,7 @@
           <div class="card-tools">          
             
              <a href="/themes" class="btn btn-success" >
-              <i class="fas fa-plus"></i>Themes(<b class="red"><?php echo e($sliders); ?></b>)
+              <i class="fas fa-plus"></i>Sliders(<b class="red"><?php echo e($sliders); ?></b>)
             </a>
           </div>
         </div>
@@ -39,7 +39,7 @@
  <?php if(Auth::user()->role == 'Admin' || Auth::user()->role =='accountant'): ?>
                         <a href="/students">
                         <i class="fa fa-users"></i>
-                        <span>Themes(<b class="blue"><?php echo e($sliders); ?></b>)</span>
+                        <span>Sliders(<b class="blue"><?php echo e($sliders); ?></b>)</span>
 
                         </a>
 
