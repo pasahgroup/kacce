@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\slider;
 use App\Models\program;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class themeController extends Controller
 {
@@ -144,7 +145,9 @@ class themeController extends Controller
     public function update(Request $request, $id)
     {
 
-    // dd('update');
+           $imagePhoto = slider::where('id',$id)->first();
+
+     // dd($imagePhoto->attachment);
 
 //          if(request('attachment')){
 //             //dd('d1');
@@ -191,7 +194,7 @@ class themeController extends Controller
 //        }
 
 
-
+//dd('print');
 
 
   if(request('attachment')){
@@ -221,7 +224,11 @@ class themeController extends Controller
                 'status'=>request('status'),
                     'description'=>request('description'),
                        'attachment'=>$imageToStore
-                ]);                
+                ]); 
+
+                //Delete the photo 
+                Storage::disk('local')->delete('public/uploads/'.$imagePhoto->attachment);             
+                
                 return redirect()->route('themes.index')->with('success','Slider created succesfully');
      
         }
