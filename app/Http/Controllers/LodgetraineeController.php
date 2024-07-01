@@ -118,7 +118,8 @@ class LodgetraineeController extends Controller
     {
       
 
-           $pin=rand(10000,99999);    
+           $pin=rand(10000,99999);
+    
          
           $student =  lodgetrainee::UpdateOrCreate(
             [   'pin'=>$pin],

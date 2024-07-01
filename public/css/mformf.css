@@ -215,7 +215,7 @@ body {
     font-size: 16px;
     font-weight: 300;
     color: #2f394f;
-    line-height: 10px;
+    line-height: 20px;
     text-align: center;
 }
 
@@ -325,8 +325,7 @@ h3 {
 
 .form-top {
     overflow: hidden;
-/*    padding: 0 25px 15px 25px;*/
-     padding: 0 25px 0px 25px;
+    padding: 0 25px 15px 25px;
     background: #26A69A;
     -moz-border-radius: 4px 4px 0 0;
     -webkit-border-radius: 4px 4px 0 0;

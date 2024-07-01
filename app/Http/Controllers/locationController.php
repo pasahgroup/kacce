@@ -41,6 +41,12 @@ class locationController extends Controller
         location::create(
             [
         'location_name'=>request('location_name'),
+        'country'=>request('country'),
+        'region'=>request('region'),
+        'district'=>request('district'),
+        'ward_town'=>request('ward_town'),
+        'lat'=>request('lat'),
+        'long'=>request('long'),
         'user_id'=>auth()->id()
             ]
         );
@@ -83,6 +89,12 @@ class locationController extends Controller
         $location = location::where('id',$id)
                ->update([
         'location_name'=>request('location_name'),
+        'country'=>request('country'),
+        'region'=>request('region'),
+        'district'=>request('district'),
+        'ward_town'=>request('ward_town'),
+        'lat'=>request('lat'),
+        'long'=>request('long'),
         'user_id'=>auth()->id()
 
               ]);
@@ -99,10 +111,10 @@ class locationController extends Controller
     {
            $delete = location::where('id',$id)->first();
         if($delete->delete()){
-         return redirect()->back()->with('success','Location'." ".$delete->country." ".$delete->location_name.' removed successfully');
+         return redirect()->back()->with('success','Agent'." ".$delete->country." ".$delete->location_name.' removed successfully');
         }    
         else{
-            return redirect()->back()->with('error','Location'." ".$delete->country." ". $delete->location_name.' not exists');
+            return redirect()->back()->with('error','Agent'." ".$delete->country." ". $delete->location_name.' not exists');
         }
     }
 }

@@ -3,10 +3,10 @@
 
 <head>
     <meta charset="utf-8">
-     <title>{{$title ?? 'Asset Management System'}}</title>
+     <title>{{$title ?? 'KACCE'}}</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Asset Management System" name="keywords">
-    <meta content="Asset Management System" name="description">
+    <meta content="HM Academy" name="keywords">
+    <meta content="HM Academy" name="description">
 
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
@@ -18,16 +18,47 @@
     <link href="../website/lib/animate/animate.min.css" rel="stylesheet">
     <link href="../website/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
-  <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet"> -->
-  <script src="../website/lib/jquery-3.4.1.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+  
   <link href="../css/all.min.css" rel="stylesheet">
- <link href="../css/style-shortline.css" rel="stylesheet">
-
+       <script src="../website/lib/jquery-3.4.1.min.js"></script>
     <!-- Customized Bootstrap Stylesheet -->
     <link href="../website/css/style.css" rel="stylesheet">
     <!-- <link href="../slider_header/style.css" rel="stylesheet"> -->
-
+    <link href="../css/style-shortline.css" rel="stylesheet">
      <link href="../slider_header/style_slider.css" rel="stylesheet">
+
+
+
+
+
+
+ <link href="../../assetf/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="../../assetf/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Global styles END --> 
+   
+  <!-- Page level plugin styles START -->
+  <link href="../../assetf/pages/css/animate.css" rel="stylesheet">
+  <link href="../../assetf/plugins/fancybox/source/jquery.fancybox.css" rel="stylesheet">
+  <link href="../../assetf/plugins/owl.carousel/assets/owl.carousel.css" rel="stylesheet">
+  <!-- Page level plugin styles END -->
+
+  <!-- Theme styles START -->
+ <!--  <link href="../../assetf/pages/css/components.css" rel="stylesheet">
+  <link href="../../assetf/pages/css/slider.css" rel="stylesheet">
+  <link href="../../assetf/corporate/css/style.css" rel="stylesheet">
+  <link href="../../assetf/corporate/css/style-responsive.css" rel="stylesheet">
+  <link href="../../assetf/corporate/css/themes/red.css" rel="stylesheet" id="style-color">
+  <link href="../../assetf/corporate/css/custom.css" rel="stylesheet">
+
+ -->
+
+    <link href="../../assetf/pages/css/components.css" rel="stylesheet">
+  <link href="../../assetf/corporate/css/style.css" rel="stylesheet">
+  <link href="../../assetf/pages/css/portfolio.css" rel="stylesheet">
+  <link href="../../assetf/corporate/css/style-responsive.css" rel="stylesheet">
+  <link href="../../assetf/corporate/css/themes/red.css" rel="stylesheet" id="style-color">
+  <link href="../../assetf/corporate/css/custom.css" rel="stylesheet">
 </head>
    
 <body>
@@ -80,78 +111,87 @@
         <div class="row align-items-center bg-light py-3 px-xl-5 d-none d-lg-flex">
             <div class="col-lg-4">
                 <a href="" class="text-decoration-none">
-                    <span class="h3 text-uppercase text-primary bg-dark px-2">Asset</span>
-                    <span class="h3 text-uppercase text-dark bg-primary2 px-2 ml-n1" style="background-color:red">Control</span>
+                    <span class="h3 text-uppercase text-primary bg-dark px-2">KACCE</span>
+                    <span class="h3 text-uppercase text-dark bg-primary2 px-2 ml-n1" style="background-color:red">KIGOMA</span>
                 </a>
             </div>
-            <div class="col-lg-5 col-6 text-left">                          
-                            
-                              
-                                <div class="overflow-hidden" style="width: 735px;">                                 
+            <div class="col-lg-5 col-6 text-left">                         
+                                                          
+                               <div class="overflow-hidden" style="width: 735px;">                                 
                                 <div id="note" class="ps-2">
-                                   @foreach ($students as $student)   
-                                    <img src="{{ URL::asset('/storage/photos/'.$student->photo) }}" class="img-fluid rounded-circle border border-3 border-primary me-2" style="width: 30px; height: 30px;" alt="">
-                                    <a href="#"><p class="text-white mb-0 link-hover"></p></a>
-                                @endforeach  
+                                    <img src="../img/logo/logo.png" class="img-fluid rounded-circle border border-3 border-primary me-2" style="width: 30px; height: 30px;" alt="">
+                                    <a href="#"><p class="text-white mb-0 link-hover"></p><strong> -Welcome at KACCE</strong></a>
+                           
                                 </div>                                   
                             </div> 
 
 
             </div>
             <div class="col-lg-3 col-6 text-right">
-                <b class="m-0">@isset($contact->phone){{$contact->phone}} @endisset</b>
-                <h5 class="m-0">@isset($contact->email){{$contact->email}} @endisset</h5>
+                <!-- <b class="m-0">Contact</b> -->
+                <strong class="m-0"><i class="fa fa-phone" style="color:pink"></i>@isset($contact->phone){{$contact->phone}} @endisset</strong>
+                 <strong class="m-2"> <i class="fa fa-envelope" style="color:brown"></i>@isset($contact->email){{$contact->email}} @endisset</strong>
             </div>
         </div>
     </div>
 
 
-      <div class="container-fluid bg-dark mb-30">
-        <div class="row px-xl-5">           
-            <div class="col-lg-9">
-                <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 py-lg-0 px-0">
+      <div class="container-fluid">
+        <div class="row">           
+            <div class="col-lg-12">
+                    <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 py-lg-0 px-0 float-right">
+                    <div style="padding-top:0px">                        
+                      <a class="btn btn-primary" href="/donate" role="button">Donate</a>
+                      </div>
+            
+                  
+             <!--    <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 py-lg-0 px-0 float-right bg-dark mb-30"> -->
+                <!-- <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 py-lg-0 px-0 float-right"> -->
                     <a href="" class="text-decoration-none d-block d-lg-none">
-                        <span class="h1 text-uppercase text-dark bg-light px-2">Multi</span>
-                        <span class="h1 text-uppercase text-light bg-primary px-2 ml-n1">Shop</span>
+                       <span class="h3 text-uppercase text-primary bg-dark px-2">KACCE</span>
+                    <span class="h3 text-uppercase text-dark bg-primary2 px-2 ml-n1" style="background-color:red">KIGOMA</span>
                     </a>
                     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                         <span class="navbar-toggler-icon"></span>
                     </button>
+                 
+ <div class="float-right">
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav mr-auto py-0">
                             <a href="/" class="nav-item nav-link active">Home</a>
                          
                             <div class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Vulnarable<i class="fa fa-angle-down mt-1"></i></a>
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Activities<i class="fa fa-angle-down mt-1"></i></a>
                                 <div class="dropdown-menu bg-primary rounded-0 border-0 m-0">
-                                    <br>
-                                    <a href="/trained/trained-students" class="dropdown-item">Vulnarable Youth</a>
-                                    <a href="/trained-staff/trained-staff" class="dropdown-item">Trained Staff</a>
-                                    <a href="/trained-lodges/lodges" class="dropdown-item">Trained Lodges</a>
+                                   
+                                    <a href="/dp/bee" class="dropdown-item">Bee Keeping</a>                                   
+                                     <a href="/dp/entrepreneurship" class="dropdown-item">Entrepreneurship</a>
+                                     <a href="/dp/health" class="dropdown-item">Health</a>
+                                         <a href="/dp/tree" class="dropdown-item">Tree planting</a>
+                                          <a href="/dp/vulnarable" class="dropdown-item">Vulnarable Children</a>
+                                           <a href="/tree-gallery" class="dropdown-item">Blog</a>                                  
                                 </div>
                             </div>
-
-                              <div class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Opportunity<i class="fa fa-angle-down mt-1"></i></a>
-                                <div class="dropdown-menu bg-primary rounded-0 border-0 m-0">
-                                    <br>
-                                    <a href="#" class="dropdown-item">Trainee Registration</a>
-                                    <a href="#" class="dropdown-item">Vulnarable Youth Registration</a>
-                                </div>
-                            </div>
-
+                              <a href="/tree-gallery" class="nav-item nav-link">Blog</a>
                                <a href="/aboutus" class="nav-item nav-link">About us</a>
                             <a href="/mailing" class="nav-item nav-link">Contact</a>
-                        </div>                      
+
+                            <img src="../img/logo/logo.png" class="img-fluid rounded-circle border border-3 border-primary me-2" style="width: 30px; height: 30px;" alt="">
+                        </div>   
+
                     </div>
-                </nav>
+                </div>
+       
+    </nav>
             </div>
         </div>
     </div>
+
    
 
     <!-- Navbar End -->
  @yield('content')
+
      <!-- Featured End -->
 
     <!-- Footer Start -->
@@ -159,12 +199,26 @@
         <div class="row px-xl-5 pt-5">
          
             <div class="col-lg-8 col-md-12">
-                <div class="row">
-                   
-                    <div class="col-md-4 mb-5">
-                        <h5 class="text-secondary text-uppercase mb-4">Pages</h5>
+                <div class="row">                   
+                    <div class="col-md-6 mb-5">
+                        <h5 class="text-secondary text-uppercase mb-4">Reports</h5>
                         <div class="d-flex flex-column justify-content-start">
-                            <a class="text-secondary mb-2" href="/"><i class="fa fa-angle-right mr-2"></i>Home</a>
+                           
+
+                            <a class="text-secondary mb-2" href="../img/reports/annual_report.pdf" target="_blank"> <i class="fa fa-angle-right mr-2"></i>KACCE Annual Activities Report: <strong style="color:yellow;">View</strong></a>
+
+                            <a class="text-secondary mb-2" href="../img/reports/profile.pdf" target="_blank"> <i class="fa fa-angle-right mr-2"></i>KACCE Profile:<strong style="color:yellow;"> View</strong></a>
+                                                 
+                             <a class="text-secondary mb-2" href="../img/reports/S-URT-Environmental_Management_Act_2004.pdf" target="_blank"> <i class="fa fa-angle-right mr-2"></i>Sheria ya usimamizi wa mazingira ya mwaka 2004 Na.20:<strong style="color:yellow;"> View</strong></a>
+
+                        <!--      <a href="img/reports/annual_report.pdf" target="_blank">KACCE Annual Activities Report: Download</a> -->
+                             
+                             <ul>
+                                <li><a href="/donate" target="_blank" role="button" class="btn btn-primary" style="background-color:#">Donate</a></li>
+                                <br>
+                                 <li><a href="https://kacce.or.tz:2096" target="_blank">Webmail</a></li>
+                                                                <ul>
+
                             <!-- <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Our Shop</a> -->
                           <!--   <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Shop Detail</a>
                             <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Shopping Cart</a>
@@ -173,11 +227,10 @@
                         </div>
                     </div>
 
-                     <div class="col-md-4 mb-5">
+                     <div class="col-md-2 mb-5">
                         <h5 class="text-secondary text-uppercase mb-4">Quick Links</h5>
                         <div class="d-flex flex-column justify-content-start">
-                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Trainee Registration</a>
-                             <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Vulnarable Youth Registration</a>
+                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Online Addmission</a>
                             <!-- <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Our Shop</a> -->
                           <!--   <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Shop Detail</a>
                             <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Shopping Cart</a>
@@ -213,19 +266,20 @@
                <div class="col-lg-4 col-md-12 mb-5 pr-3 pr-xl-5">
                 <h5 class="text-secondary text-uppercase mb-4">Contact</h5>
                 
-                <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i>@isset($contact->address){{$contact->address}} @endisset</p>
+                <p class="mb-2"><i class="fa fa-map-marker text-primary mr-3"></i>
+                    @isset($contact->address){{$contact->address}} @endisset</p>
                 <p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i>@isset($contact->email){{$contact->email}} @endisset</p>
-                <p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>@isset($contact->phone){{$contact->phone}} @endisset</p>
+                <p class="mb-0"><i class="fa fa-phone text-primary mr-3"></i>@isset($contact->phone){{$contact->phone}} @endisset</p>
             </div>
         </div>
         <div class="row border-top mx-xl-5 py-4" style="border-color: rgba(256, 256, 256, .1) !important;">
             <div class="col-md-6 px-xl-0">
-                <p class="mb-md-0 text-center text-md-left text-secondary">
-                    &copy; <a class="text-primary text-center" href="#">Pasah Group</a>. All Rights Reserved by Pasah Group.
-                </p>
+                    &copy; <a class="text-primary text-center" href="#">KACCE</a>.All Rights Reserved by KACCE.
+              
             </div>
             <div class="col-md-6 px-xl-0 text-center text-md-right">
-                <img class="img-fluid" src="img/payments.png" alt="">
+                    <p class="powered">Developed by: <a href="https://www.pasah.net" target="_blank">www.pasah.net</a></p>
+            
             </div>
         </div>
     </div>
@@ -237,10 +291,8 @@
 
 
     <!-- JavaScript Libraries -->
-    <!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script> -->
-    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script> -->
-   <script src="../website/lib/bootstrap.bundle.min.js"></script>
-    
+      <script src="../website/lib/bootstrap.bundle.min.js"></script>
+
     <script src="../website/lib/easing/easing.min.js"></script>
     <script src="../website/lib/owlcarousel/owl.carousel.min.js"></script>
 
@@ -250,5 +302,49 @@
 
     <!-- Template Javascript -->
     <script src="../website/js/main.js"></script>
+
+   <script src="../../assetf/plugins/jquery.min.js" type="text/javascript"></script>
+    <script src="../../assetf/plugins/jquery-migrate.min.js" type="text/javascript"></script>
+    <script src="../../assetf/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>      
+    <script src="../../assetf/corporate/scripts/back-to-top.js" type="text/javascript"></script>
+    <!-- END CORE PLUGINS -->
+
+    <!-- BEGIN PAGE LEVEL JAVASCRIPTS (REQUIRED ONLY FOR CURRENT PAGE) -->
+    <script src="../../assetf/plugins/fancybox/source/jquery.fancybox.pack.js" type="text/javascript"></script><!-- pop up -->
+    <script src="../../assetf/plugins/owl.carousel/owl.carousel.min.js" type="text/javascript"></script><!-- slider for products -->
+
+    <script src="../../assetf/corporate/scripts/layout.js" type="text/javascript"></script>
+    <script src="../../assetf/pages/scripts/bs-carousel.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function() {
+            Layout.init();    
+            Layout.initOWL();
+            Layout.initTwitter();
+            Layout.initFixHeaderWithPreHeader(); /* Switch On Header Fixing (only if you have pre-header) */
+            Layout.initNavScrolling();
+        });
+    </script>
+
+
+
+      <script src="../../assetf/plugins/jquery.min.js" type="text/javascript"></script>
+    <script src="../../assetf/plugins/jquery-migrate.min.js" type="text/javascript"></script>
+    <script src="../../assetf/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>      
+    <script src="../../assetf/corporate/scripts/back-to-top.js" type="text/javascript"></script>
+    <!-- END CORE PLUGINS -->
+
+    <!-- BEGIN PAGE LEVEL JAVASCRIPTS (REQUIRED ONLY FOR CURRENT PAGE) -->
+    <script src="../../assetf/plugins/fancybox/source/jquery.fancybox.pack.js" type="text/javascript"></script><!-- pop up -->
+    <script src="../../assetf/plugins/jquery-mixitup/jquery.mixitup.min.js" type="text/javascript"></script>
+    
+    <script src="../../assetf/corporate/scripts/layout.js" type="text/javascript"></script>
+    <script src="../../assetf/pages/scripts/portfolio.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function() {
+            Layout.init();
+            Layout.initTwitter();
+            Portfolio.init();
+        });
+    </script>
 </body>
 </html>

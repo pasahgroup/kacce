@@ -97,11 +97,10 @@
                   <ul class="mix-filter">
                    
                     <li data-filter="category_1" class="filter active"><a href="/tree-gallery">Tree Planting</a></li>
-                    <li data-filter="category_2" class="filter"><a href="/hiking-gallery"><i class="fas fa-hiking"></i> Hiking And Trekking</a></li>
-                    <li data-filter="category_3" class="filter"><a href="/beach-gallery">Beach Holidays</a></li>
-                    <li data-filter="category_3" class="filter"><a href="/group-gallery">Group Tours</a></li>
-                     <li data-filter="category_3" class="filter"><a href="/day-gallery">Day Tours</a></li>
-                     <li data-filter="category_3 category_2" class="filter"><a href="/historical-gallery">Historical Site Tours</a></li>
+                    <li data-filter="category_2" class="filter"><a href="/bee-gallery"><i class=""></i>Bee Keeping</a></li>
+                    <li data-filter="category_3" class="filter"><a href="/entrepreneurship-gallery">Entrepreneurship</a></li>
+                    <li data-filter="category_3" class="filter"><a href="/vulnarable-gallery">Vulnarable Children</a></li>
+                     <li data-filter="category_3" class="filter"><a href="/health-gallery">Health</a></li>
                   </ul>
                                   <div class="row">  
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -111,14 +110,14 @@
                                   <hr>
                                   <div class="row mix-grid thumbnails"> 
 
-                                 @foreach ($safaris as $safari) 
+                                 @foreach ($sliders as $slider) 
                             <div class="col-md-3 col-sm-4 mix category_1" style="display: block; opacity: 1;">
                                     <div class="mix-inner">
-                                      <img alt="No Image" src="{{ URL::asset('/storage/uploads/'.$safari->attachment) }}" alt="No Image" style="height:220px;width:100%;" class="img-responsive">
+                                      <img alt="No Image" src="{{ URL::asset('/storage/uploads/'.$slider->attachment) }}" alt="No Image" style="height:220px;width:80%;" class="img-responsive">
                                       <div class="mix-details">
-                                          <h4>{{$safari->tour_name}}</h4>
-                                          <a href="/safaris-slider-packages/{{$safari->id}}" class="mix-link"><i class="fa fa-link"></i></a>
-                                          <a data-rel="fancybox-button" title="{{$safari->tour_highlight}}" href="{{ URL::asset('/storage/uploads/'.$safari->attachment) }}" style="height:40px;width:15%;" class="mix-preview fancybox-button imgf"><i class="fa fa-search"></i>
+                                          <h4>{{$slider->tour_name}}</h4>
+                                          <a href="/detailp/{{$slider->id}}" class="mix-link"><i class="fa fa-link"></i></a>
+                                          <a data-rel="fancybox-button" title="{{$slider->description}}" href="{{ URL::asset('/storage/uploads/'.$slider->attachment) }}" style="height:40px;width:15%;" class="mix-preview fancybox-button imgf"><i class="fa fa-search"></i>
                                                         </a>
                                     </div> 
                                  </div>                                       

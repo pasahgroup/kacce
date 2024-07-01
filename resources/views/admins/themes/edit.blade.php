@@ -69,12 +69,13 @@
                               <select name="section" id="section" class="form-control">
                               <option>{{$sliders->section}}</option>
                                 
-                            <option>Main slider</option>
-                             <option>Slider1</option>   
-                            <option>Slider2</option>
-                           <option>Footer1</option>
-                             <option>Footer2</option>  
-                               <option>Footer3</option>                     
+                            <option value="bee">Bee Keeping</option>
+                             <option value="blog">Blog</option>   
+                            <option value="entrepreneurship">Entrepreneurship</option>
+                           <option value="tree">Tree Planting</option>
+                             <option value="health">Health</option>  
+                               <option value="vulnarable">Vulnarable Children</option>
+                                                       
                             </select>
 
                                 </div>

@@ -3195,7 +3195,7 @@ input[type="button"].btn-block {
 .dropdown-item {
   display: block;
   width: 100%;
-  padding: 0.25rem 1.5rem;
+  padding: 0.3rem 1.5rem;
   clear: both;
   font-weight: 400;
   color: #212529;
@@ -5920,7 +5920,7 @@ a.close.disabled {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 15%;
+  width: 0.2%;
   color: #fff;
   text-align: center;
   opacity: 0.5;
@@ -6109,7 +6109,9 @@ button.bg-primary:focus {
 }
 
 .bg-secondary {
-  background-color: #F5F5F5 !important;
+   
+  /*background-color: #F5F5F5 !important;*/
+   background-color: #387D42 !important;
 }
 
 a.bg-secondary:hover, a.bg-secondary:focus,
@@ -6169,7 +6171,8 @@ button.bg-light:focus {
 }
 
 .bg-dark {
-  background-color: #3D464D !important;
+  /*background-color: #3D464D !important;  */
+  background-color: #387D42 !important;
 }
 
 a.bg-dark:hover, a.bg-dark:focus,
@@ -7097,9 +7100,9 @@ button.bg-dark:focus {
   }
 }
 
-.float-left {
+/*.float-left {
   float: left !important;
-}
+}*/
 
 .float-right {
   float: right !important;
@@ -7544,7 +7547,7 @@ button.bg-dark:focus {
 
 .pt-3,
 .py-3 {
-  padding-top: 1rem !important;
+  padding-top: 0.3rem !important;
 }
 
 .pr-3,
@@ -7554,7 +7557,7 @@ button.bg-dark:focus {
 
 .pb-3,
 .py-3 {
-  padding-bottom: 1rem !important;
+  padding-bottom: 0.3rem !important;
 }
 
 .pl-3,
@@ -9333,7 +9336,7 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 .text-body {
-  color: #6C757D !important;
+  color: #F7CF36 !important;
 }
 
 .text-muted {
@@ -9466,7 +9469,7 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 .mb-30 {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .pb-30 {
@@ -9506,7 +9509,7 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 .navbar-dark .navbar-nav .nav-link {
-  padding: 20px 10px;
+  padding: 0px 23px;
   color: #F5F5F5;
   outline: none;
 }
@@ -9557,7 +9560,8 @@ a.text-dark:hover, a.text-dark:focus {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(61, 70, 77, 0.5);
+  /*background: rgba(61, 70, 77, 0.5);*/
+    background:transparent;
   z-index: 1;
 }
 

@@ -8,8 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class tribe extends Model
 {
     use HasFactory;
-
-        protected $fillable = [
+      protected $fillable = [
         'tribe'
     ];
 }
+

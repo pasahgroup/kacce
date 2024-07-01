@@ -19,7 +19,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Location Page</li>
+              <li class="breadcrumb-item active">Locations Page</li>
             </ol>
           </div>
         </div>
@@ -36,7 +36,7 @@
 
           <div class="card-tools">
             <a href="{{ route('locations.create') }}" class="btn btn-primary" >
-              <i class="fas fa-plus"></i> Location
+              <i class="fas fa-plus"></i> Locations
             </a>
           </div>
         </div>
@@ -49,6 +49,11 @@
                 <tr>
                   <th>#</th>
                   <th>Location Name</th>
+                  <th>Country</th>
+                  <th>Region</th>
+                  <th>District</th>
+                  <th>Ward / Town</th>
+                  <th>GPS</th>
                   <th>Action</th>
                 </tr>
                 </thead>
@@ -57,6 +62,11 @@
                 <tr>
                     <td>{{ $data->id }}</td>
                   <td>{{ $data->location_name }}</td>
+                  <td>{{ $data->country }}</td>
+                  <td>{{ $data->region }}</td>
+                  <td>{{ $data->district }}</td>
+                  <td>{{ $data->ward_town }}</td>
+                  <td>{{ $data->lat }},{{ $data->long }}</td>
                    <td><a href="{{ route('location-edit',$data->id) }}"><i class="fa fa-edit"></i></a> 
                     <a href="{{ route('location-Destroy',$data->id) }}" onclick="return confirm('Are you sure? You want to delete location: {{ $data->location_name}} {{ $data->last_name}}','Destroy')"><i class="fa fa-trash red"></i></a></td>
                 </tr>
@@ -67,6 +77,11 @@
                 <tr>
                     <th>#</th>
                     <th>Location Name</th>
+                    <th>Country</th>
+                    <th>Region</th>
+                    <th>District</th>
+                    <th>Ward / Town</th>
+                    <th>GPS</th>
                     <th>Action</th>
                 </tr>
                 </tfoot>

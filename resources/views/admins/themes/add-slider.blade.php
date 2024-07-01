@@ -73,12 +73,12 @@
 
                               <select name="section" id="section" class="form-control">
                               <option value="">--Select section name--</option>
-                             <option>Main slider</option>
-                             <option>Slider1</option>   
-                            <option>Slider2</option>
-                           <option>Footer1</option>
-                             <option>Footer2</option>  
-                               <option>Footer3</option>                          
+                             <option value="bee">Bee Keeping</option>
+                             <option value="blog">Blog</option>   
+                            <option value="entrepreneurship">Entrepreneurship</option>
+                           <option value="tree">Tree Planting</option>
+                             <option value="health">Health</option>  
+                               <option value="vulnarable">Vulnarable Children</option>                          
                             </select>
 
                                 </div>
@@ -112,13 +112,11 @@
             </span>
 </div>
 </div>
+                         
 
-                           
-
-
-
-                  <div class="col-md-1 col-lg-1 col-sm-12 col-xs-12 col-md-offset-3">
-                      <div class="form-group row">
+                  <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 col-md-offset-3">
+                      <div class="row">
+                        <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 col-md-offset-3">
                         <a href="/themes" class="btn btn-primary">
               <i class="fa fa-angle-double-left"></i>
             </a>

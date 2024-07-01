@@ -89,7 +89,6 @@ class StudentController extends Controller
 
 
 
-
     /**
      * Show the form for creating a new resource.
      *
@@ -378,7 +377,6 @@ $classes = classg::get();
        echo json_encode($aData);
        exit;
      }
-
     /**
      * Remove the specified resource from storage.
      *

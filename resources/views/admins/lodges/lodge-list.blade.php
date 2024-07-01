@@ -69,13 +69,12 @@
                                   <td><a href="/editLodge/{{$lodge->id}}">{{ $lodge->location }}</a></td>
                                   <td><a href="/editLodge/{{$lodge->id}}">{{ $lodge->gm_contact }}</a></td>
                                 <td><a href="/editLodge/{{$lodge->id}}">{{ $lodge->gm_email }}</a></td>    
-                                 <td>{{ $lodge->status }}</td>
+                                 <td>{{ $lodge->status }}</a></td>
 
                     <td><a href="/editLodge/{{$lodge->id}}"><i class="fa fa-edit"></i></a>
                      <a href="/destroyLodge/{{$lodge->id}}" onclick="return confirm('Are you sure? You want to delete {{ $lodge->lodge_name}}','Lodge')"><i class="fa fa-trash red"></i></a></td>
-                              
+                                </tr>
                      @endforeach
-                       </tr>
 
                   </tbody>
                   <tfoot>

@@ -14,7 +14,6 @@ use App\Models\title;
 use App\Models\quickLink;
 use App\Models\attraction;
 use App\Models\tribe;
-use App\Models\lodgetrainee;
 
 use App\Models\student;
 use DB;
@@ -31,7 +30,6 @@ class websiteController extends Controller
 
  public function detailPage($id)
     {
-     // dd($id);
 $detail = slider::where('id',$id)
           //->select('sliders.*')
           // ->offset(1)
@@ -50,12 +48,27 @@ $detail = slider::where('id',$id)
 
  public function detail($id)
     {
-$detail = slider::where('id',$id)->first();
-        
+$detail = slider::where('id',$id)->first();       
 
 //dd($detail);
  return view('website.detailPage.detail',compact('detail'));
     }
+
+
+
+ public function blog()
+    {
+      //dd("print");
+$blogs = slider::where('status',1)->limit(36)->get();
+          $blogs = collect($blogs);
+         // dd($blogs);
+
+ return view('website.blog.blog',compact('blogs'));
+    }
+
+
+
+
 
     public function index()
     {
@@ -204,22 +217,34 @@ $detail = slider::where('id',$id)->first();
  ->where('section','Main slider')
                   ->count();
 
- $sliderCountFooter1 = slider::where('status','1')
- ->where('section','Footer1')
+ $sliderCountBee = slider::where('status','1')
+ ->where('section','bee')
                   ->count();
 
 
- $sliderCountFooter2 = slider::where('status','1')
- ->where('section','Footer2')
+ $sliderCountBlog = slider::where('status','1')
+ ->where('section','blog')
                   ->count();
                   
- $sliderCountFooter3 = slider::where('status','1')
- ->where('section','Footer3')
+ $sliderCountEntrepreneurship = slider::where('status','1')
+ ->where('section','entrepreneurship')
+                  ->count();
+ $sliderCountHealth = slider::where('status','1')
+ ->where('section','health')
                   ->count();
 
+ $sliderCountVulnarable = slider::where('status','1')
+ ->where('section','vulnarable')
+                  ->count();
+
+ $sliderCountTree = slider::where('status','1')
+ ->where('section','tree')
+                  ->count();
+
+
+
+
 //dd($sliderCountFooter3);
-
-
 $slider_first = slider::where('status','1')
                  ->where('section','Main slider')
           //->select('sliders.*')
@@ -240,28 +265,26 @@ $slider1 = slider::where('section','slider1')
 
 
 
-           $footer2 = slider::where('status','1')
-                 ->where('section','footer2')
-          //->select('sliders.*')
-          // ->offset(1)
-          ->limit(1)->first();
 
-
- $footer2_slider = slider::where('status','1')
-                 ->where('section','Footer2')
+  $bee_slider = slider::where('status','1')
+                 ->where('section','bee')
           //->select('sliders.*')
             ->offset(1)
            ->limit(8)->get();
 
 
+$bee = slider::where('status','1')
+                 ->where('section','bee')
+          //->select('sliders.*')
+          // ->offset(1)
+          ->limit(1)->first();
 
 
-//dd($footer2_slider);
+// dd($bee);
 
 
-
-$footer1 = slider::where('status','1')
-                 ->where('section','footer1')
+$tree = slider::where('status','1')
+                 ->where('section','tree')
           //->select('sliders.*')
           // ->offset(1)
           ->limit(1)->first();
@@ -273,8 +296,8 @@ $footer1 = slider::where('status','1')
           // ->offset(1)
           ->limit(1)->first();
 
-$footer1_slider = slider::where('status','1')
-                 ->where('section','footer1')
+$tree_slider = slider::where('status','1')
+                 ->where('section','tree')
           //->select('sliders.*')
             ->offset(1)
            ->limit(8)->get();
@@ -282,29 +305,32 @@ $footer1_slider = slider::where('status','1')
 
 
 
-      $footer3_slider = slider::where('status','1')
-                 ->where('section','footer3')
+      $entrepreneurship_slider = slider::where('status','1')
+                 ->where('section','entrepreneurship')
           //->select('sliders.*')
             ->offset(1)
            ->limit(8)->get();
 
-//dd($footer1_slider);
 
- // $sliders = slider::where('status','1')
- //           ->where('section','Main slider')
- //          // ->select('sliders.*')
- //           ->offset(1)
- //          ->limit(8)->get();
-
-
-
-//dd($footer2);
-
-$footer3 = slider::where('status','1')
-                 ->where('section','footer3')
+$entrepreneurship = slider::where('status','1')
+                 ->where('section','entrepreneurship')
           //->select('sliders.*')
           // ->offset(1)
           ->limit(1)->first();
+
+
+$vulnarable = slider::where('status','1')
+                 ->where('section','vulnarable')
+          //->select('sliders.*')
+          // ->offset(1)
+          ->limit(1)->first();
+
+
+   $vulnarable_slider = slider::where('status','1')
+                 ->where('section','vulnarable')
+          //->select('sliders.*')
+            ->offset(1)
+           ->limit(8)->get();
 
 
 
@@ -356,7 +382,7 @@ $footer3 = slider::where('status','1')
        
      //Seach Engine
        // $seo = title::where('title','What We Offer')->first();
-       $title = "Asset Control";
+       $title = "KACCE KIGOMA";
        $description = "";
        $keywords = "";
 
@@ -401,42 +427,37 @@ $footer3 = slider::where('status','1')
 
 
 
-         return view('website.home.index',compact('offers_private','student_webs','footer1','footer2','footer3','slider_first','slider1','slider2','sliderCount','offers_group','popular_safarif','popular_trekking','popular_trekkingf','popular_safari','popular_holiday','popular_holidayf','popular_historicalf','popular_historical','place_to_visit','sliders','slidersCount','testimonies','offers','welcome_message','datasLink','title','description','keywords','contacts','testimonies_one','quickLinkSliders','historical_first','historical','geographical_first','geographical','culture_first','culture','wildlife_first','wildlife','sliderCountFooter1','sliderCountFooter2','sliderCountFooter3','footer1_slider','footer2_slider','footer3_slider'));
+
+         return view('website.home.index',compact('offers_private','student_webs','tree','bee','entrepreneurship','slider_first','slider1','slider2','sliderCount','offers_group','popular_safarif','popular_trekking','popular_trekkingf','popular_safari','popular_holiday','popular_holidayf','popular_historicalf','popular_historical','place_to_visit','sliders','slidersCount','testimonies','offers','welcome_message','datasLink','title','description','keywords','contacts','testimonies_one','quickLinkSliders','historical_first','historical','geographical_first','geographical','culture_first','culture','wildlife_first','wildlife','sliderCountBee','sliderCountBlog','sliderCountTree','sliderCountHealth','sliderCountEntrepreneurship','sliderCountVulnarable','tree_slider','bee_slider','entrepreneurship_slider','vulnarable','vulnarable_slider'));
     }
 
- public function trained($id)
+
+
+ public function dp($p)
     {
+        //dd($p);
+ 
+     $sliders = slider::where('status','1')
+           ->where('section',$p)         
+          ->get();
 
-  $student_webs = student::select('first_name','last_name','class','session','photo')
-           ->limit(16)->get();
-//dd($student_webs);
-return view('website.vulnarable.vulnarable',compact('student_webs'));
 
+       //dd($sliders);
+       return view('website.detailPage.detailPage',compact('sliders','p'));
     }
 
 
- public function trainedLodges($id)
+
+ public function dh($h)
     {
+        //dd($h);
+$detail = slider::where('id',$h)->first();       
 
-  $trained_lodges = lodgetrainee::select('id','lodge','status')
-           ->groupby('lodge')
-         ->get();
-     return view('website.vulnarable.lodge-list',compact('trained_lodges'));
-
+// dd($detail);
+ return view('website.detailPage.detailp',compact('detail'));
     }
 
- public function trainedStaff($id)
-    {
-//dd($id);
-  $trained_lodges = lodgetrainee::select('id','first_name','middle_name','last_name','photo','lodge','designation')
-           ->groupby('lodge')
-         ->limit(16)->get();
-
-         //dd($trained_lodges);
-     return view('website.vulnarable.trainee-staff',compact('trained_lodges'));
-
-    }
-
+   
     /**
      * Show the form for creating a new resource.
      *

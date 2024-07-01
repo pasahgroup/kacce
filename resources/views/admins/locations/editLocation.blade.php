@@ -48,6 +48,55 @@
                         </div>
                     </div>
 
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <div class="form-group row">
+                          <label for="inputEmail3" class="col-sm-4 col-form-label">Country</label>
+                          <div class="col-sm-8">
+                            <input type="text" class="form-control" name="country"  value="{{$datas->country}}">
+                          </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                          <div class="form-group row">
+                            <label for="inputEmail3" class="col-sm-4 col-md-4 col-form-label">Region</label>
+                            <div class="col-sm-8 col-md-8">
+                              <input type="text" class="form-control" name="region"  value="{{$datas->region}}">
+                            </div>
+                              </div>
+                          </div>
+
+                          <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                            <div class="form-group row">
+                              <label for="inputEmail3" class="col-sm-4 col-md-6 col-form-label">District</label>
+                              <div class="col-sm-8 col-md-6">
+                             <input type="text" class="form-control" name="district"   value="{{$datas->district}}">
+                              </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                                <div class="form-group row">
+                                  <label for="inputEmail3" class="col-sm-4 col-md-6 col-form-label">Ward / Town</label>
+                                  <div class="col-sm-8 col-md-6">
+                                 <input type="text"class="form-control" name="ward_town" id=""  value="{{$datas->ward_town}}">
+                                  </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4 col-md-4  col-sm-12 col-xs-12">
+                                    <div class="form-group row">
+                                      <label for="inputEmail3" class="col-sm-4 col-md-4 col-form-label">Location GPS</label>
+                                      <div class="col-sm-4 col-md-4">
+                                     <input type="number" class="form-control"  value="{{$datas->lat}}" name="lat">
+                                      </div>
+                                      <div class="col-sm-4 col-md-4">
+                                        <input type="number" class="form-control"  value="{{$datas->long}}" name="long">
+                                         </div>
+                                        </div>
+                                    </div>
+
+
                     </div>
 
 

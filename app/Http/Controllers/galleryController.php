@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class galleryController extends Controller
 {
     //
-  public function treeGallery()
+   public function treeGallery()
     {
         $title='Tree Planting';
    
@@ -16,59 +16,63 @@ class galleryController extends Controller
            ->where('section','tree')
                    ->limit(10)->get();
 
-   
 
-     return view('website.galleries.gallery',compact('safaris','title'));
+     return view('website.galleries.gallery',compact('sliders','title'));
     }
 
 
 
-public function hikingGallery()
+  public function beeGallery()
     {
-         $title='Hiking & Trekking';
-    $safaris = program::
-  join('attachments','attachments.destination_id','programs.id')
-  ->select('programs.*','attachments.attachment')
-    ->where('attachments.type','Programs')
-   ->where('programs.type','Hiking & Trekking')
-    ->get();
-     return view('website.galleries.gallery',compact('safaris','title'));
+        $title='Bee Keeping';   
+
+   $sliders = slider::where('status','1')
+           ->where('section','bee')
+                   ->limit(10)->get();
+
+     return view('website.galleries.gallery',compact('sliders','title'));
     }
 
-public function beachGallery()
+
+
+ public function entrepreneurshipGallery()
     {
-         $title='Beach Holidays';
-    $safaris = program::
-  join('attachments','attachments.destination_id','programs.id')
-  ->select('programs.*','attachments.attachment')
-    ->where('attachments.type','Programs')
-   ->where('programs.type','Beach Holidays')
-    ->get();
-     return view('website.galleries.gallery',compact('safaris','title'));
+        $title='Entrepreneurship';   
+
+   $sliders = slider::where('status','1')
+           ->where('section','entrepreneurship')
+                   ->limit(10)->get();
+
+     return view('website.galleries.gallery',compact('sliders','title'));
     }
 
-public function groupGallery()
+
+
+
+ public function vulnarableGallery()
     {
-         $title='Group Tours';
-    $safaris = program::
-  join('attachments','attachments.destination_id','programs.id')
-  ->select('programs.*','attachments.attachment')
-    ->where('attachments.type','Programs')
-   ->where('programs.type','Combined Tours')
-    ->get();
-     return view('website.galleries.gallery',compact('safaris','title'));
+        $title='Vulnarable Children';   
+
+   $sliders = slider::where('status','1')
+           ->where('section','vulnarable')
+                   ->limit(10)->get();
+
+     return view('website.galleries.gallery',compact('sliders','title'));
     }
-    public function dayGallery()
+
+
+  public function healthGallery()
     {
-         $title='Day Tours';
-    $safaris = program::
-  join('attachments','attachments.destination_id','programs.id')
-  ->select('programs.*','attachments.attachment')
-    ->where('attachments.type','Programs')
-   ->where('programs.type','Day Tours')
-    ->get();
-     return view('website.galleries.gallery',compact('safaris','title'));
+        $title='Health';   
+
+   $sliders = slider::where('status','1')
+           ->where('section','health')
+                   ->limit(10)->get();
+
+     return view('website.galleries.gallery',compact('sliders','title'));
     }
+
+
     public function historicalGallery()
     {
     $title='Historical Sites';
